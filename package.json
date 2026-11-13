@@ -1,6 +1,6 @@
 {
-	"name": "8pay",
-	"description": "Build a personal website, blog, or portfolio with Astro.",
+	"name": "paycommission",
+	"description": "8PayCommission: calculators and analysis for 8th Pay Commission salary, pension, DA, HRA, and pay matrix updates in India.",
 	"cloudflare": {
 		"label": "Astro Framework Starter",
 		"products": [
@@ -13,14 +13,12 @@
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "12.6.12",
-		"@astrojs/mdx": "4.3.13",
-		"@astrojs/rss": "4.0.14",
 		"@astrojs/sitemap": "3.6.1",
 		"astro": "5.16.9",
 		"typescript": "5.9.3"
 	},
 	"devDependencies": {
-		"wrangler": "4.136.1"
+		"wrangler": "4.127.0"
 	},
 	"engines": {
 		"node": ">=22"

@@ -1,0 +1,3 @@
+Cloudflare Pages rebuild trigger
+Date: 2026-10-04T00:00:00Z
+Reason: Astro formula cleanup already applied; forcing a fresh deploy to ensure the latest build is picked up.
