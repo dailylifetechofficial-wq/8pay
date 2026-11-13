@@ -1,0 +1,232 @@
+---
+import '../styles/site.css';
+import { SITE_NAME, SITE_URL, ADSENSE_CLIENT, UPDATED_ISO, UPDATED_LABEL, PUBLISHED_ISO, PAGES, NAV_GROUPS, HI_PAGES, pageBySlug } from '../data/site';
+import type { PageInfo } from '../data/site';
+
+export interface Props {
+	title: string;
+	description: string;
+	slug: string; // '' for home; 'hi/...' for Hindi pages
+	h1?: string;
+	lead?: string;
+	ogImage?: string;
+	faq?: { q: string; a: string }[];
+	toc?: { id: string; label: string }[];
+	related?: string[];
+	breadcrumbLabel?: string;
+	pageType?: 'article' | 'home' | 'info';
+	noindex?: boolean;
+	updated?: string;
+	published?: string;
+	lang?: 'en' | 'hi';
+	alternate?: string; // slug of the translated page
+}
+
+const {
+	title, description, slug, h1, lead, ogImage, faq = [], toc = [], related = [],
+	breadcrumbLabel, pageType = 'article', noindex = false,
+	updated = UPDATED_ISO, published = PUBLISHED_ISO, lang = 'en', alternate,
+} = Astro.props;
+
+const hi = lang === 'hi';
+const T = hi
+	? { skip: 'सामग्री पर जाएं', toc: 'इस पेज पर', faq: 'अक्सर पूछे जाने वाले सवाल', updated: 'अंतिम अपडेट', by: 'लेखक', related: 'संबंधित गाइड', home: 'होम', disclaimer: 'स्वतंत्र जानकारी, आधिकारिक सलाह नहीं।', disclaimerBody: '8PayCommission का भारत सरकार या 8वें केंद्रीय वेतन आयोग से कोई संबंध नहीं है। जब तक अलग से न लिखा हो, 8वें वेतन आयोग के आंकड़े अनुमान या परिदृश्य हैं। आधिकारिक आदेश वित्त मंत्रालय और 8cpc.gov.in पर देखें।', menu: 'मेनू', policy: 'हम तथ्य कैसे जांचते हैं' }
+	: { skip: 'Skip to content', toc: 'On this page', faq: 'Frequently asked questions', updated: 'Last updated', by: 'By', related: 'Related guides and calculators', home: 'Home', disclaimer: 'Independent information, not official advice.', disclaimerBody: '8PayCommission is not affiliated with the Government of India or the 8th Central Pay Commission. 8th CPC figures on this page are projections or scenarios unless stated otherwise. Check the Finance Ministry and 8cpc.gov.in for official orders.', menu: 'Menu', policy: 'How we verify facts' };
+
+const path = slug ? `/${slug}/` : '/';
+const canonical = `${SITE_URL}${path}`;
+const ogName = (ogImage || slug || 'home').replace(/\//g, '-');
+const og = `${SITE_URL}/images/og/${ogName}.png`;
+const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+const crumbLabel = breadcrumbLabel || pageBySlug(slug)?.title || title;
+const crumbs = slug
+	? [{ name: T.home, url: `${SITE_URL}/` }, { name: crumbLabel, url: canonical }]
+	: [{ name: T.home, url: `${SITE_URL}/` }];
+const altUrl = alternate !== undefined ? `${SITE_URL}${alternate ? '/' + alternate + '/' : '/'}` : '';
+
+const graph: any[] = [
+	{
+		'@type': 'Organization', '@id': `${SITE_URL}/#org`, name: SITE_NAME, url: `${SITE_URL}/`,
+		logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon.svg` },
+		description: 'Independent publisher of 8th Pay Commission calculators and explainers. Not affiliated with the Government of India.',
+	},
+	{ '@type': 'WebSite', '@id': `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: SITE_NAME, publisher: { '@id': `${SITE_URL}/#org` }, inLanguage: ['en-IN', 'hi-IN'] },
+	{
+		'@type': pageType === 'article' ? 'Article' : 'WebPage', '@id': `${canonical}#page`, url: canonical,
+		name: title, headline: (h1 || title).slice(0, 110), description, image: [og],
+		inLanguage: hi ? 'hi-IN' : 'en-IN', isPartOf: { '@id': `${SITE_URL}/#website` },
+		author: { '@type': 'Organization', name: '8PayCommission Editorial Team', url: `${SITE_URL}/about-us/` },
+		publisher: { '@id': `${SITE_URL}/#org` }, datePublished: published, dateModified: updated, mainEntityOfPage: canonical,
+	},
+	{ '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },
+];
+if (faq.length) {
+	graph.push({ '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
+}
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+const relatedPages: PageInfo[] = related.map((s) => pageBySlug(s)).filter((p): p is PageInfo => !!p);
+const footerGroups = ['Latest', 'Calculators', 'Pay and allowances', 'Guides'];
+const searchIndex = JSON.stringify(PAGES.map((p) => ({ u: `/${p.slug}/`, t: p.title, d: p.blurb })));
+const hasAside = toc.length > 0;
+---
+
+<!doctype html>
+<html lang={hi ? 'hi-IN' : 'en-IN'}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="robots" content={robots} />
+		<link rel="canonical" href={canonical} />
+		{altUrl && <link rel="alternate" hreflang={hi ? 'en-IN' : 'hi-IN'} href={altUrl} />}
+		{altUrl && <link rel="alternate" hreflang={hi ? 'hi-IN' : 'en-IN'} href={canonical} />}
+		{altUrl && <link rel="alternate" hreflang="x-default" href={hi ? altUrl : canonical} />}
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="theme-color" content="#0b1f3a" />
+		<meta name="author" content="8PayCommission Editorial Team" />
+		<meta name="google-adsense-account" content={ADSENSE_CLIENT} />
+		<meta property="og:type" content={pageType === 'article' ? 'article' : 'website'} />
+		<meta property="og:site_name" content={SITE_NAME} />
+		<meta property="og:locale" content={hi ? 'hi_IN' : 'en_IN'} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={og} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={og} />
+		{pageType === 'article' && <meta property="article:modified_time" content={updated} />}
+		<script type="application/ld+json" set:html={jsonLd}></script>
+		<script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`} crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<a class="skip" href="#main">{T.skip}</a>
+		<header class="site-header">
+			<div class="wrap nav-row">
+				<a href="/" class="brand" aria-label="8PayCommission home"><span class="brand-mark">₹</span><span>8PayCommission</span></a>
+				<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">{T.menu}</button>
+				<nav id="site-nav" class="site-nav" aria-label="Main">
+					<ul>
+						{NAV_GROUPS.map((g) => (
+							<li class="has-menu">
+								<button class="menu-btn" aria-expanded="false">{g.label}</button>
+								<ul class="menu">
+									{g.slugs.map((s) => (<li><a href={`/${s}/`}>{pageBySlug(s)?.title}</a></li>))}
+								</ul>
+							</li>
+						))}
+						<li><a href="/about-us/">About</a></li>
+						<li><a class="lang-link" href={alternate !== undefined ? (hi ? (alternate ? `/${alternate}/` : '/') : `/${alternate}/`) : '/hi/8th-pay-commission/'} hreflang={hi ? 'en' : 'hi'}>{hi ? 'English' : 'हिंदी'}</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main id="main" class="wrap">
+			{slug && (
+				<nav class="crumbs" aria-label="Breadcrumb">
+					<ol>
+						<li><a href="/">{T.home}</a></li>
+						<li aria-current="page">{crumbLabel}</li>
+					</ol>
+				</nav>
+			)}
+
+			<div class={hasAside ? 'page-grid has-aside' : 'page-grid'}>
+				<article class="article">
+					{pageType !== 'home' && (
+						<header class="page-head">
+							<h1>{h1 || title}</h1>
+							{lead && <p class="lead">{lead}</p>}
+							{pageType === 'article' && (
+								<p class="byline">
+									<span class="pill">{T.updated}: <time datetime={updated}>{UPDATED_LABEL}</time></span>
+									<span>{T.by} <a href="/about-us/">8PayCommission Editorial Team</a></span>
+									<a href="/editorial-policy/">{T.policy}</a>
+								</p>
+							)}
+						</header>
+					)}
+
+					<slot />
+
+					{faq.length > 0 && (
+						<section id="faq" class="faq">
+							<h2>{T.faq}</h2>
+							{faq.map((f) => (
+								<details>
+									<summary>{f.q}</summary>
+									<p>{f.a}</p>
+								</details>
+							))}
+						</section>
+					)}
+
+					{pageType === 'article' && (
+						<aside class="disclaimer" aria-label="Disclaimer">
+							<strong>{T.disclaimer}</strong> {T.disclaimerBody}
+						</aside>
+					)}
+
+					{relatedPages.length > 0 && (
+						<section class="related" aria-labelledby="related-h">
+							<h2 id="related-h">{T.related}</h2>
+							<ul class="cards">
+								{relatedPages.map((p) => (
+									<li><a href={`/${p.slug}/`}><strong>{p.title}</strong><span>{p.blurb}</span></a></li>
+								))}
+							</ul>
+						</section>
+					)}
+				</article>
+
+				{hasAside && (
+					<aside class="side">
+						<nav class="toc" aria-label={T.toc}>
+							<strong>{T.toc}</strong>
+							<ol>{toc.map((t) => (<li><a href={`#${t.id}`}>{t.label}</a></li>))}</ol>
+						</nav>
+					</aside>
+				)}
+			</div>
+		</main>
+
+		<footer class="site-footer">
+			<div class="wrap">
+				<div class="foot-grid">
+					{footerGroups.map((g) => (
+						<div>
+							<h2>{g}</h2>
+							<ul>{PAGES.filter((p) => p.group === g).map((p) => (<li><a href={`/${p.slug}/`}>{p.title}</a></li>))}</ul>
+						</div>
+					))}
+					<div>
+						<h2>हिंदी</h2>
+						<ul>{HI_PAGES.map((p) => (<li><a href={`/${p.slug}/`} hreflang="hi">{p.title}</a></li>))}</ul>
+					</div>
+					<div>
+						<h2>About</h2>
+						<ul>{PAGES.filter((p) => p.group === 'About').map((p) => (<li><a href={`/${p.slug}/`}>{p.title}</a></li>))}<li><a href="/site-map/">Site map</a></li></ul>
+					</div>
+				</div>
+				<p class="foot-note">© {new Date().getFullYear()} 8PayCommission. Independent publisher, not affiliated with the Government of India. Calculators give estimates for information only.</p>
+			</div>
+		</footer>
+
+		<script is:inline>
+			(function () {
+				var t = document.querySelector('.nav-toggle'), n = document.getElementById('site-nav');
+				if (t && n) t.addEventListener('click', function () { var o = n.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
+				document.querySelectorAll('.menu-btn').forEach(function (b) {
+					b.addEventListener('click', function () { var li = b.parentElement, o = li.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+				});
+			})();
+		</script>
+		{pageType === 'home' && <script is:inline set:html={`window.__PAGES=${searchIndex};(function(){var q=document.getElementById('site-search'),r=document.getElementById('search-results');if(!q||!r)return;q.addEventListener('input',function(){var v=q.value.trim().toLowerCase();if(v.length<2){r.innerHTML='';return;}var out=window.__PAGES.filter(function(p){return (p.t+' '+p.d).toLowerCase().indexOf(v)>-1}).slice(0,6);r.innerHTML=out.length?out.map(function(p){return '<li><a href="'+p.u+'"><strong>'+p.t+'</strong><span>'+p.d+'</span></a></li>'}).join(''):'<li class="none">No match. Try fitment, DA, pension or arrears.</li>';});})();`}></script>}
+		<script is:inline src="/js/calculators.js" defer></script>
+	</body>
+</html>
