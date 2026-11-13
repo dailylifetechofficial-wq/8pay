@@ -1,0 +1,45 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Figure from '../../components/Figure.astro';
+import Calc from '../../components/Calc.astro';
+const faq = [
+ {
+  "q": "अभी DA कितना है?",
+  "a": "1 जुलाई 2026 से 63%।"
+ },
+ {
+  "q": "अगली DA बढ़ोतरी कब होगी?",
+  "a": "अगला संशोधन 1 जनवरी 2027 से देय है। हाल की मंज़ूरियां प्रभावी तारीख के तीन-चार महीने बाद आई हैं।"
+ },
+ {
+  "q": "क्या DA बेसिक में मिलाया जाएगा?",
+  "a": "अभी घोषित नहीं। पिछले आयोगों ने इसे फिटमेंट फैक्टर के जरिए मिलाया था।"
+ },
+ {
+  "q": "DA की गणना कैसे होती है?",
+  "a": "पिछले 12 महीनों के AICPI-IW औसत और आधार 261.42 के अंतर से।"
+ }
+];
+const toc = [{"id": "chart", "label": "DA चार्ट"}, {"id": "kaise", "label": "DA कैसे तय होता है"}, {"id": "calc", "label": "कैलकुलेटर"}, {"id": "aage", "label": "8वें आयोग में DA"}, {"id": "faq", "label": "सवाल-जवाब"}];
+const related = ["da-hike-latest-news", "da-merger-8th-pay-commission"];
+---
+
+<SiteLayout title="DA 63%: महंगाई भत्ता जुलाई 2026, DA चार्ट और कैलकुलेटर" description="केंद्रीय कर्मचारियों का DA 1 जुलाई 2026 से 63% है। DA चार्ट 2021 से 2026, DA की गणना, बकाया और DA कैलकुलेटर। 3 नवंबर 2026 तक अपडेट।" slug="hi/da-hike-63-percent" h1="DA 63%: महंगाई भत्ता की ताज़ा जानकारी" lead="दर, चार्ट और असर, एक जगह।" faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="DA 63%" lang="hi" alternate="da-hike-latest-news">
+
+<div class="answer"><p><strong>संक्षेप में:</strong> केंद्रीय कर्मचारियों और पेंशनभोगियों का महंगाई भत्ता (DA) और महंगाई राहत (DR) <strong>1 जुलाई 2026 से 63%</strong> है। केंद्रीय कैबिनेट ने 28 अक्टूबर 2026 को 60% से 3 प्रतिशत अंक की बढ़ोतरी मंज़ूर की। 1 जनवरी 2027 से अगला संशोधन होना है, जिसकी घोषणा अभी नहीं हुई।</p></div>
+<Figure name="da-rate-history" eager />
+
+<h2 id="chart">DA चार्ट: जुलाई 2021 से अब तक</h2>
+<div class="table-wrap"><table><thead><tr><th>लागू होने की तारीख</th><th class="num">DA दर</th><th>बढ़ोतरी</th></tr></thead><tbody><tr><th scope="row">1 जुलाई 2021</th><td class="num">31%</td><td>कोविड रोक के बाद बहाल</td></tr><tr><th scope="row">1 जनवरी 2022</th><td class="num">34%</td><td>+3 अंक</td></tr><tr><th scope="row">1 जुलाई 2022</th><td class="num">38%</td><td>+4 अंक</td></tr><tr><th scope="row">1 जनवरी 2023</th><td class="num">42%</td><td>+4 अंक</td></tr><tr><th scope="row">1 जुलाई 2023</th><td class="num">46%</td><td>+4 अंक</td></tr><tr><th scope="row">1 जनवरी 2024</th><td class="num">50%</td><td>+4 अंक</td></tr><tr><th scope="row">1 जुलाई 2024</th><td class="num">53%</td><td>+3 अंक</td></tr><tr><th scope="row">1 जनवरी 2025</th><td class="num">55%</td><td>+2 अंक</td></tr><tr><th scope="row">1 जुलाई 2025</th><td class="num">58%</td><td>+3 अंक</td></tr><tr><th scope="row">1 जनवरी 2026</th><td class="num">60%</td><td>+2 अंक</td></tr><tr><th scope="row">1 जुलाई 2026</th><td class="num">63%</td><td>+3 अंक</td></tr></tbody></table></div>
+<p>जनवरी 2020 से जून 2021 तक कोविड के दौरान DA की बढ़ोतरी रोकी गई थी और 1 जुलाई 2021 से बहाल हुई।</p>
+
+<h2 id="kaise">DA कैसे तय होता है</h2>
+<p>DA की दर पिछले 12 महीनों के AICPI-IW (औद्योगिक श्रमिकों के लिए अखिल भारतीय उपभोक्ता मूल्य सूचकांक) के औसत पर आधारित है। सूत्र: (12 महीने का औसत घटा 261.42) भाग 261.42, गुणा 100। दर हर साल 1 जनवरी और 1 जुलाई से संशोधित होती है।</p>
+
+<h2 id="calc">DA बढ़ोतरी कैलकुलेटर</h2>
+<Calc name="da" title="DA hike calculator" intro="Enter your basic pay to see the monthly increase and arrears." />
+<h2 id="aage">8वें वेतन आयोग में DA का क्या होगा</h2>
+<p>नई वेतन संरचना लागू होने तक DA पुराने नियमों से बढ़ता रहेगा। पिछले आयोगों ने जमा हुआ DA फिटमेंट फैक्टर के जरिए नई बेसिक में मिलाकर DA को शून्य से शुरू किया था। 8वें आयोग में क्या होगा, यह अभी घोषित नहीं है।</p>
+<p class="note">यह पेज अंग्रेज़ी गाइड का हिंदी संस्करण है। कैलकुलेटर का इंटरफ़ेस अंग्रेज़ी में है।</p>
+
+</SiteLayout>

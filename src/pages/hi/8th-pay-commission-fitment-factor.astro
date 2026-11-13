@@ -1,0 +1,45 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Figure from '../../components/Figure.astro';
+import Calc from '../../components/Calc.astro';
+const faq = [
+ {
+  "q": "फिटमेंट फैक्टर क्या होता है?",
+  "a": "वह गुणक जिससे पुरानी बेसिक पे को नई बेसिक पे में बदला जाता है।"
+ },
+ {
+  "q": "7वें वेतन आयोग का फिटमेंट फैक्टर कितना था?",
+  "a": "2.57। इससे न्यूनतम बेसिक पे ₹18,000 तय हुई।"
+ },
+ {
+  "q": "क्या 2.86 फिटमेंट फैक्टर पक्का है?",
+  "a": "नहीं। यह मीडिया में चला अनुमान है, सरकारी आंकड़ा नहीं।"
+ },
+ {
+  "q": "2.28 फैक्टर पर वास्तविक बढ़ोतरी कितनी होगी?",
+  "a": "DA 63% मानें तो बेसिक और DA मिलाकर लगभग 40%।"
+ }
+];
+const toc = [{"id": "matlab", "label": "असली मतलब"}, {"id": "nyunatam", "label": "न्यूनतम वेतन"}, {"id": "apna", "label": "अपना हिसाब"}, {"id": "faq", "label": "सवाल-जवाब"}];
+const related = ["fitment-factor-8th-pay-commission", "minimum-basic-pay-8th-pay-commission"];
+---
+
+<SiteLayout title="8वें वेतन आयोग का फिटमेंट फैक्टर: 1.92, 2.28, 2.57, 2.86" description="8वें वेतन आयोग का फिटमेंट फैक्टर क्या होगा? 1.92, 2.28, 2.86 और 3.83 का असली मतलब, DA मिलने के बाद वास्तविक वृद्धि और कैलकुलेटर।" slug="hi/8th-pay-commission-fitment-factor" h1="8वें वेतन आयोग का फिटमेंट फैक्टर" lead="हर परिदृश्य में असली वेतन वृद्धि कितनी होगी।" faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="\u092b\u093f\u091f\u092e\u0947\u0902\u091f \u092b\u0948\u0915\u094d\u091f\u0930" lang="hi" alternate="fitment-factor-8th-pay-commission">
+
+<div class="answer"><p><strong>संक्षेप में:</strong> फिटमेंट फैक्टर वह गुणक है जिससे आपकी मौजूदा बेसिक पे को नई बेसिक पे में बदला जाता है। 6ठे आयोग में यह 1.86 और 7वें में 2.57 था। 8वें आयोग के लिए कोई आधिकारिक आंकड़ा नहीं है। असली सवाल यह है कि फैक्टर 1.63 (यानी 1 + आज के 63% DA) से कितना ऊपर है, क्योंकि DA नई बेसिक में मिल जाता है।</p></div>
+<Figure name="fitment-factor-comparison" eager />
+
+<h2 id="matlab">फिटमेंट फैक्टर का असली मतलब</h2>
+<p>अगर DA 63% है तो 100 रुपये की बेसिक पर आपको 163 रुपये मिलते हैं। 1.63 का फैक्टर लगाने पर नई बेसिक 163 रुपये होगी और DA शून्य, यानी कुछ नहीं बदलेगा। असली बढ़ोतरी सिर्फ 1.63 से ऊपर वाले हिस्से की है।</p>
+<div class="table-wrap"><table><thead><tr><th>फिटमेंट फैक्टर</th><th class="num">बेसिक में वृद्धि</th><th class="num">असली वृद्धि (DA 63% पर)</th></tr></thead><tbody><tr><th scope="row">1.92</th><td class="num">92%</td><td class="num">17.8%</td></tr><tr><th scope="row">2.28</th><td class="num">128%</td><td class="num">39.9%</td></tr><tr><th scope="row">2.57</th><td class="num">157%</td><td class="num">57.7%</td></tr><tr><th scope="row">2.86</th><td class="num">186%</td><td class="num">75.5%</td></tr><tr><th scope="row">3.83 (कर्मचारी पक्ष की मांग)</th><td class="num">283%</td><td class="num">135.0%</td></tr></tbody></table></div>
+<p>यह आंकड़े सिर्फ उदाहरण हैं। HRA की दर भी नई व्यवस्था में कम से शुरू हो सकती है, जिससे वास्तविक लाभ और घट सकता है।</p>
+
+<h2 id="nyunatam">न्यूनतम वेतन पर असर</h2>
+<div class="table-wrap"><table><thead><tr><th>फैक्टर</th><th class="num">न्यूनतम बेसिक पे (₹18,000 पर)</th></tr></thead><tbody><tr><th scope="row">1.92</th><td class="num">₹34,560</td></tr><tr><th scope="row">2.28</th><td class="num">₹41,040</td></tr><tr><th scope="row">2.57</th><td class="num">₹46,260</td></tr><tr><th scope="row">2.86</th><td class="num">₹51,480</td></tr><tr><th scope="row">3.83</th><td class="num">₹69,000</td></tr></tbody></table></div>
+<p>कर्मचारी पक्ष (NC-JCM) के ज्ञापन में ₹69,000 न्यूनतम वेतन की मांग बताई गई है, जो करीब 3.83 के बराबर है। यह मांग है, सरकारी फैसला नहीं।</p>
+
+<h2 id="apna">अपना हिसाब लगाएं</h2>
+<Calc name="fitment" title="Fitment factor simulator" intro="Enter your basic pay and DA rate to see the real increase for each scenario." />
+<p class="note">यह पेज अंग्रेज़ी गाइड का हिंदी संस्करण है। कैलकुलेटर का इंटरफ़ेस अंग्रेज़ी में है।</p>
+
+</SiteLayout>

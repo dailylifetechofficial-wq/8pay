@@ -1,0 +1,40 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Figure from '../../components/Figure.astro';
+import Calc from '../../components/Calc.astro';
+const faq = [
+ {
+  "q": "क्या यह सरकारी कैलकुलेटर है?",
+  "a": "नहीं। यह स्वतंत्र अनुमान है और 7वें वेतन आयोग के नियमों व मान लिए गए फैक्टर पर आधारित है।"
+ },
+ {
+  "q": "कौन सा फिटमेंट फैक्टर चुनें?",
+  "a": "सावधान अनुमान के लिए 1.92, मध्यम के लिए 2.28 और ऊंचे अनुमान के लिए 2.86। असली वृद्धि देखें, सिर्फ गुणक नहीं।"
+ },
+ {
+  "q": "क्या मेरा डेटा सेव होता है?",
+  "a": "नहीं। गणना आपके ब्राउज़र में होती है।"
+ }
+];
+const toc = [{"id": "udaharan", "label": "उदाहरण"}, {"id": "dhyan", "label": "ध्यान रखें"}, {"id": "faq", "label": "सवाल-जवाब"}];
+const related = ["8th-pay-commission-salary-calculator", "8th-pay-commission-arrears-calculator"];
+---
+
+<SiteLayout title="8वां वेतन आयोग सैलरी कैलकुलेटर: लेवल के अनुसार अनुमान" description="8वें वेतन आयोग के अनुमानित वेतन की गणना करें: 1.92, 2.28, 2.57 और 2.86 फैक्टर पर बेसिक, DA, HRA, TA और शुद्ध वेतन की तुलना।" slug="hi/8th-pay-commission-salary-calculator" h1="8वां वेतन आयोग सैलरी कैलकुलेटर" lead="अपने लेवल और फैक्टर के हिसाब से अनुमानित वेतन देखें।" faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="\u0938\u0948\u0932\u0930\u0940 \u0915\u0948\u0932\u0915\u0941\u0932\u0947\u091f\u0930" lang="hi" alternate="8th-pay-commission-salary-calculator">
+
+<div class="answer"><p><strong>कैसे काम करता है:</strong> कैलकुलेटर आपकी मौजूदा बेसिक पे को मान लिए गए फिटमेंट फैक्टर से गुणा करता है, फिर DA, HRA और ट्रांसपोर्ट अलाउंस जोड़ता है और NPS/UPS व अन्य कटौतियां घटाता है। 8वें आयोग से जुड़े सभी इनपुट अनुमान हैं, क्योंकि आयोग ने कोई आंकड़ा घोषित नहीं किया है।</p></div>
+<Calc name="salary" title="8th Pay Commission salary calculator" intro="Choose your level, fitment scenario and city class." />
+<Figure name="salary-calculation-flow" />
+
+<h2 id="udaharan">उदाहरण: लेवल 6, X श्रेणी का शहर</h2>
+<p>बेसिक पे ₹35,400, फैक्टर 2.28, DA शून्य से शुरू और HRA 24%। वर्तमान शुद्ध वेतन लगभग ₹64,486 और अनुमानित नया शुद्ध वेतन लगभग ₹92,798, यानी करीब 44% की बढ़ोतरी। यह बढ़ोतरी 128% वाली सुर्खी से बहुत कम है, क्योंकि 63% DA नई बेसिक में समा जाता है।</p>
+
+<h2 id="dhyan">ध्यान रखें</h2>
+<ul>
+<li>नई बेसिक की तुलना पुरानी बेसिक और DA के योग से करें।</li>
+<li>HRA की दर नई व्यवस्था में कम से शुरू हो सकती है।</li>
+<li>एरियर एकमुश्त मिलता है और उस साल की आय में कर लगता है।</li>
+</ul>
+<p class="note">यह पेज अंग्रेज़ी गाइड का हिंदी संस्करण है। कैलकुलेटर का इंटरफ़ेस अंग्रेज़ी में है।</p>
+
+</SiteLayout>
