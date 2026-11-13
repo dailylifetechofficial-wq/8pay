@@ -1,0 +1,60 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "When will the 8th Pay Commission be implemented?",
+  "a": "No date has been announced. The report is due around May 2027. Past commissions took five to seven months from report to Cabinet decision, so revised pay is more likely to appear in late 2027 or 2028."
+ },
+ {
+  "q": "Will the 8th Pay Commission be effective from 1 January 2026?",
+  "a": "That is the widely reported expectation, but the government has not notified an effective date. If it is adopted, arrears would be calculated from that date."
+ },
+ {
+  "q": "Will I get arrears?",
+  "a": "If revised pay is made effective from a date earlier than the payout, the difference is normally paid as arrears. The 6th and 7th commissions both paid arrears."
+ },
+ {
+  "q": "Can the commission give interim relief?",
+  "a": "The Terms of Reference allow interim reports on specific subjects. Whether any interim pay relief is recommended has not been announced."
+ }
+];
+const toc = [{"id": "two-dates", "label": "Effective vs payment date"}, {"id": "history", "label": "Lessons from 6th and 7th CPC"}, {"id": "scenarios", "label": "Three timelines"}, {"id": "what-can-change", "label": "What could change it"}, {"id": "what-to-do", "label": "What to do now"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-arrears-calculator", "8th-pay-commission-latest-news", "7th-vs-8th-pay-commission", "8th-pay-commission-faq"];
+---
+
+<SiteLayout title="8th Pay Commission Implementation Date: When Will It Start?" description="When will the 8th Pay Commission be implemented? Expected 1 Jan 2026 effective date, report due May 2027, past timelines and arrears scenarios explained." slug="8th-pay-commission-implementation-date" h1="8th Pay Commission Implementation Date" lead="What is official, what is expected, and what past commissions suggest about timing." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Implementation Date" alternate="hi/8th-pay-commission-kab-lagu-hoga">
+
+<div class="answer"><p><strong>Short answer:</strong> There is no official implementation date. Reports say revised pay is expected to count from <strong>1 January 2026</strong>, but money will only reach payslips after the report (due about May 2027) is accepted by the Cabinet and rules are notified. If past patterns hold, that points to late 2027 or 2028, with arrears covering the gap.</p></div>
+
+<h2 id="two-dates">Two different dates people mix up</h2>
+<p>Most confusion comes from treating two separate dates as one.</p>
+<div class="table-wrap"><table><thead><tr><th>Date</th><th>Meaning</th><th>Status</th></tr></thead><tbody><tr><th scope="row">Effective date</th><td>The date from which the new pay is calculated. Arrears are measured from here.</td><td>Widely reported as 1 January 2026; not formally notified.</td></tr><tr><th scope="row">Payment date</th><td>The month your payslip first shows revised pay.</td><td>Unknown. Depends on the report and Cabinet approval.</td></tr></tbody></table></div>
+<p>In both the 6th and 7th commissions the effective date was set at 1 January of the year the commission was due, and the actual payout came later with arrears. The 8th is widely expected to follow the same approach because the 7th CPC pay structure took effect on 1 January 2016, and a ten-year cycle ends on 31 December 2025.</p>
+
+<h2 id="history">What the last two commissions tell us</h2>
+<div class="table-wrap"><table><thead><tr><th>Commission</th><th>Constituted</th><th>Report submitted</th><th>Cabinet decision</th><th>Effective from</th></tr></thead><tbody><tr><th scope="row">6th CPC</th><td>Oct 2006</td><td>Mar 2008</td><td>Aug 2008</td><td>1 Jan 2006</td></tr><tr><th scope="row">7th CPC</th><td>Feb 2014</td><td>Nov 2015</td><td>Jun 2016 (notified Jul 2016)</td><td>1 Jan 2016</td></tr><tr><th scope="row">8th CPC</th><td>Nov 2025</td><td>Due about May 2027</td><td>Not yet</td><td>Expected 1 Jan 2026 (unconfirmed)</td></tr></tbody></table></div>
+<p>The gap between report and Cabinet decision was roughly five months for the 6th and seven months for the 7th. Applying a similar gap to a May 2027 report gives a Cabinet decision somewhere between October 2027 and January 2028. This is arithmetic from precedent, not a forecast from the government.</p>
+<Figure name="arrears-timeline" />
+
+<h2 id="scenarios">Three plausible timelines</h2>
+<div class="table-wrap"><table><thead><tr><th>Scenario</th><th>Report</th><th>Cabinet decision</th><th>First revised payslip</th><th>Arrears if effective 1 Jan 2026</th></tr></thead><tbody><tr><th scope="row">Faster</th><td>Interim and final reports early (Q1 2027)</td><td>Mid 2027</td><td>Late 2027</td><td>About 20 months</td></tr><tr><th scope="row">Base case (precedent)</th><td>May 2027</td><td>Oct 2027 to Jan 2028</td><td>Early 2028</td><td>About 24 months</td></tr><tr><th scope="row">Slower</th><td>Extended deadline</td><td>Mid 2028</td><td>Late 2028</td><td>About 33 months</td></tr></tbody></table></div>
+<p>Use the <a href="/8th-pay-commission-arrears-calculator/">arrears calculator</a> to turn any of these into rupees for your own pay level.</p>
+
+<h2 id="what-can-change">What could change the timeline</h2>
+<ul>
+<li><strong>Interim reports.</strong> The Terms of Reference allow them. A report on a narrow subject can be acted on early. Staff bodies have also asked for 20% interim relief; see <a href="/8th-pay-commission-demands-interim-relief/">demands</a>.</li>
+<li><strong>Fiscal calendar.</strong> The Union Budget for 2027-28 will show whether money has been set aside.</li>
+<li><strong>State elections and politics.</strong> Governments have historically moved faster before major elections.</li>
+<li><strong>Deadline extensions.</strong> Commissions in India have asked for more time before.</li>
+</ul>
+
+<h2 id="what-to-do">What employees can do now</h2>
+<ul>
+<li>Do not assume a date. Plan on arrears arriving as a lump sum, not as a monthly change.</li>
+<li>Keep records of your basic pay history; arrears depend on it.</li>
+<li>Track DA: it will keep rising under 7th CPC rules until a new structure is notified. See <a href="/da-hike-latest-news/">DA hike</a>.</li>
+</ul>
+
+</SiteLayout>

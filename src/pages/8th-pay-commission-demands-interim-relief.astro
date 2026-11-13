@@ -1,0 +1,53 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What minimum pay is the staff side demanding?",
+  "a": "The NC-JCM memorandum reportedly asks for Rs 69,000, against Rs 18,000 today. Other reports mention figures up to Rs 72,000."
+ },
+ {
+  "q": "Has the government granted interim relief?",
+  "a": "No. There is no government order granting interim relief or merging DA into basic pay."
+ },
+ {
+  "q": "What fitment factor does Rs 69,000 imply?",
+  "a": "About 3.83, which is Rs 69,000 divided by Rs 18,000."
+ },
+ {
+  "q": "What is interim relief?",
+  "a": "A temporary pay increase given in advance while a Pay Commission is still preparing its report."
+ }
+];
+const toc = [{"id": "table", "label": "Demands vs today"}, {"id": "what-69000-means", "label": "What Rs 69,000 means"}, {"id": "interim", "label": "Interim relief"}, {"id": "pensioners", "label": "Pensioner demands"}, {"id": "read", "label": "Reading the headlines"}, {"id": "faq", "label": "FAQ"}];
+const related = ["fitment-factor-8th-pay-commission", "minimum-basic-pay-8th-pay-commission", "da-merger-8th-pay-commission", "8th-pay-commission-memorandum-submission"];
+---
+
+<SiteLayout title="8th Pay Commission Demands: Rs 69,000 Minimum Pay and Interim Relief" description="Staff-side demands to the 8th Pay Commission: Rs 69,000 minimum pay, 3.83 fitment, 20% interim relief, 50% DA merger and OPS. What is asked and what is decided." slug="8th-pay-commission-demands-interim-relief" h1="8th Pay Commission Demands and Interim Relief" lead="What staff bodies have asked for, and what the government has and has not agreed." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Staff Demands">
+
+<div class="answer"><p><strong>Short answer:</strong> The staff-side National Council (NC-JCM) memorandum, finalised in April 2026, reportedly asks for a minimum basic pay of <strong>Rs 69,000</strong> (a fitment factor of about 3.83), 20% interim relief from 1 January 2026, merger of 50% DA into basic pay and restoration of the old pension scheme. These are demands. The government has not granted interim relief or merged DA.</p></div>
+<Figure name="staff-demands-summary" eager />
+
+<h2 id="table">Main demands compared with today</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Today (7th CPC)</th><th>Staff-side demand (reported)</th></tr></thead><tbody><tr><th scope="row">Minimum basic pay</th><td>₹18,000</td><td>₹69,000</td></tr><tr><th scope="row">Fitment factor</th><td>2.57 (7th CPC)</td><td>About 3.83 (₹69,000 over ₹18,000)</td></tr><tr><th scope="row">Interim relief</th><td>None</td><td>20% of pay and pension from 1 Jan 2026 until the award</td></tr><tr><th scope="row">DA merger</th><td>DA at 63%, not merged</td><td>Merge 50% of DA/DR into basic pay and pension</td></tr><tr><th scope="row">Pension scheme</th><td>NPS and UPS for post-2004 recruits</td><td>Restore the Old Pension Scheme</td></tr><tr><th scope="row">Wage basis</th><td>Family of three consumption units</td><td>Five units in the minimum wage calculation</td></tr><tr><th scope="row">Other asks</th><td>-</td><td>Interest-free car advance of ₹10 lakh and a festival salary advance (reported)</td></tr></tbody></table></div>
+<p>Figures differ slightly across reports and between federations. Some media reports mention minimum pay demands of up to Rs 72,000. Treat all of them as positions, not forecasts.</p>
+
+<h2 id="what-69000-means">What Rs 69,000 would mean</h2>
+<p>A factor of 3.83 is 3.83 divided by 1.63, or about 2.35 times today's basic plus DA of 63%. That is a real increase of roughly 135% in basic pay and DA combined. By comparison, the 7th CPC raised pay by about 14% in real terms. The commission must weigh such a claim against the fiscal prudence language in its Terms of Reference. See the <a href="/fitment-factor-8th-pay-commission/">fitment factor guide</a> for the maths.</p>
+
+<h2 id="interim">Interim relief: what it is and where it stands</h2>
+<p>Interim relief is a temporary, advance pay rise that a government may give while a Pay Commission is still preparing its report. The staff side asked for 20% of pay and pension from 1 January 2026, along with the merger of 50% DA into basic pay, and the confederation of central employees threatened a one-day strike in February 2026 to press the point.</p>
+<ul>
+<li><strong>Government position.</strong> There is no order granting interim relief or merging DA into basic pay. Reports noted that the Union Budget 2026-27 contained no update on the commission.</li>
+<li><strong>Precedent.</strong> Reports note that interim relief was sought but not granted before the 6th and 7th commissions.</li>
+<li><strong>Practical effect.</strong> DA continues to rise every half-year; it reached 63% from July 2026. See the <a href="/da-hike-latest-news/">DA chart</a>.</li>
+</ul>
+
+<h2 id="pensioners">Demands from pensioners</h2>
+<p>Pensioner bodies have asked for DR to be merged into pension once it crosses 50%, for interim relief on pension, and for those who retired before 1 January 2026 to be covered. See the <a href="/8th-pay-commission-pension-calculator/">pension calculator</a>.</p>
+
+<h2 id="read">How to read demand headlines</h2>
+<p>Staff-side demands start high by design because the commission and the government will push the other way. The useful question is not which number is largest, but what the report recommends and what the Cabinet accepts. Our <a href="/8th-pay-commission-latest-news/">timeline</a> separates the two.</p>
+
+</SiteLayout>

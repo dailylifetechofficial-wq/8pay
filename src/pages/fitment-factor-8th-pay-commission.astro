@@ -1,0 +1,70 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the fitment factor in the 8th Pay Commission?",
+  "a": "No official fitment factor has been announced. The commission will recommend it in its report, due around May 2027."
+ },
+ {
+  "q": "What was the fitment factor in the 7th Pay Commission?",
+  "a": "2.57, applied to pay band plus grade pay. It set minimum basic pay at Rs 18,000."
+ },
+ {
+  "q": "Is 2.86 confirmed for the 8th Pay Commission?",
+  "a": "No. 2.86 was a widely quoted media projection. It is not a government figure. The staff-side memorandum asks for about 3.83."
+ },
+ {
+  "q": "How much salary hike will I get at 2.28?",
+  "a": "Your basic pay would be multiplied by 2.28, but DA of 63% would be absorbed, so the real increase in basic plus DA is about 40%, before the HRA change."
+ }
+];
+const toc = [{"id": "meaning", "label": "What it does"}, {"id": "real-increase", "label": "Real increase"}, {"id": "history", "label": "Earlier commissions"}, {"id": "2-86-vs-2-57", "label": "2.86 vs 2.57"}, {"id": "who-decides", "label": "What the commission weighs"}, {"id": "faq", "label": "FAQ"}];
+const related = ["minimum-basic-pay-8th-pay-commission", "8th-pay-commission-demands-interim-relief", "da-merger-8th-pay-commission", "7th-vs-8th-pay-commission"];
+---
+
+<SiteLayout title="8th Pay Commission Fitment Factor: 1.92, 2.28, 2.57 and 2.86" description="What is the 8th Pay Commission fitment factor? Compare 1.92, 2.28, 2.57 and 2.86, see the real raise after DA absorption, and try a fitment calculator." slug="fitment-factor-8th-pay-commission" h1="8th Pay Commission Fitment Factor: What Each Scenario Means" lead="Including the 2.86 vs 2.57 comparison, with a simulator for your own basic pay." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Fitment Factor" alternate="hi/8th-pay-commission-fitment-factor">
+
+<div class="answer"><p><strong>Short answer:</strong> The fitment factor is the multiplier that converts your current basic pay into the new basic pay. The 6th CPC used 1.86 and the 7th CPC used 2.57. For the 8th CPC, no figure has been announced. The numbers in circulation (1.92, 2.28, 2.86, and the staff-side 3.83) are scenarios or demands. What matters is how far a factor sits above the pay-neutral point of about 1.63, which is 1 plus the current 63% DA.</p></div>
+<Figure name="fitment-factor-comparison" eager />
+<Calc name="fitment" title="Fitment factor simulator" intro="Enter your basic pay and the DA rate at the date DA is merged. The table shows the revised basic and how much of the rise is real." />
+
+<h2 id="meaning">What the fitment factor does</h2>
+<p>When a Pay Commission is implemented, each employee's basic pay is multiplied by the fitment factor and then placed at the nearest cell in the new pay matrix. Dearness Allowance, which had grown to a large share of pay, is folded into this multiplication and then restarts from zero. That is why a large factor does not equal a large raise.</p>
+
+<h2 id="real-increase">Why the real increase is smaller than the factor</h2>
+<p>With DA at 63%, a person with basic pay of Rs 100 already gets Rs 163. A fitment factor of 1.63 would give them Rs 163 as basic with no DA, so nothing changes. Only the part of the factor above 1.63 is a real raise.</p>
+<div class="table-wrap"><table><thead><tr><th>Fitment factor</th><th class="num">Rise in basic pay</th><th class="num">Real increase if DA is 60%</th><th class="num">Real increase if DA is 63%</th></tr></thead><tbody><tr><th scope="row">1.92</th><td class="num">92%</td><td class="num">20.0%</td><td class="num">17.8%</td></tr><tr><th scope="row">2.28</th><td class="num">128%</td><td class="num">42.5%</td><td class="num">39.9%</td></tr><tr><th scope="row">2.57</th><td class="num">157%</td><td class="num">60.6%</td><td class="num">57.7%</td></tr><tr><th scope="row">2.86</th><td class="num">186%</td><td class="num">78.7%</td><td class="num">75.5%</td></tr><tr><th scope="row">3.83 (staff demand)</th><td class="num">283%</td><td class="num">139.4%</td><td class="num">135.0%</td></tr></tbody></table></div>
+<p>The real increase also excludes the change in HRA, which usually restarts at lower percentages. See the <a href="/8th-pay-commission-salary-calculator/">salary calculator</a> for the full payslip effect.</p>
+
+<h2 id="history">Fitment factors in earlier commissions</h2>
+<div class="table-wrap"><table><thead><tr><th>Commission</th><th>Factor</th><th>What it did</th></tr></thead><tbody><tr><th scope="row">6th CPC (2006)</th><td>1.86</td><td>Applied to the 5th CPC basic pay; introduced pay bands and grade pay.</td></tr><tr><th scope="row">7th CPC (2016)</th><td>2.57</td><td>Applied to pay band plus grade pay; replaced them with the pay matrix. About 2.25 for the 125% DA absorbed and about 14.3% real increase.</td></tr><tr><th scope="row">8th CPC (2025-27)</th><td>Not announced</td><td>The commission will recommend the factor in its report.</td></tr></tbody></table></div>
+
+<h2 id="2-86-vs-2-57">2.86 versus 2.57: the two numbers people compare</h2>
+<p>The 7th CPC factor of 2.57 set the minimum basic pay at Rs 18,000 (Rs 7,000 x 2.57). The figure of 2.86 was widely quoted in media projections in 2025 and gives a minimum of Rs 51,480 on Rs 18,000. It is not a government number. The staff-side NC-JCM memorandum finalised in April 2026 goes further, asking for a minimum pay of Rs 69,000, which implies a factor of about 3.83. See <a href="/8th-pay-commission-demands-interim-relief/">staff demands</a>.</p>
+<div class="table-wrap"><table><thead><tr><th>Level</th><th class="num">7th CPC entry pay</th><th class="num">At 2.57</th><th class="num">At 2.86</th><th class="num">Difference</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">₹18,000</td><td class="num">₹46,260</td><td class="num">₹51,480</td><td class="num">₹5,220</td></tr><tr><th scope="row">Level 6</th><td class="num">₹35,400</td><td class="num">₹90,978</td><td class="num">₹1,01,244</td><td class="num">₹10,266</td></tr><tr><th scope="row">Level 10</th><td class="num">₹56,100</td><td class="num">₹1,44,177</td><td class="num">₹1,60,446</td><td class="num">₹16,269</td></tr><tr><th scope="row">Level 14</th><td class="num">₹1,44,200</td><td class="num">₹3,70,594</td><td class="num">₹4,12,412</td><td class="num">₹41,818</td></tr></tbody></table></div>
+<p>Values are straight multiplication before pay-matrix rounding. Applying 2.57 again assumes the same step as 2016; applying 2.86 would mean a real increase of about 75% at DA 63%, which is large by historical standards.</p>
+
+<h2 id="who-decides">What the commission weighs</h2>
+<ul>
+<li><strong>Fiscal capacity.</strong> The Terms of Reference tell the commission to consider fiscal prudence and the effect on state finances.</li>
+<li><strong>Cost of living.</strong> Accumulated DA must be absorbed.</li>
+<li><strong>Comparable pay.</strong> Market and public-sector comparisons are considered.</li>
+<li><strong>Staff-body demands.</strong> Memoranda from federations argue for higher minimum pay.</li>
+</ul>
+<p>Staff associations argue for factors well above 2.5. Independent analysts have generally projected lower values, because the 7th CPC raise was an average of around 14% in total pay and government finances are limited. Neither is a decision.</p>
+
+
+<h2 id="check-claims">How to test a headline claim in 30 seconds</h2>
+<ol>
+<li>Find the fitment factor the article uses.</li>
+<li>Divide it by 1 plus the DA rate (for example 1.63 at DA 63%).</li>
+<li>Subtract 1. That is the real increase in basic plus DA.</li>
+<li>Ask whether the article also assumes a higher HRA than today. If so, the gain is overstated.</li>
+</ol>
+<p>A claim of a "186% hike" at 2.86 becomes about a 75% real increase on this test. A claim of "92% hike" at 1.92 becomes about 18%.</p>
+<h2 id="state">What it means for state staff</h2>
+<p>State governments choose their own multipliers. A central factor does not apply to them automatically; see <a href="/state-government-8th-pay-commission/">state government employees</a>.</p>
+
+</SiteLayout>

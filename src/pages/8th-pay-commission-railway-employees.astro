@@ -1,0 +1,59 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Will railway employees get the 8th Pay Commission?",
+  "a": "Yes. Railway staff are central government employees and are covered by the 8th CPC."
+ },
+ {
+  "q": "Are railway allowances revised separately?",
+  "a": "The commission reviews allowances; running and night duty allowances are part of its brief for railways."
+ },
+ {
+  "q": "Which pay level is a railway Station Master?",
+  "a": "Level 6 in the 7th CPC pay matrix, with entry pay of Rs 35,400."
+ },
+ {
+  "q": "How many railway employees are there?",
+  "a": "Roughly 12 lakh, making Indian Railways the largest central government employer."
+ }
+];
+const toc = [{"id": "levels", "label": "Pay levels"}, {"id": "allowances", "label": "Allowances"}, {"id": "demands", "label": "Federation demands"}, {"id": "pensioners", "label": "Pensioners"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-salary-calculator", "8th-pay-commission-pay-matrix", "8th-pay-commission-pension-calculator"];
+---
+
+<SiteLayout title="8th Pay Commission for Railway Employees: Pay Levels and Demands" description="What the 8th Pay Commission means for railway employees: pay levels, running and night duty allowances, federation demands, pensioners and a calculator." slug="8th-pay-commission-railway-employees" h1="8th Pay Commission for Railway Employees" lead="Pay levels, allowances and what railway staff and pensioners should watch." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Railway Employees">
+
+<div class="answer"><p><strong>Short answer:</strong> Railway employees are central government employees, so the 8th Pay Commission covers them under the same pay matrix and fitment factor as other departments. Railways is the largest central employer, with roughly 12 lakh staff, so its federations are among the most active voices before the commission.</p></div>
+
+<h2 id="levels">Railway posts in the pay matrix</h2>
+<div class="table-wrap"><table><thead><tr><th>Post (examples)</th><th>Pay level</th><th class="num">7th CPC entry pay</th></tr></thead><tbody><tr><th scope="row">Track maintainer</th><td>Level 1</td><td class="num">₹18,000</td></tr><tr><th scope="row">Assistant Loco Pilot, Technician Grade III</th><td>Level 2</td><td class="num">₹19,900</td></tr><tr><th scope="row">Station Master, Junior Engineer</th><td>Level 6</td><td class="num">₹35,400</td></tr><tr><th scope="row">Section Engineer</th><td>Level 7</td><td class="num">₹44,900</td></tr></tbody></table></div>
+<p>Use the <a href="/8th-pay-commission-salary-calculator/">salary calculator</a> and pick your level to estimate pay under each scenario.</p>
+
+<h2 id="allowances">Railway-specific allowances</h2>
+<ul>
+<li><strong>Running allowance.</strong> For loco pilots, guards and other running staff, paid in addition to basic pay.</li>
+<li><strong>Night Duty Allowance.</strong> Paid to eligible staff for night duty, subject to a basic pay ceiling.</li>
+<li><strong>Overtime and special pay.</strong> Vary by cadre.</li>
+</ul>
+<p>These items are reviewed by the Commission and the Railway Board. The commission has not announced any change.</p>
+
+<h2 id="demands">What railway federations are asking for</h2>
+<p>The two major federations, AIRF and NFIR, have asked the commission for a higher minimum pay, better running allowance, early DA merger and a review of pension. These are demands, not decisions.</p>
+
+<h2 id="pensioners">Railway pensioners</h2>
+<p>Railway pensioners get pension revised on the same basis as other central pensioners. See the <a href="/8th-pay-commission-pension-calculator/">pension calculator</a> and <a href="/8th-pay-commission-arrears-calculator/">arrears calculator</a>.</p>
+
+
+<h2 id="checklist">What railway employees can do now</h2>
+<ul>
+<li>Check your pay level on the latest pay slip and use it in the <a href="/8th-pay-commission-salary-calculator/">salary calculator</a>.</li>
+<li>Follow your federation's circulars; memoranda to the commission are usually collective.</li>
+<li>Keep records of running allowance and night duty allowance, since both depend on duty records.</li>
+</ul>
+<h2 id="timeline">Timeline for railway staff</h2>
+<p>The railway workforce follows the central timeline: the report is due about May 2027, followed by Cabinet consideration. See <a href="/8th-pay-commission-implementation-date/">implementation date</a>. Railway Board orders then apply the decisions to railway cadres.</p>
+
+</SiteLayout>

@@ -1,0 +1,66 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the HRA rate for central government employees?",
+  "a": "30% of basic pay in Class X cities, 20% in Class Y and 10% in Class Z, at current DA above 50%."
+ },
+ {
+  "q": "Which cities are Class X?",
+  "a": "Delhi, Mumbai, Kolkata, Chennai, Hyderabad, Bengaluru, Ahmedabad and Pune."
+ },
+ {
+  "q": "Will HRA change in the 8th Pay Commission?",
+  "a": "Not announced. After the 7th CPC HRA restarted at 24/16/8 when DA reset, then stepped up as DA grew."
+ },
+ {
+  "q": "Is HRA paid with government accommodation?",
+  "a": "No, HRA is generally not payable if you are in government-provided accommodation."
+ }
+];
+const toc = [{"id": "slabs", "label": "Rates by DA level"}, {"id": "classes", "label": "City classes"}, {"id": "scenario", "label": "After revision"}, {"id": "rules", "label": "Rules"}, {"id": "faq", "label": "FAQ"}];
+const related = ["da-hra-calculator-8th-pay-commission", "da-merger-8th-pay-commission", "8th-pay-commission-salary-calculator"];
+---
+
+<SiteLayout title="HRA Slabs: X, Y, Z City Rates for Central Employees (8th CPC)" description="Current HRA rates for central government employees are 30%, 20% and 10% for X, Y and Z cities. See DA-linked slabs, city list and 8th CPC scenarios." slug="hra-slabs-8th-pay-commission" h1="HRA Slabs for X, Y and Z Cities" lead="Current rates, how they changed, and what may happen under the 8th CPC." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="HRA Slabs">
+
+<div class="answer"><p><strong>Current HRA rates:</strong> 30% of basic pay for Class X cities, 20% for Class Y and 10% for Class Z. The rates were 24/16/8 when DA was below 25%, 27/18/9 between 25% and 50% DA, and moved to 30/20/10 when DA crossed 50%. The 8th CPC has not announced new rates.</p></div>
+<Figure name="hra-city-classes" eager />
+
+<h2 id="slabs">HRA rates by DA level</h2>
+<div class="table-wrap"><table><thead><tr><th>DA level</th><th class="num">Class X</th><th class="num">Class Y</th><th class="num">Class Z</th></tr></thead><tbody><tr><th scope="row">Below 25%</th><td class="num">24%</td><td class="num">16%</td><td class="num">8%</td></tr><tr><th scope="row">25% to below 50%</th><td class="num">27%</td><td class="num">18%</td><td class="num">9%</td></tr><tr><th scope="row">50% and above (now)</th><td class="num">30%</td><td class="num">20%</td><td class="num">10%</td></tr></tbody></table></div>
+<p>A minimum HRA amount also applies for each class, which protects lower-paid staff. Check the latest Finance Ministry order for current floor amounts.</p>
+
+<h2 id="classes">How cities are classified</h2>
+<ul>
+<li><strong>Class X:</strong> Delhi, Mumbai, Kolkata, Chennai, Hyderabad, Bengaluru, Ahmedabad and Pune.</li>
+<li><strong>Class Y:</strong> Cities with a population of 5 lakh or more that are not in Class X.</li>
+<li><strong>Class Z:</strong> All other places.</li>
+</ul>
+<p>Classification follows Census population, so it can change when the next census is applied.</p>
+
+<h2 id="scenario">What HRA could look like after revision</h2>
+<p>HRA is a percentage of basic pay, so a bigger basic raises HRA even at a lower rate. Level 6 in a Class X city:</p>
+<div class="table-wrap"><table><thead><tr><th>Case</th><th class="num">Basic</th><th class="num">HRA rate</th><th class="num">HRA amount</th></tr></thead><tbody><tr><th scope="row">Today</th><td class="num">₹35,400</td><td class="num">30%</td><td class="num">₹10,620</td></tr><tr><th scope="row">2.28 factor, 24% rate</th><td class="num">₹80,712</td><td class="num">24%</td><td class="num">₹19,371</td></tr><tr><th scope="row">2.28 factor, 27% rate</th><td class="num">₹80,712</td><td class="num">27%</td><td class="num">₹21,792</td></tr><tr><th scope="row">2.28 factor, 30% rate</th><td class="num">₹80,712</td><td class="num">30%</td><td class="num">₹24,214</td></tr></tbody></table></div>
+<p>Amounts are before matrix rounding. Use the <a href="/da-hra-calculator-8th-pay-commission/">allowance calculator</a> to test your own figures.</p>
+
+<h2 id="rules">Rules to know</h2>
+<ul>
+<li>HRA is not paid if you live in government-provided accommodation.</li>
+<li>If both spouses work for the government, special rules decide who may claim HRA.</li>
+<li>HRA follows the place of posting, not your residence.</li>
+</ul>
+<p>Rules change by Finance Ministry order; check the current instructions before claiming.</p>
+
+
+<h2 id="tips">Practical tips</h2>
+<ul>
+<li>After a transfer, HRA changes from the date you join at the new station, so check your pay slip after the move.</li>
+<li>HRA depends on the city class of your place of posting, not your rented home; if your office is in a Class Y city but you live in a Class X suburb, Class Y rates apply.</li>
+<li>Keep your allotment and joining records in case of audit; wrong HRA is recovered later.</li>
+</ul>
+<p>For the combined effect of HRA, DA and TA on a payslip, use the <a href="/da-hra-calculator-8th-pay-commission/">allowance calculator</a>.</p>
+
+</SiteLayout>

@@ -1,0 +1,55 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "How much arrears will I get under the 8th Pay Commission?",
+  "a": "It depends on your pay level, the final fitment factor and how long the delay is between the effective date and the payout. Our calculator gives an estimate under assumed scenarios."
+ },
+ {
+  "q": "Will arrears be calculated from 1 January 2026?",
+  "a": "That is the widely reported expectation, but the government has not confirmed it."
+ },
+ {
+  "q": "Are arrears taxable?",
+  "a": "Yes, they are taxed in the year you receive them. Relief for arrears that relate to earlier years may be available; check current income-tax rules."
+ },
+ {
+  "q": "Do pensioners get arrears?",
+  "a": "Yes. Pensioners are expected to receive revised pension and arrears from the same effective date."
+ }
+];
+const toc = [{"id": "example", "label": "Worked example"}, {"id": "past", "label": "How past arrears were paid"}, {"id": "deductions", "label": "Deductions and tax"}, {"id": "pensioners", "label": "Pensioners"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-implementation-date", "8th-pay-commission-salary-calculator", "8th-pay-commission-pension-calculator"];
+---
+
+<SiteLayout title="8th Pay Commission Arrears Calculator: Estimate Your Back Pay" description="Estimate 8th Pay Commission arrears by pay level and months of delay. Worked example, tax and NPS treatment, and how 6th and 7th CPC arrears were paid." slug="8th-pay-commission-arrears-calculator" h1="8th Pay Commission Arrears Calculator" lead="Estimate back pay between the effective date and your first revised payslip." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Arrears Calculator">
+
+<div class="answer"><p><strong>How arrears arise:</strong> If revised pay is made effective from an earlier date than it is paid, the government pays the difference for each month in between. Arrears = monthly pay under the new structure minus pay you actually received, multiplied by the number of months.</p></div>
+<Calc name="arrears" title="8th Pay Commission arrears calculator" intro="Uses the same assumptions as the salary calculator. Set the number of months between the effective date and your first revised payslip." />
+<Figure name="arrears-timeline" />
+
+<h2 id="example">Worked example</h2>
+<p>For the Level 6 employee in our <a href="/8th-pay-commission-salary-calculator/">salary calculator example</a>, gross pay rises from Rs 71,256 to Rs 1,01,868 a month under a 2.28 scenario. The gap is Rs 30,612 a month. The table shows arrears for different delays.</p>
+<div class="table-wrap"><table><thead><tr><th>Months of delay</th><th class="num">Approximate gross arrears</th></tr></thead><tbody><tr><th scope="row">12 months</th><td class="num">₹3,67,344</td></tr><tr><th scope="row">18 months</th><td class="num">₹5,51,016</td></tr><tr><th scope="row">24 months</th><td class="num">₹7,34,688</td></tr><tr><th scope="row">30 months</th><td class="num">₹9,18,360</td></tr></tbody></table></div>
+<p>Under the effective date of 1 January 2026 that is widely expected, a payout in early 2028 would mean about 24 months. See <a href="/8th-pay-commission-implementation-date/">implementation date</a> for why.</p>
+
+<h2 id="past">How arrears were paid after earlier commissions</h2>
+<ul>
+<li><strong>6th CPC.</strong> Arrears for 2006 to 2008 were released in two instalments over two financial years, with the larger share in the second year.</li>
+<li><strong>7th CPC.</strong> Arrears from January 2016 were paid after the Cabinet decision in 2016, largely as a lump sum.</li>
+</ul>
+<p>The government can decide the method for the 8th CPC; there is no announcement yet.</p>
+
+<h2 id="deductions">Deductions and tax on arrears</h2>
+<ul>
+<li><strong>NPS and UPS.</strong> The employee and government contributions are due on arrears of basic pay and DA, so some of the arrears flow into your retirement account.</li>
+<li><strong>Income tax.</strong> Arrears are taxed in the year received. Tax relief for salary arrears that relate to earlier years may be available under current income-tax law; check the current rules or ask your DDO.</li>
+<li><strong>DA arrears.</strong> If DA rises during the arrears period under 7th CPC rules, those increases are already in your pay and are not counted twice.</li>
+</ul>
+
+<h2 id="pensioners">Arrears for pensioners</h2>
+<p>Pensioners receive revised pension from the effective date as well. Pension arrears are paid by the pension-disbursing bank after the Pension and Pensioners Welfare Department issues orders. Use the <a href="/8th-pay-commission-pension-calculator/">pension calculator</a> for the monthly figure and multiply by months of delay.</p>
+
+</SiteLayout>

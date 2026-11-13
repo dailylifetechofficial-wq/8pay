@@ -1,0 +1,48 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "How many Pay Commissions have there been in India?",
+  "a": "Seven reports have been delivered, and the 8th Central Pay Commission was constituted on 3 November 2025."
+ },
+ {
+  "q": "Who chaired the 6th Pay Commission?",
+  "a": "Justice B. N. Srikrishna."
+ },
+ {
+  "q": "What was the minimum pay under the 1st Pay Commission?",
+  "a": "Rs 55 a month."
+ },
+ {
+  "q": "How often is a Pay Commission set up?",
+  "a": "Roughly every ten years since the 5th Pay Commission."
+ }
+];
+const toc = [{"id": "table", "label": "All eight at a glance"}, {"id": "themes", "label": "What each era changed"}, {"id": "cycle", "label": "The ten-year cycle"}, {"id": "faq", "label": "FAQ"}];
+const related = ["7th-vs-8th-pay-commission", "minimum-basic-pay-8th-pay-commission", "8th-pay-commission-implementation-date"];
+---
+
+<SiteLayout title="History of Pay Commissions in India: 1st to 8th, Chairs and Pay" description="All eight Central Pay Commissions: chairpersons, years, reports and minimum pay from Rs 55 in 1946 to Rs 18,000 under the 7th CPC. See what each changed." slug="pay-commissions-in-india-history" h1="History of Pay Commissions in India" lead="From the 1st in 1946 to the 8th in 2025: who chaired them and how pay changed." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="History">
+
+<div class="answer"><p><strong>Short answer:</strong> India has had seven Central Pay Commissions since 1946, and the 8th was constituted on 3 November 2025. Each has raised the minimum pay, from Rs 55 under the 1st to Rs 18,000 under the 7th. A commission has been set up roughly every ten years since the 5th.</p></div>
+<Figure name="pay-commission-chairs" eager />
+
+<h2 id="table">All eight commissions at a glance</h2>
+<div class="table-wrap"><table><thead><tr><th>Commission</th><th>Chairperson</th><th>Constituted</th><th>Report</th><th class="num">Minimum pay</th></tr></thead><tbody><tr><th scope="row">1st CPC</th><td>Srinivasa Varadachariar</td><td>1946</td><td>1947</td><td class="num">₹55</td></tr><tr><th scope="row">2nd CPC</th><td>Jaganath Das</td><td>1957</td><td>1959</td><td class="num">₹80</td></tr><tr><th scope="row">3rd CPC</th><td>Raghubir Dayal</td><td>1970</td><td>1973</td><td class="num">₹185</td></tr><tr><th scope="row">4th CPC</th><td>P. N. Singhal</td><td>1983</td><td>1986</td><td class="num">₹750</td></tr><tr><th scope="row">5th CPC</th><td>S. Ratnavel Pandian</td><td>1994</td><td>1997</td><td class="num">₹2,550</td></tr><tr><th scope="row">6th CPC</th><td>B. N. Srikrishna</td><td>2006</td><td>2008</td><td class="num">₹7,000</td></tr><tr><th scope="row">7th CPC</th><td>A. K. Mathur</td><td>2014</td><td>2015</td><td class="num">₹18,000</td></tr><tr><th scope="row">8th CPC</th><td>Ranjana Prakash Desai</td><td>2025</td><td>Due about May 2027</td><td class="num">Not announced</td></tr></tbody></table></div>
+
+<h2 id="themes">What each era changed</h2>
+<ul>
+<li><strong>1st to 3rd:</strong> Set the principle of a needs-based minimum wage and basic pay scales for the new republic.</li>
+<li><strong>4th:</strong> Introduced Dearness Allowance as a percentage of pay and simplified scales.</li>
+<li><strong>5th:</strong> Reduced the number of scales and cut posts; DA restarted from zero in 1996.</li>
+<li><strong>6th:</strong> Replaced scales with pay bands and grade pay, with a fitment of 1.86; DA reset in 2006.</li>
+<li><strong>7th:</strong> Replaced pay bands with a pay matrix, with a fitment of 2.57 and a 3% annual increment; DA reset in 2016.</li>
+</ul>
+
+<h2 id="cycle">The ten-year cycle</h2>
+<p>The 6th and 7th commissions took effect on 1 January 2006 and 1 January 2016. Staff bodies argue that the 8th should apply from 1 January 2026 to keep the cycle, which is why that date appears in so many reports even though the government has not confirmed it. See <a href="/8th-pay-commission-implementation-date/">implementation date</a>.</p>
+<Figure name="pay-commission-history" />
+
+</SiteLayout>

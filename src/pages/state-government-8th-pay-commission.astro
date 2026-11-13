@@ -1,0 +1,67 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Does the 8th Pay Commission apply to state government employees?",
+  "a": "No. It covers central government employees and pensioners. States decide separately."
+ },
+ {
+  "q": "When will states implement the 8th Pay Commission?",
+  "a": "No date. Past revisions reached states one to three years after the Centre."
+ },
+ {
+  "q": "Do states have their own pay commissions?",
+  "a": "Many do. A state may form one or adopt the central scale with changes."
+ },
+ {
+  "q": "Is state DA the same as central DA?",
+  "a": "No. Each state sets its own DA, and many are below the central 63%."
+ }
+];
+const toc = [{"id": "how", "label": "How it works"}, {"id": "lag", "label": "Why there is a lag"}, {"id": "table", "label": "Major states"}, {"id": "what-to-do", "label": "What to do now"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-salary-calculator", "da-hike-latest-news", "ups-unified-pension-scheme-8th-cpc"];
+---
+
+<SiteLayout title="8th Pay Commission for State Government Employees: When and How" description="Does the 8th Pay Commission apply to state employees? How states follow central pay revisions, typical delays, and where UP, Maharashtra, Karnataka and others stand." slug="state-government-8th-pay-commission" h1="8th Pay Commission for State Government Employees" lead="How state governments follow central pay revisions and why the timeline differs." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="State Employees">
+
+<div class="answer"><p><strong>Short answer:</strong> The 8th Pay Commission covers central employees only. State governments decide separately whether and when to revise pay, often after forming their own commission. Past revisions reached state employees one to three years after the central date.</p></div>
+<Figure name="centre-vs-state-pay" eager />
+
+<h2 id="how">How state pay revisions work</h2>
+<ol>
+<li>The Centre notifies its revision.</li>
+<li>The state government decides to follow the central scale, or sets up a state pay commission.</li>
+<li>The state notifies its own pay matrix, effective date and arrears schedule.</li>
+</ol>
+<p>Each state has its own pay structure, DA rate and allowances, so a central calculator cannot give an exact figure for state staff. Use the <a href="/8th-pay-commission-salary-calculator/">salary calculator</a> only as a rough guide.</p>
+
+<h2 id="lag">Why there is a lag</h2>
+<ul>
+<li>States wait for the central report and its financial implications.</li>
+<li>State finances differ, and many hold commissions of their own.</li>
+<li>Cash payment often starts later than the notional effective date.</li>
+</ul>
+
+<h2 id="table">Where major states stand</h2>
+<p>The notes below are general summaries of past practice. Check your state Finance Department orders for the current position.</p>
+<div class="table-wrap"><table><thead><tr><th>State</th><th>Pattern in the last revision</th><th>What to check</th></tr></thead><tbody><tr><th scope="row">Uttar Pradesh</th><td>Adopted a 7th CPC based matrix in the 2016-17 period.</td><td>Finance Department orders and DA rate announcements.</td></tr><tr><th scope="row">Maharashtra</th><td>Notional effect from 2016 with cash benefit later, in 2019.</td><td>Maharashtra has announced adoption of UPS for state staff.</td></tr><tr><th scope="row">Karnataka</th><td>Revised pay on the 7th State Pay Commission report in 2024.</td><td>The state commission schedule.</td></tr><tr><th scope="row">Tamil Nadu</th><td>Implemented the 7th pay revision from October 2017.</td><td>Pay Commission announcements by the state.</td></tr><tr><th scope="row">West Bengal</th><td>Follows its own ROPA scheme; DA is well below the central rate and has been in litigation.</td><td>Court orders and ROPA notices.</td></tr><tr><th scope="row">Bihar, Madhya Pradesh, Rajasthan</th><td>Adopted central-style matrices around 2017-2018.</td><td>State announcements; Rajasthan uses its own 9-18-27 year ACP scheme.</td></tr></tbody></table></div>
+
+<h2 id="what-to-do">What state employees can do now</h2>
+<ul>
+<li>Track your state DA, which may lag the central 63%.</li>
+<li>Watch for a state pay commission announcement or a state decision to adopt the central scale.</li>
+<li>Do not use central arrears assumptions for state staff.</li>
+</ul>
+
+
+<h2 id="checklist">State employee checklist</h2>
+<ul>
+<li>Find your state's current DA rate on the Finance Department website and compare it with the central 63%.</li>
+<li>Note the date of your state's last pay revision; many states revise every ten years.</li>
+<li>Follow your employee federation and state cabinet announcements.</li>
+</ul>
+<p>State content on this site is general. We do not publish state-specific calculators because state matrices and allowances differ.</p>
+
+</SiteLayout>

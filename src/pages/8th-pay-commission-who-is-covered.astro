@@ -1,0 +1,44 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Does the 8th Pay Commission apply to state government employees?",
+  "a": "Not directly. States choose whether and when to follow central pay revisions."
+ },
+ {
+  "q": "Are defence personnel covered by the 8th Pay Commission?",
+  "a": "Yes. Defence personnel and ex-servicemen are within its scope."
+ },
+ {
+  "q": "How many people will the 8th Pay Commission cover?",
+  "a": "About 50 lakh central employees and about 69 lakh pensioners, according to government statements."
+ },
+ {
+  "q": "Are PSU and bank employees covered?",
+  "a": "No. Their pay is decided through separate wage settlements."
+ }
+];
+const toc = [{"id": "table", "label": "Coverage table"}, {"id": "retirees", "label": "Pre-2026 retirees"}, {"id": "npsups", "label": "NPS and UPS"}, {"id": "contract", "label": "Contract staff"}, {"id": "faq", "label": "FAQ"}];
+const related = ["state-government-8th-pay-commission", "8th-pay-commission-defence-armed-forces", "8th-pay-commission-railway-employees", "8th-pay-commission-pension-calculator"];
+---
+
+<SiteLayout title="Who Is Covered by the 8th Pay Commission? Eligibility Explained" description="Who gets the 8th Pay Commission? Central employees, defence staff, railways and pensioners are covered. States, PSUs and banks are not. See the full table." slug="8th-pay-commission-who-is-covered" h1="Who Is Covered by the 8th Pay Commission?" lead="Eligibility for employees, pensioners and other groups." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Who Is Covered">
+
+<div class="answer"><p><strong>Short answer:</strong> The 8th Pay Commission covers central government employees, including defence and central armed forces personnel and railway staff, plus central pensioners and family pensioners. Government statements put this at about 50 lakh employees and 69 lakh pensioners. State employees, PSU staff and bank staff are not covered directly.</p></div>
+<Figure name="who-is-covered" eager />
+
+<h2 id="table">Coverage at a glance</h2>
+<div class="table-wrap"><table><thead><tr><th>Group</th><th>Covered by the 8th CPC?</th><th>Notes</th></tr></thead><tbody><tr><th scope="row">Central civil employees</th><td>Yes</td><td>All ministries and departments, including railways and Union Territory administrations.</td></tr><tr><th scope="row">Defence personnel</th><td>Yes</td><td>Army, Navy and Air Force; the commission invited defence stakeholders to give inputs.</td></tr><tr><th scope="row">Central armed police forces</th><td>Yes</td><td>Treated as central government employees.</td></tr><tr><th scope="row">Central pensioners and family pensioners</th><td>Yes</td><td>Revised pension follows the new structure.</td></tr><tr><th scope="row">State government employees</th><td>No</td><td>Each state decides. See <a href="/state-government-8th-pay-commission/">state employees</a>.</td></tr><tr><th scope="row">PSU employees</th><td>No</td><td>Pay follows each company's own wage settlement and DPE guidelines.</td></tr><tr><th scope="row">Bank employees</th><td>No</td><td>Wages are settled through bipartite agreements.</td></tr><tr><th scope="row">Autonomous and statutory bodies</th><td>Depends</td><td>Many adopt central scales through a separate government decision.</td></tr><tr><th scope="row">Judiciary</th><td>No</td><td>Judicial officers have their own pay commission.</td></tr><tr><th scope="row">Gramin Dak Sevaks</th><td>Historically separate</td><td>They have been handled under a separate departmental committee. Check the latest orders.</td></tr></tbody></table></div>
+
+<h2 id="retirees">Employees who retired before 2026</h2>
+<p>Past commissions revised pension for all existing pensioners, including those who retired decades earlier. Pensioner bodies have asked that those who retired before 1 January 2026 be included in the 8th CPC. This has not been decided; the effective date will determine who counts as a serving employee and who as an existing pensioner.</p>
+
+<h2 id="npsups">Employees under NPS and UPS</h2>
+<p>Employees under NPS or UPS are covered for pay. Their retirement benefits depend on contributions and on the pay on which they are based; see <a href="/ups-unified-pension-scheme-8th-cpc/">UPS and the 8th CPC</a>.</p>
+
+<h2 id="contract">Contract and outsourced staff</h2>
+<p>Contract, casual and outsourced workers are not on the pay matrix and are not covered, although some departments link wages to government rates by their own rules.</p>
+
+</SiteLayout>

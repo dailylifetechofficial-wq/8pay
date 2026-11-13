@@ -1,0 +1,54 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the latest DA hike for central government employees?",
+  "a": "A 3 percentage point increase from 60% to 63%, effective 1 July 2026, approved by the Union Cabinet on 28 October 2026."
+ },
+ {
+  "q": "When will the next DA hike be announced?",
+  "a": "The next revision applies from 1 January 2027. Recent approvals came three to four months after the effective date, so an announcement in the first half of 2027 is likely, but no date has been set."
+ },
+ {
+  "q": "Will DA be merged with basic pay?",
+  "a": "Not announced. Previous pay commissions reset DA to zero after absorbing it into the new basic pay. The 8th CPC has not said whether it will follow that approach."
+ },
+ {
+  "q": "How is DA calculated?",
+  "a": "DA is a percentage of basic pay. The percentage depends on the 12-month average of the AICPI-IW consumer price index against a base of 261.42."
+ }
+];
+const toc = [{"id": "history", "label": "DA chart"}, {"id": "how-set", "label": "How DA is set"}, {"id": "effects", "label": "What changes"}, {"id": "da-and-8th-cpc", "label": "DA and the 8th CPC"}, {"id": "faq", "label": "FAQ"}];
+const related = ["da-merger-8th-pay-commission", "da-hra-calculator-8th-pay-commission", "8th-pay-commission-salary-calculator", "8th-pay-commission-latest-news"];
+---
+
+<SiteLayout title="DA Hike Latest News: DA Now 63% (July 2026) + DA Chart" description="Central government DA is 63% from 1 July 2026 (up from 60%). See DA chart since 2021, how DA is calculated, arrears and a DA hike calculator. Updated 3 Nov 2026." slug="da-hike-latest-news" h1="DA Hike Latest News: Dearness Allowance Now 63%" lead="Current rate, history since 2024, and a calculator for the monthly and arrears effect." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="DA Hike" alternate="hi/da-hike-63-percent">
+
+<div class="answer"><p><strong>Short answer:</strong> Dearness Allowance and Dearness Relief for central government employees and pensioners are <strong>63%</strong> of basic pay or pension from 1 July 2026. The Union Cabinet approved the 3 percentage point increase on 28 October 2026, up from 60%. The next revision, due from 1 January 2027, has not been announced.</p></div>
+<Figure name="da-rate-history" eager />
+
+<h2 id="history">DA chart: rate history since July 2021</h2>
+<div class="table-wrap"><table><thead><tr><th>Effective from</th><th>DA / DR rate</th><th>Increase</th><th>Approved</th></tr></thead><tbody><tr><th scope="row">1 Jul 2021</th><td>31%</td><td>Restored after freeze</td><td>2021</td></tr><tr><th scope="row">1 Jan 2022</th><td>34%</td><td>+3 points</td><td>2022</td></tr><tr><th scope="row">1 Jul 2022</th><td>38%</td><td>+4 points</td><td>2022</td></tr><tr><th scope="row">1 Jan 2023</th><td>42%</td><td>+4 points</td><td>2023</td></tr><tr><th scope="row">1 Jul 2023</th><td>46%</td><td>+4 points</td><td>2023</td></tr><tr><th scope="row">1 Jan 2024</th><td>50%</td><td>+4 points</td><td>Mar 2024</td></tr><tr><th scope="row">1 Jul 2024</th><td>53%</td><td>+3 points</td><td>Oct 2024</td></tr><tr><th scope="row">1 Jan 2025</th><td>55%</td><td>+2 points</td><td>Mar 2025</td></tr><tr><th scope="row">1 Jul 2025</th><td>58%</td><td>+3 points</td><td>Oct 2025</td></tr><tr><th scope="row">1 Jan 2026</th><td>60%</td><td>+2 points</td><td>Apr 2026</td></tr><tr><th scope="row">1 Jul 2026</th><td>63%</td><td>+3 points</td><td>28 Oct 2026</td></tr></tbody></table></div>
+<p>DA and DR increases from January 2020 to June 2021 were frozen during the Covid period and restored from 1 July 2021.</p>
+<p>The most recent two increases were approved about three to four months after their effective dates, and were paid with arrears. The July 2026 increase is expected to cost about Rs 10,016 crore a year and to benefit 48.54 lakh employees and 68.71 lakh pensioners.</p>
+
+<Calc name="da" title="DA hike calculator" intro="Enter your basic pay to see the monthly effect of the move from 60% to 63% and the arrears for the months already elapsed." />
+
+<h2 id="how-set">How the DA rate is decided</h2>
+<p>Under the 7th CPC formula, DA is worked out from the average of the All India Consumer Price Index for Industrial Workers (AICPI-IW, base 2016=100) over the previous twelve months. The Labour Bureau publishes the index monthly. The formula is: DA % = (12-month average of AICPI-IW minus 261.42) divided by 261.42, multiplied by 100, rounded to the nearest whole number.</p>
+<p>The Finance Ministry revises DA for two periods each year, effective 1 January and 1 July. The Cabinet then approves the increase, usually a few months into the period.</p>
+
+<h2 id="effects">What a higher DA changes</h2>
+<ul>
+<li><strong>Take-home pay.</strong> DA is a percentage of basic pay, so each point adds 1% of basic to your monthly pay.</li>
+<li><strong>Other allowances.</strong> Transport Allowance carries DA on top. HRA rates have stepped up in the past when DA crossed set thresholds. See <a href="/hra-slabs-8th-pay-commission/">HRA slabs</a>.</li>
+<li><strong>Retirement benefits.</strong> The gratuity ceiling was raised to Rs 25 lakh when DA crossed 50%. See <a href="/gratuity-limit-8th-pay-commission/">gratuity limit</a>.</li>
+<li><strong>Pension.</strong> Pensioners receive the same increase as Dearness Relief.</li>
+</ul>
+
+<h2 id="da-and-8th-cpc">DA and the 8th Pay Commission</h2>
+<p>DA keeps rising under 7th CPC rules until a new pay structure is notified. Pay commissions have historically absorbed accumulated DA into the new basic pay through the fitment factor and restarted DA from zero. Whether the 8th CPC does the same is not yet known. Our guide on <a href="/da-merger-8th-pay-commission/">DA merger</a> explains why this matters for your real raise.</p>
+
+</SiteLayout>

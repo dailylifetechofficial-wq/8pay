@@ -1,0 +1,65 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What will be the minimum pension under the 8th Pay Commission?",
+  "a": "Not announced. The 7th CPC minimum is Rs 9,000 a month. If the 8th CPC applied a factor of 2.28 to it, the figure would be about Rs 20,520 before DR, but that is a projection."
+ },
+ {
+  "q": "How is pension revised after a Pay Commission?",
+  "a": "Existing basic pension is multiplied by a fitment factor, and Dearness Relief restarts from a lower base. The 7th CPC used 2.57 for pensioners as well as employees."
+ },
+ {
+  "q": "Is family pension also revised?",
+  "a": "Yes. Family pension is a percentage of the pay or pension, so it rises when the base is revised."
+ },
+ {
+  "q": "Will DR be merged into basic pension?",
+  "a": "Not announced. Earlier commissions absorbed accumulated DR into the revised basic pension through the fitment factor."
+ }
+];
+const toc = [{"id": "hike", "label": "Expected pension hike"}, {"id": "rules", "label": "Rules that matter"}, {"id": "nps-ups", "label": "NPS and UPS"}, {"id": "faq", "label": "FAQ"}];
+const related = ["ups-unified-pension-scheme-8th-cpc", "gratuity-limit-8th-pay-commission", "8th-pay-commission-arrears-calculator", "da-merger-8th-pay-commission"];
+---
+
+<SiteLayout title="8th Pay Commission Pension Calculator and Expected Pension Hike" description="Estimate your revised pension under 8th Pay Commission scenarios. Minimum pension, DR at 63%, family pension and commutation rules explained with examples." slug="8th-pay-commission-pension-calculator" h1="8th Pay Commission Pension Calculator and Pension Hike" lead="Revised pension for existing pensioners under assumed fitment scenarios." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Pension Calculator">
+
+<div class="answer"><p><strong>How pensions are revised:</strong> In the 7th CPC, existing basic pensions were multiplied by the same 2.57 factor as pay. If the 8th CPC repeats that approach, revised pension = current basic pension &times; fitment factor, with Dearness Relief restarting from a low base. The commission has not announced the factor.</p></div>
+<Calc name="pensionExisting" title="8th Pay Commission pension calculator" intro="Enter the basic pension shown in your PPO, before Dearness Relief." />
+<Figure name="pension-calculation-flow" />
+
+<h2 id="hike">Expected pension hike: how to read the numbers</h2>
+<p>The headline multiplier overstates the gain, because DR is currently 63% and will fall away if it is merged. A pensioner with a basic pension of Rs 30,000 draws Rs 48,900 today (basic plus 63% DR). With a 2.28 factor, the revised basic pension would be about Rs 68,400, a rise of roughly 40% over the current total, before DR on the new basis. At 1.92 the revised pension would be Rs 57,600, a rise of about 18%.</p>
+<div class="table-wrap"><table><thead><tr><th>Basic pension today</th><th class="num">Pension + DR today (63%)</th><th class="num">At 1.92</th><th class="num">At 2.28</th><th class="num">At 2.86</th></tr></thead><tbody><tr><th scope="row">₹9,000 (minimum)</th><td class="num">₹14,670</td><td class="num">₹17,280</td><td class="num">₹20,520</td><td class="num">₹25,740</td></tr><tr><th scope="row">₹20,000</th><td class="num">₹32,600</td><td class="num">₹38,400</td><td class="num">₹45,600</td><td class="num">₹57,200</td></tr><tr><th scope="row">₹30,000</th><td class="num">₹48,900</td><td class="num">₹57,600</td><td class="num">₹68,400</td><td class="num">₹85,800</td></tr><tr><th scope="row">₹50,000</th><td class="num">₹81,500</td><td class="num">₹96,000</td><td class="num">₹1,14,000</td><td class="num">₹1,43,000</td></tr></tbody></table></div>
+<p>All figures are illustrative and ignore DR on the revised basic. The 7th CPC fixed a minimum pension of Rs 9,000 and a maximum of Rs 1,25,000 a month. Both would be reset by the 8th CPC.</p>
+
+<h2 id="rules">Pension rules that matter</h2>
+<ul>
+<li><strong>Family pension.</strong> 30% of the last pay drawn is the normal rate. A higher rate applies for an initial period after death in service.</li>
+<li><strong>Commutation.</strong> Up to 40% of pension can be commuted for a lump sum. The commuted portion is restored after 15 years, and staff bodies have asked for 12.</li>
+<li><strong>Additional pension for older pensioners.</strong> Additional pension begins at 20% of basic pension at age 80 and rises in steps at 85, 90, 95 and 100.</li>
+<li><strong>Dearness Relief.</strong> Paid on pension at the same rate as DA. It is 63% from 1 July 2026.</li>
+<li><strong>Fixed Medical Allowance.</strong> Pensioners not covered by CGHS get a fixed amount each month. The commission may review it.</li>
+</ul>
+
+<h2 id="nps-ups">Employees under NPS and UPS</h2>
+<p>If you joined after 2004 and are under the National Pension System or the Unified Pension Scheme, your retirement income is not a pay-linked pension in the same way. Read <a href="/ups-unified-pension-scheme-8th-cpc/">UPS and the 8th CPC</a> for how the assured payout is tied to your basic pay at retirement, which the commission will revise.</p>
+
+
+<h2 id="examples">Three pensioner examples</h2>
+<ul>
+<li><strong>Minimum pension.</strong> A pensioner on the Rs 9,000 minimum draws Rs 14,670 with DR at 63%. A 2.28 factor would lift basic pension to Rs 20,520, about 40% above today's total.</li>
+<li><strong>Mid-range pension.</strong> Basic pension of Rs 30,000 draws Rs 48,900 today. At 1.92 it becomes Rs 57,600 and at 2.86 Rs 85,800.</li>
+<li><strong>Family pensioner.</strong> A family pension of Rs 18,000 would rise in the same proportion, because it is a percentage of the pay or pension on which it is based.</li>
+</ul>
+<h2 id="checklist">Checklist for pensioners</h2>
+<ul>
+<li>Keep your PPO and latest pension slip; the revised pension will be fixed from the PPO basic pension.</li>
+<li>Check that your bank and the pension-disbursing authority have your Aadhaar-linked details up to date.</li>
+<li>Submit your annual Jeevan Pramaan life certificate on time so that revised pension and arrears are not held up.</li>
+<li>Pensioners who retired before 2016 were revised using the 2.57 factor on their pension as of 31 December 2015, so check your PPO shows that revision.</li>
+</ul>
+
+</SiteLayout>

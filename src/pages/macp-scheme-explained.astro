@@ -1,0 +1,49 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the MACP scheme?",
+  "a": "A scheme giving three financial upgrades after 10, 20 and 30 years of service to employees who have not been promoted."
+ },
+ {
+  "q": "Is MACP the same as a promotion?",
+  "a": "No. MACP raises pay to the next level in the matrix but does not change your post or duties."
+ },
+ {
+  "q": "When did MACP start?",
+  "a": "From 1 September 2008, replacing the earlier ACP scheme."
+ },
+ {
+  "q": "Will MACP change in the 8th Pay Commission?",
+  "a": "Not announced. Staff bodies have asked for improvements."
+ }
+];
+const toc = [{"id": "rules", "label": "How MACP works"}, {"id": "example", "label": "Example"}, {"id": "8cpc", "label": "MACP and the 8th CPC"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-pay-matrix", "central-government-payslip-explained", "8th-pay-commission-demands-interim-relief"];
+---
+
+<SiteLayout title="MACP Scheme Explained: 10, 20 and 30-Year Upgrades Under 8th CPC" description="MACP gives three financial upgrades after 10, 20 and 30 years of service. See how it works with the pay matrix, an example and what may change in the 8th CPC." slug="macp-scheme-explained" h1="MACP Scheme Explained" lead="Three financial upgrades after 10, 20 and 30 years, and how they work in the pay matrix." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="MACP">
+
+<div class="answer"><p><strong>Short answer:</strong> The Modified Assured Career Progression (MACP) scheme gives central government employees up to three financial upgrades, after 10, 20 and 30 years of regular service, when they have not been promoted. Each upgrade moves pay to the next higher level in the pay matrix.</p></div>
+<Figure name="macp-ladder" eager />
+
+<h2 id="rules">How MACP works</h2>
+<ul>
+<li><strong>Three upgrades.</strong> After 10, 20 and 30 years of continuous regular service in the same post or grade.</li>
+<li><strong>Next level.</strong> Under the 7th CPC pay matrix, an upgrade moves you to the next higher pay level, not to a higher post.</li>
+<li><strong>Promotions count.</strong> Each regular promotion you receive counts as one of the three benefits.</li>
+<li><strong>Screening.</strong> A departmental committee checks that you meet the benchmark, usually a rating of "Good".</li>
+<li><strong>Not a promotion.</strong> You keep the same post and duties; only the pay changes.</li>
+</ul>
+<p>MACP replaced the earlier ACP scheme from 1 September 2008, following the 6th Pay Commission.</p>
+
+<h2 id="example">Example</h2>
+<p>An employee who joined at Level 4 (entry pay Rs 25,500) and has not been promoted after ten years would move to Level 5 on the first MACP, with pay fixed at the next higher cell. After 20 years without promotion, a second upgrade moves them to Level 6.</p>
+<p>Use the <a href="/8th-pay-commission-pay-matrix/">pay matrix lookup</a> to see entry pay at each level.</p>
+
+<h2 id="8cpc">MACP and the 8th Pay Commission</h2>
+<p>Staff bodies have asked the commission to improve MACP, for example by adding more upgrades or shortening the intervals. The Terms of Reference let the commission look at promotion and career progression as part of the pay structure. Nothing has been announced.</p>
+
+</SiteLayout>

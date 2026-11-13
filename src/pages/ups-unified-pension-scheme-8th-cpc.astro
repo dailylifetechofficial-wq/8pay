@@ -1,0 +1,59 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the Unified Pension Scheme?",
+  "a": "A central government pension scheme from 1 April 2025 that offers an assured payout of 50% of average basic pay in the last 12 months for 25 years of service, with minimum and family pension guarantees."
+ },
+ {
+  "q": "What is the minimum pension under UPS?",
+  "a": "Rs 10,000 a month after at least 10 years of service."
+ },
+ {
+  "q": "Is UPS better than NPS?",
+  "a": "It gives an assured payout instead of a market-linked one, at a higher government contribution. Whether it suits you depends on your service length and risk preference."
+ },
+ {
+  "q": "Will the 8th Pay Commission raise UPS pension?",
+  "a": "The payout is a percentage of basic pay, so a higher basic from the new matrix raises it."
+ }
+];
+const toc = [{"id": "pillars", "label": "Core features"}, {"id": "compare", "label": "OPS vs NPS vs UPS"}, {"id": "with-8th-cpc", "label": "8th CPC effect"}, {"id": "states", "label": "States"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-pension-calculator", "gratuity-limit-8th-pay-commission", "8th-pay-commission-pay-matrix"];
+---
+
+<SiteLayout title="Unified Pension Scheme (UPS) and the 8th CPC: Rules + Calculator" description="UPS gives 50% assured pension after 25 years, Rs 10,000 minimum and 60% family pension. Compare OPS, NPS and UPS and see the 8th Pay Commission effect." slug="ups-unified-pension-scheme-8th-cpc" h1="Unified Pension Scheme (UPS) and the 8th Pay Commission" lead="Assured payout rules, a comparison with OPS and NPS, and an estimator." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Unified Pension Scheme">
+
+<div class="answer"><p><strong>Short answer:</strong> The Unified Pension Scheme (UPS), in effect from 1 April 2025 for central government employees, promises an assured payout of 50% of the average basic pay of the last 12 months for at least 25 years of service, a Rs 10,000 minimum after 10 years, and 60% family pension. Because the payout is tied to basic pay, a higher basic pay from the 8th CPC raises it.</p></div>
+<Figure name="ups-vs-nps-vs-ops" eager />
+<Calc name="pensionNew" title="UPS and OPS pension estimator" intro="Enter your pay at retirement and qualifying service to compare the assured UPS payout with the old pension formula." />
+
+<h2 id="pillars">The core features of UPS</h2>
+<div class="table-wrap"><table><thead><tr><th>Feature</th><th>Rule</th></tr></thead><tbody><tr><th scope="row">Assured payout</th><td>50% of the average basic pay over the last 12 months before retirement, for 25 years of qualifying service; proportionate for 10 to 25 years.</td></tr><tr><th scope="row">Assured family pension</th><td>60% of the pension the employee was drawing at death.</td></tr><tr><th scope="row">Assured minimum pension</th><td>Rs 10,000 a month on retirement after at least 10 years of service.</td></tr><tr><th scope="row">Inflation indexation</th><td>Dearness Relief on the assured payout, family pension and minimum pension, linked to AICPI-IW.</td></tr><tr><th scope="row">Lump sum at retirement</th><td>One-tenth of monthly emoluments (pay plus DA) for every completed six months of service, in addition to gratuity.</td></tr><tr><th scope="row">Contributions</th><td>Employee 10% of basic plus DA; government 18.5% (the extra above NPS goes to a pooled corpus).</td></tr></tbody></table></div>
+<p>Employees who were under NPS had a window to move to UPS, and a one-time switch back to NPS was allowed. Check the current Department of Financial Services orders for any open option.</p>
+
+<h2 id="compare">OPS, NPS and UPS compared</h2>
+<div class="table-wrap"><table><thead><tr><th></th><th>OPS</th><th>NPS</th><th>UPS</th></tr></thead><tbody><tr><th scope="row">Applies to</th><td>Joined before 1 Jan 2004</td><td>Joined from 1 Jan 2004</td><td>Option for NPS employees, from 1 Apr 2025</td></tr><tr><th scope="row">Pension basis</th><td>50% of last basic, 33 years for full</td><td>Market-linked corpus</td><td>50% of average last 12 months, 25 years for full</td></tr><tr><th scope="row">Employee contribution</th><td>None</td><td>10%</td><td>10%</td></tr><tr><th scope="row">Government contribution</th><td>Pays pension from budget</td><td>14%</td><td>18.5%</td></tr><tr><th scope="row">Inflation protection</th><td>Dearness Relief</td><td>Not assured</td><td>Dearness Relief</td></tr></tbody></table></div>
+
+<h2 id="with-8th-cpc">How the 8th Pay Commission affects UPS</h2>
+<p>UPS pension is a percentage of basic pay, so the commission's new basic pay raises it. An employee retiring after the new matrix with a basic pay of Rs 78,800 under 25 years of service would see an assured payout of about Rs 39,400. If the same employee's basic were revised to Rs 1,79,700 (a 2.28 scenario), the payout would be about Rs 89,800, before Dearness Relief. Use the estimator above to test your figures.</p>
+<p>The Terms of Reference also ask the commission to review gratuity for NPS employees; see <a href="/gratuity-limit-8th-pay-commission/">gratuity limit</a>.</p>
+
+<h2 id="states">States and UPS</h2>
+<p>UPS is a central scheme. States decide separately, and a few have announced their own adoption plans. See <a href="/state-government-8th-pay-commission/">state government employees</a>.</p>
+
+
+<h2 id="example">Worked example: 30 years of service</h2>
+<p>A Level 12 employee retires with an average basic pay of Rs 78,800 over the last 12 months and 30 years of service. The assured payout is 50% of Rs 78,800, which is Rs 39,400 a month before Dearness Relief. Under the old pension formula the same employee would get 50% for 33 years of service, and the pro-rata for 30 years is about Rs 35,800, so UPS gives a higher payout in this case because it needs 25 years rather than 33 for the full 50%.</p>
+<p>The lump sum at retirement is a tenth of monthly pay plus DA for every completed six months. With DA at 63% and 30 years (60 periods), that is about Rs 7.7 lakh, in addition to gratuity.</p>
+<h2 id="choosing">Questions to ask before choosing between NPS and UPS</h2>
+<ul>
+<li>How many years of service will you complete? Fewer than 25 years means a proportionate payout.</li>
+<li>Do you expect strong returns from the NPS corpus? UPS gives a predictable payout, NPS does not.</li>
+<li>Is your family covered? UPS has an assured 60% family pension.</li>
+</ul>
+<p>This page is general information, not financial advice. Check the latest orders and your department's guidance.</p>
+
+</SiteLayout>

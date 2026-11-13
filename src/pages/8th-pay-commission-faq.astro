@@ -1,0 +1,103 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the 8th Pay Commission?",
+  "a": "A body that reviews pay, allowances and pensions of central government employees and pensioners. It was constituted on 3 November 2025 under Justice Ranjana Prakash Desai."
+ },
+ {
+  "q": "When will the 8th Pay Commission report be submitted?",
+  "a": "Within 18 months of constitution, which is about May 2027."
+ },
+ {
+  "q": "When will the 8th Pay Commission be implemented?",
+  "a": "No date has been announced. Past commissions took five to seven months after the report for a Cabinet decision."
+ },
+ {
+  "q": "From what date will revised pay apply?",
+  "a": "Reports say 1 January 2026, but the government has not confirmed it."
+ },
+ {
+  "q": "What is the fitment factor?",
+  "a": "The multiplier that converts current basic pay into new basic pay. For the 8th CPC it is not announced."
+ },
+ {
+  "q": "What was the 7th CPC fitment factor?",
+  "a": "2.57."
+ },
+ {
+  "q": "What is the current DA?",
+  "a": "63% from 1 July 2026."
+ },
+ {
+  "q": "What is the minimum salary today?",
+  "a": "Rs 18,000 a month at Level 1 of the 7th CPC pay matrix."
+ },
+ {
+  "q": "What is the maximum basic pay?",
+  "a": "Rs 2,50,000 a month at Level 18 (Cabinet Secretary)."
+ },
+ {
+  "q": "Who is on the 8th Pay Commission?",
+  "a": "Justice Ranjana Prakash Desai (chair), Prof. Pulak Ghosh (part-time member) and Pankaj Jain (member-secretary)."
+ },
+ {
+  "q": "How many people will it cover?",
+  "a": "About 50 lakh central employees and 69 lakh pensioners."
+ },
+ {
+  "q": "Will DA be merged with basic pay?",
+  "a": "Not announced. Earlier commissions absorbed DA through the fitment factor."
+ },
+ {
+  "q": "What is the current HRA rate?",
+  "a": "30%, 20% and 10% for X, Y and Z cities."
+ },
+ {
+  "q": "What is the gratuity limit?",
+  "a": "Rs 25 lakh since 1 January 2024."
+ },
+ {
+  "q": "What is the minimum pension?",
+  "a": "Rs 9,000 a month."
+ },
+ {
+  "q": "What is UPS?",
+  "a": "The Unified Pension Scheme in effect from 1 April 2025, with an assured payout of 50% of average basic pay after 25 years."
+ },
+ {
+  "q": "Will state employees get it?",
+  "a": "Not automatically. States decide on their own."
+ },
+ {
+  "q": "Are arrears payable?",
+  "a": "If the effective date is earlier than the payout, arrears for the gap are normally paid."
+ },
+ {
+  "q": "Are your calculators official?",
+  "a": "No. They are independent estimators using assumed scenarios."
+ },
+ {
+  "q": "Where can I find official updates?",
+  "a": "On 8cpc.gov.in, in Finance Ministry orders and in PIB releases."
+ }
+];
+const toc = [{"id": "guides", "label": "Where to read more"}, {"id": "faq", "label": "All questions"}];
+const related = ["8th-pay-commission-latest-news", "8th-pay-commission-salary-calculator", "da-hike-latest-news"];
+---
+
+<SiteLayout title="8th Pay Commission FAQ: 20 Questions Answered (2026)" description="Answers to 20 common 8th Pay Commission questions: dates, fitment factor, DA at 63%, minimum pay, pension, gratuity, HRA, UPS and state employees." slug="8th-pay-commission-faq" h1="8th Pay Commission FAQ" lead="Twenty short answers with the facts that are confirmed and the ones that are not." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="FAQ">
+
+<div class="answer"><p>Short, sourced answers to the questions readers ask most. For detail, follow the links in each guide. Facts are current to 3 November 2026.</p></div>
+<h2 id="guides">Where to read more</h2>
+<ul>
+<li><a href="/8th-pay-commission-latest-news/">Latest news and verified timeline</a></li>
+<li><a href="/8th-pay-commission-implementation-date/">Implementation date and arrears</a></li>
+<li><a href="/fitment-factor-8th-pay-commission/">Fitment factor scenarios</a></li>
+<li><a href="/da-hike-latest-news/">DA hike and calculator</a></li>
+<li><a href="/8th-pay-commission-pay-matrix/">Pay matrix</a></li>
+</ul>
+
+</SiteLayout>

@@ -1,0 +1,60 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "How many levels are in the 7th CPC pay matrix?",
+  "a": "There are 18 levels, plus a Level 13A, covering Rs 18,000 to Rs 2,50,000 at entry."
+ },
+ {
+  "q": "Has the 8th Pay Commission published a new pay matrix?",
+  "a": "No. The matrix will be part of the commission's report. The columns on this page are scenarios built with assumed fitment factors."
+ },
+ {
+  "q": "What is the Level 1 basic pay?",
+  "a": "Rs 18,000 in the 7th CPC matrix."
+ },
+ {
+  "q": "How much is the annual increment in the pay matrix?",
+  "a": "About 3% of basic pay, rounded to the nearest Rs 100, moving to the next cell in the same level."
+ }
+];
+const toc = [{"id": "table", "label": "Matrix by level"}, {"id": "lookup", "label": "Cell lookup"}, {"id": "groups", "label": "Four bands of levels"}, {"id": "increments", "label": "Increments and promotions"}, {"id": "compression", "label": "Pay spread"}, {"id": "faq", "label": "FAQ"}];
+const related = ["fitment-factor-8th-pay-commission", "minimum-basic-pay-8th-pay-commission", "8th-pay-commission-salary-calculator", "7th-vs-8th-pay-commission"];
+---
+
+<SiteLayout title="8th Pay Commission Pay Matrix: Levels 1 to 18 With Scenarios" description="7th CPC pay matrix for all 18 levels with entry pay, old grade pay and 8th Pay Commission scenario pay at 1.92, 2.28 and 2.86. Includes a cell lookup." slug="8th-pay-commission-pay-matrix" h1="8th Pay Commission Pay Matrix: Levels 1 to 18" lead="The current matrix with scenario columns, a lookup tool and a plain guide to levels." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Pay Matrix">
+
+<div class="answer"><p><strong>Short answer:</strong> The 7th CPC pay matrix has 18 levels (plus Level 13A), with entry pay from Rs 18,000 at Level 1 to Rs 2,50,000 at Level 18. The 8th CPC will publish a new matrix. Until then, a scenario matrix can be built by multiplying each cell by an assumed fitment factor, as in the table below.</p></div>
+<Figure name="pay-matrix-levels" eager />
+
+<h2 id="table">Pay matrix: entry pay by level with 8th CPC scenarios</h2>
+<p>Entry pay is the first cell of each level in the 7th CPC matrix. Scenario columns multiply it by the factor shown, before the rounding that a real matrix applies.</p>
+<div class="table-wrap"><table><thead><tr><th>Level</th><th class="num">7th CPC entry pay</th><th>Old grade pay</th><th>Typical posts</th><th class="num">At 1.92</th><th class="num">At 2.28</th><th class="num">At 2.86</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">₹18,000</td><td>1,800</td><td>Multi-tasking staff, peon</td><td class="num">₹34,560</td><td class="num">₹41,040</td><td class="num">₹51,480</td></tr><tr><th scope="row">Level 2</th><td class="num">₹19,900</td><td>1,900</td><td>Lower Division Clerk</td><td class="num">₹38,208</td><td class="num">₹45,372</td><td class="num">₹56,914</td></tr><tr><th scope="row">Level 3</th><td class="num">₹21,700</td><td>2,000</td><td>Constable</td><td class="num">₹41,664</td><td class="num">₹49,476</td><td class="num">₹62,062</td></tr><tr><th scope="row">Level 4</th><td class="num">₹25,500</td><td>2,400</td><td>Upper Division Clerk, Postal Assistant</td><td class="num">₹48,960</td><td class="num">₹58,140</td><td class="num">₹72,930</td></tr><tr><th scope="row">Level 5</th><td class="num">₹29,200</td><td>2,800</td><td>Assistant Sub-Inspector</td><td class="num">₹56,064</td><td class="num">₹66,576</td><td class="num">₹83,512</td></tr><tr><th scope="row">Level 6</th><td class="num">₹35,400</td><td>4,200</td><td>Junior Engineer, Sub-Inspector</td><td class="num">₹67,968</td><td class="num">₹80,712</td><td class="num">₹1,01,244</td></tr><tr><th scope="row">Level 7</th><td class="num">₹44,900</td><td>4,600</td><td>Assistant Section Officer, Inspector</td><td class="num">₹86,208</td><td class="num">₹1,02,372</td><td class="num">₹1,28,414</td></tr><tr><th scope="row">Level 8</th><td class="num">₹47,600</td><td>4,800</td><td>Section Officer</td><td class="num">₹91,392</td><td class="num">₹1,08,528</td><td class="num">₹1,36,136</td></tr><tr><th scope="row">Level 9</th><td class="num">₹53,100</td><td>5,400</td><td>Senior Section Officer / Group B</td><td class="num">₹1,01,952</td><td class="num">₹1,21,068</td><td class="num">₹1,51,866</td></tr><tr><th scope="row">Level 10</th><td class="num">₹56,100</td><td>5,400</td><td>Entry-level Group A (e.g. IAS, IPS)</td><td class="num">₹1,07,712</td><td class="num">₹1,27,908</td><td class="num">₹1,60,446</td></tr><tr><th scope="row">Level 11</th><td class="num">₹67,700</td><td>6,600</td><td>Senior Time Scale, Group A</td><td class="num">₹1,29,984</td><td class="num">₹1,54,356</td><td class="num">₹1,93,622</td></tr><tr><th scope="row">Level 12</th><td class="num">₹78,800</td><td>7,600</td><td>Under Secretary</td><td class="num">₹1,51,296</td><td class="num">₹1,79,664</td><td class="num">₹2,25,368</td></tr><tr><th scope="row">Level 13</th><td class="num">₹1,23,100</td><td>8,700</td><td>Deputy Secretary</td><td class="num">₹2,36,352</td><td class="num">₹2,80,668</td><td class="num">₹3,52,066</td></tr><tr><th scope="row">Level 13A</th><td class="num">₹1,31,100</td><td>8,900</td><td>Director</td><td class="num">₹2,51,712</td><td class="num">₹2,98,908</td><td class="num">₹3,74,946</td></tr><tr><th scope="row">Level 14</th><td class="num">₹1,44,200</td><td>10,000</td><td>Joint Secretary</td><td class="num">₹2,76,864</td><td class="num">₹3,28,776</td><td class="num">₹4,12,412</td></tr><tr><th scope="row">Level 15</th><td class="num">₹1,82,200</td><td>-</td><td>Additional Secretary</td><td class="num">₹3,49,824</td><td class="num">₹4,15,416</td><td class="num">₹5,21,092</td></tr><tr><th scope="row">Level 16</th><td class="num">₹2,05,400</td><td>-</td><td>Apex scale</td><td class="num">₹3,94,368</td><td class="num">₹4,68,312</td><td class="num">₹5,87,444</td></tr><tr><th scope="row">Level 17</th><td class="num">₹2,25,000</td><td>-</td><td>Secretary to Government of India</td><td class="num">₹4,32,000</td><td class="num">₹5,13,000</td><td class="num">₹6,43,500</td></tr><tr><th scope="row">Level 18</th><td class="num">₹2,50,000</td><td>-</td><td>Cabinet Secretary</td><td class="num">₹4,80,000</td><td class="num">₹5,70,000</td><td class="num">₹7,15,000</td></tr></tbody></table></div>
+<p>Posts are examples; the level of a post depends on the cadre and recruitment rules. Levels 15 to 18 do not have a grade pay equivalent.</p>
+
+<h2 id="lookup">Find any cell in the matrix</h2>
+<Calc name="matrix" title="Pay matrix cell lookup" intro="Pick a level and a cell to see the 7th CPC basic pay and scenario values." />
+
+<h2 id="groups">The four bands of levels</h2>
+<h3 id="levels-1-5">Levels 1 to 5: support and clerical staff</h3>
+<p>Entry pay runs from Rs 18,000 to Rs 29,200. This is the largest group by headcount, and it is where a higher minimum pay has the most effect. Most staff associations focus their demands here.</p>
+<h3 id="levels-6-9">Levels 6 to 9: executives and Group B officers</h3>
+<p>Entry pay runs from Rs 35,400 to Rs 53,100. Promotion between these levels is often through departmental exams or the Modified Assured Career Progression scheme.</p>
+<h3 id="levels-10-13a">Levels 10 to 13A: Group A officers</h3>
+<p>Entry pay runs from Rs 56,100 to Rs 1,31,100. Officers enter Group A at Level 10 and move up through time-scale and non-functional upgrades.</p>
+<h3 id="levels-14-18">Levels 14 to 18: senior leadership</h3>
+<p>Entry pay runs from Rs 1,44,200 to Rs 2,50,000. Levels 17 and 18 are single fixed amounts.</p>
+
+<h2 id="increments">How increments and promotions work in the matrix</h2>
+<ul>
+<li><strong>Annual increment.</strong> Each year basic pay moves to the next cell in the same level, about 3% higher, rounded to the nearest Rs 100. Increments fall on 1 January or 1 July.</li>
+<li><strong>Promotion.</strong> On promotion you move to the next level and are placed at the first cell that is higher than your current pay after adding one increment.</li>
+<li><strong>MACP.</strong> The Modified Assured Career Progression scheme gives financial upgrades after 10, 20 and 30 years of service if no promotion has occurred.</li>
+</ul>
+
+<h2 id="compression">The spread between lowest and highest pay</h2>
+<p>The ratio between Level 1 entry pay and the top salary is about 1 to 13.9 (Rs 18,000 to Rs 2,50,000). The 6th CPC ratio was lower. The 8th CPC may keep, widen or narrow it; a uniform fitment factor leaves it unchanged, while a higher minimum with a smaller increase at the top narrows it.</p>
+
+</SiteLayout>

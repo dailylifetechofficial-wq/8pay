@@ -1,0 +1,24 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [];
+const toc = [{"id": "terms", "label": "Terms A to Z"}, {"id": "learn", "label": "Go deeper"}];
+const related = ["8th-pay-commission-faq", "fitment-factor-8th-pay-commission", "central-government-payslip-explained"];
+---
+
+<SiteLayout title="Pay Commission Glossary: DA, DR, MACP, AICPI-IW, UPS and More" description="Plain-English glossary of 8th Pay Commission terms: DA, DR, fitment factor, pay matrix, MACP, AICPI-IW, NC-JCM, OPS, NPS, UPS, OROP and more." slug="pay-commission-glossary" h1="Pay Commission Glossary" lead="Terms used in 8th Pay Commission news, explained simply." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Glossary">
+
+<div class="answer"><p>Plain-English definitions of the terms used in 8th Pay Commission news, from AICPI-IW to UPS. Each links to a deeper guide where one exists.</p></div>
+<h2 id="terms">Pay commission terms A to Z</h2>
+<div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><th scope="row">8th CPC</th><td>The Eighth Central Pay Commission, constituted on 3 November 2025.</td></tr><tr><th scope="row">AICPI-IW</th><td>All India Consumer Price Index for Industrial Workers; the index that drives DA.</td></tr><tr><th scope="row">Arrears</th><td>Back pay for the period between the effective date of a revision and its payment.</td></tr><tr><th scope="row">Basic pay</th><td>Pay fixed in the pay matrix, before allowances.</td></tr><tr><th scope="row">CGEGIS</th><td>Central Government Employees Group Insurance Scheme.</td></tr><tr><th scope="row">CGHS</th><td>Central Government Health Scheme.</td></tr><tr><th scope="row">DA</th><td>Dearness Allowance paid to serving employees as a percentage of basic pay.</td></tr><tr><th scope="row">DCRG</th><td>Death-cum-Retirement Gratuity.</td></tr><tr><th scope="row">DR</th><td>Dearness Relief; the pensioners' equivalent of DA.</td></tr><tr><th scope="row">Effective date</th><td>The date from which a revised pay structure counts.</td></tr><tr><th scope="row">Fitment factor</th><td>The multiplier that converts old basic pay into new basic pay.</td></tr><tr><th scope="row">Gratuity</th><td>A lump sum paid on retirement or death based on last pay and service.</td></tr><tr><th scope="row">HRA</th><td>House Rent Allowance, paid by city class X, Y or Z.</td></tr><tr><th scope="row">Interim relief</th><td>A temporary pay rise granted before a commission reports.</td></tr><tr><th scope="row">NC-JCM</th><td>National Council of the Joint Consultative Machinery; the staff side that deals with the government.</td></tr><tr><th scope="row">MACP</th><td>Modified Assured Career Progression; financial upgrades after 10, 20 and 30 years.</td></tr><tr><th scope="row">Memorandum</th><td>A formal submission of demands and suggestions to the commission.</td></tr><tr><th scope="row">NPS</th><td>National Pension System, for employees who joined after 1 January 2004.</td></tr><tr><th scope="row">OPS</th><td>Old Pension Scheme with a defined pension.</td></tr><tr><th scope="row">OROP</th><td>One Rank One Pension for ex-servicemen.</td></tr><tr><th scope="row">Pay level</th><td>One of the 18 levels of the pay matrix.</td></tr><tr><th scope="row">Pay matrix</th><td>The table of basic pay by level and cell introduced by the 7th CPC.</td></tr><tr><th scope="row">PPO</th><td>Pension Payment Order.</td></tr><tr><th scope="row">Terms of Reference</th><td>The brief that tells a commission what to examine.</td></tr><tr><th scope="row">TPTA</th><td>Transport Allowance; higher rates apply in listed higher-TPTA cities.</td></tr><tr><th scope="row">UPS</th><td>Unified Pension Scheme, in effect from 1 April 2025.</td></tr></tbody></table></div>
+<h2 id="learn">Go deeper</h2>
+<ul>
+<li><a href="/fitment-factor-8th-pay-commission/">Fitment factor</a></li>
+<li><a href="/da-hike-latest-news/">DA and the DA chart</a></li>
+<li><a href="/8th-pay-commission-pay-matrix/">Pay matrix</a></li>
+<li><a href="/ups-unified-pension-scheme-8th-cpc/">UPS and NPS</a></li>
+<li><a href="/macp-scheme-explained/">MACP</a></li>
+</ul>
+
+</SiteLayout>

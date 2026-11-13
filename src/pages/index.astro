@@ -1,50 +1,97 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Has the 8th Pay Commission been implemented?",
+  "a": "No. The commission was constituted on 3 November 2025 and is still working on its report, which is due within 18 months. Revised pay cannot start until the government accepts the recommendations and notifies new rules."
+ },
+ {
+  "q": "What is the current DA for central government employees?",
+  "a": "63% of basic pay from 1 July 2026. It was 60% from 1 January 2026 and 58% before that."
+ },
+ {
+  "q": "What is the fitment factor for the 8th Pay Commission?",
+  "a": "There is no official figure yet. Estimates in the media range from about 1.8 to 2.86 or higher, but they are projections and not government decisions."
+ },
+ {
+  "q": "Are the calculators on this site official?",
+  "a": "No. They are independent tools that estimate pay using 7th CPC rules and assumed 8th CPC scenarios. Official pay will follow the notified pay matrix and rules."
+ }
+];
+const toc = [];
+const related = [];
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<SiteLayout title="8th Pay Commission 2026: Salary Calculator, DA, Fitment, Pay Matrix" description="Independent 8th Pay Commission guides: salary, arrears and pension calculators, DA at 63%, fitment factor scenarios, pay matrix and verified updates." slug="" h1="8th Pay Commission 2026" lead="Calculators, DA rate and plain-English updates." faq={faq} toc={toc} related={related} pageType="home" alternate="hi/8th-pay-commission">
+
+<section class="hero">
+<h1>8th Pay Commission 2026: Calculators, DA Rate and Plain-English Updates</h1>
+<p>Independent guides for central government employees and pensioners. We separate what is officially confirmed from what is only a projection, so you can plan without guessing.</p>
+<div class="btns"><a class="btn" href="/8th-pay-commission-salary-calculator/">Salary calculator</a><a class="btn alt" href="/8th-pay-commission-latest-news/">Latest news</a><a class="btn alt" href="/da-hike-latest-news/">DA hike: 63%</a><a class="btn alt" href="/hi/8th-pay-commission/">हिंदी में पढ़ें</a></div>
+</section>
+
+<div class="answer"><p><strong>Where things stand (3 November 2026):</strong> The 8th Central Pay Commission was constituted on 3 November 2025 under Justice Ranjana Prakash Desai and has 18 months to report, which points to around May 2027. No fitment factor, new pay matrix or payout date has been announced. Dearness Allowance stands at 63% from 1 July 2026.</p></div>
+
+<div class="search" role="search"><label class="visually" for="site-search" style="position:absolute;left:-999px">Search the site</label><input id="site-search" type="search" placeholder="Search: fitment factor, DA, pension, arrears, minimum pay..." autocomplete="off" /><ul id="search-results" class="cards"></ul></div>
+<ul class="chips" aria-label="Popular topics">
+<li><a href="/8th-pay-commission-implementation-date/">When will it start?</a></li>
+<li><a href="/fitment-factor-8th-pay-commission/">Fitment factor</a></li>
+<li><a href="/minimum-basic-pay-8th-pay-commission/">Minimum salary</a></li>
+<li><a href="/8th-pay-commission-demands-interim-relief/">Interim relief</a></li>
+<li><a href="/da-hike-latest-news/">DA chart</a></li>
+<li><a href="/8th-pay-commission-pay-matrix/">Pay matrix</a></li>
+<li><a href="/8th-pay-commission-who-is-covered/">Who is covered</a></li>
+<li><a href="/central-government-payslip-explained/">Payslip explained</a></li>
+</ul>
+<div class="stat-grid">
+<div class="stat"><b>63%</b><span>Current DA and DR, from 1 July 2026</span></div>
+<div class="stat"><b>~May 2027</b><span>Report due, 18 months from 3 Nov 2025</span></div>
+<div class="stat"><b>~50 lakh</b><span>Central employees covered, plus about 69 lakh pensioners</span></div>
+<div class="stat"><b>Not yet set</b><span>Fitment factor and implementation date</span></div>
+</div>
+
+<h2 id="known-unknown">What is confirmed and what is not</h2>
+<div class="table-wrap"><table><thead><tr><th>Question</th><th>Status</th><th>Detail</th></tr></thead><tbody><tr><th scope="row">Has the commission been formed?</th><td>Confirmed</td><td>Terms of Reference notified on 3 November 2025; chair, one part-time member and a member-secretary named.</td></tr><tr><th scope="row">When is the report due?</th><td>Confirmed window</td><td>Within 18 months of constitution, so about May 2027. Interim reports are allowed.</td></tr><tr><th scope="row">What is the fitment factor?</th><td>Not announced</td><td>Figures such as 1.92, 2.28 or 2.86 are projections by analysts and staff bodies, not government numbers.</td></tr><tr><th scope="row">From when will revised pay apply?</th><td>Not confirmed</td><td>Media reports say 1 January 2026 is the expected reference date. The government has not notified it.</td></tr><tr><th scope="row">What is DA today?</th><td>Confirmed</td><td>63% from 1 July 2026, approved by the Union Cabinet on 28 October 2026.</td></tr></tbody></table></div>
+
+<h2 id="calculator">Quick 8th Pay Commission salary estimate</h2>
+<p>Pick your level and a fitment scenario to see how an 8th CPC payslip could compare with today. Every figure on the page is an illustration; open the <a href="/8th-pay-commission-salary-calculator/">full salary calculator</a> for the assumptions and a longer explanation.</p>
+<Calc name="salary" title="Estimate your 8th Pay Commission salary" intro="" />
+
+<h2 id="start-here">Start with the topic you care about</h2>
+<h3>Calculators</h3>
+<ul class="cards">
+<li><a href="/8th-pay-commission-salary-calculator/"><strong>Salary Calculator</strong><span>Monthly pay under four fitment scenarios.</span></a></li>
+<li><a href="/8th-pay-commission-arrears-calculator/"><strong>Arrears Calculator</strong><span>What the lag between effective date and payout could be worth.</span></a></li>
+<li><a href="/8th-pay-commission-pension-calculator/"><strong>Pension Calculator</strong><span>Revised pension and family pension.</span></a></li>
+<li><a href="/gratuity-limit-8th-pay-commission/"><strong>Gratuity Calculator</strong><span>DCRG formula and the Rs 25 lakh ceiling.</span></a></li>
+</ul>
+<h3>Understand the rules</h3>
+<ul class="cards">
+<li><a href="/fitment-factor-8th-pay-commission/"><strong>Fitment Factor</strong><span>Why the multiplier matters more than the headline number.</span></a></li>
+<li><a href="/8th-pay-commission-pay-matrix/"><strong>Pay Matrix</strong><span>All 18 levels with scenario columns.</span></a></li>
+<li><a href="/da-merger-8th-pay-commission/"><strong>DA Merger</strong><span>How DA gets reset after a commission.</span></a></li>
+<li><a href="/7th-vs-8th-pay-commission/"><strong>7th vs 8th CPC</strong><span>What changed, what may change.</span></a></li>
+</ul>
+<h3>Stay current</h3>
+<ul class="cards">
+<li><a href="/8th-pay-commission-latest-news/"><strong>Latest News</strong><span>A dated, source-based timeline.</span></a></li>
+<li><a href="/8th-pay-commission-implementation-date/"><strong>Implementation Date</strong><span>What past commissions tell us about timing.</span></a></li>
+<li><a href="/da-hike-latest-news/"><strong>DA Hike</strong><span>Rate history and a DA hike calculator.</span></a></li>
+<li><a href="/8th-pay-commission-demands-interim-relief/"><strong>Staff Demands</strong><span>Rs 69,000 minimum pay, 3.83 fitment, interim relief.</span></a></li>
+<li><a href="/8th-pay-commission-faq/"><strong>FAQ</strong><span>Fast answers to common questions.</span></a></li>
+</ul>
+<h3>Learn the basics</h3>
+<ul class="cards">
+<li><a href="/pay-commissions-in-india-history/"><strong>History of Pay Commissions</strong><span>All eight, with chairs and minimum pay.</span></a></li>
+<li><a href="/central-government-payslip-explained/"><strong>Payslip Explained</strong><span>Every line in plain words.</span></a></li>
+<li><a href="/macp-scheme-explained/"><strong>MACP Scheme</strong><span>Upgrades after 10, 20 and 30 years.</span></a></li>
+<li><a href="/pay-commission-glossary/"><strong>Glossary</strong><span>DA, DR, PPO, AICPI-IW and more.</span></a></li>
+</ul>
+
+<h2 id="how-we-work">How this site works</h2>
+<p>8PayCommission is an independent publisher. We read official notifications, Cabinet statements and Parliament replies, and cite the date of each fact. When something is a forecast, we label it as one. Calculators run in your browser and do not send your pay details anywhere. Read our <a href="/editorial-policy/">editorial policy</a> to see how we handle sources and corrections.</p>
+<Figure name="pay-commission-history" />
+
+</SiteLayout>

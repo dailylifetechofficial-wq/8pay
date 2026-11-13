@@ -1,0 +1,30 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [];
+const toc = [];
+const related = ["editorial-policy", "about-us"];
+---
+
+<SiteLayout title="Contact 8PayCommission: Corrections, Questions and Feedback" description="Contact the 8PayCommission editorial team by email for corrections, feedback or questions about our 8th Pay Commission guides and calculators." slug="contact-us" h1="Contact Us" lead="Corrections, questions and feedback." faq={faq} toc={toc} related={related} pageType="info" breadcrumbLabel="Contact Us">
+
+<p>We read every message. Please include the page address and, for corrections, a link to an official source.</p>
+<h2 id="email">Email</h2>
+<p><a href="mailto:dailylifetech.official@gmail.com">dailylifetech.official@gmail.com</a></p>
+<p>We aim to reply within three working days.</p>
+<h2 id="what">What to write to us about</h2>
+<ul>
+<li>Corrections to a fact or calculation.</li>
+<li>Suggestions for topics or calculators.</li>
+<li>Advertising or privacy questions.</li>
+</ul>
+<h2 id="not">What we cannot do</h2>
+<ul>
+<li>We cannot give individual pay fixation, legal or tax advice.</li>
+<li>We cannot confirm the status of your arrears or pension. Contact your pay and accounts office or pension-disbursing bank.</li>
+</ul>
+<h2 id="safety">Please do not send sensitive data</h2>
+<p>Do not email Aadhaar, PAN, bank details or PPO numbers. We will never ask for them.</p>
+
+</SiteLayout>

@@ -1,0 +1,51 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is basic pay on a central government payslip?",
+  "a": "The pay fixed for your level and cell in the 7th CPC pay matrix, before any allowances."
+ },
+ {
+  "q": "How is DA shown on the payslip?",
+  "a": "As a percentage of basic pay. It is 63% from 1 July 2026."
+ },
+ {
+  "q": "What is the NPS deduction?",
+  "a": "10% of basic pay plus DA for employees covered by the National Pension System or the Unified Pension Scheme."
+ },
+ {
+  "q": "Why is HRA not on my payslip?",
+  "a": "HRA is not paid if you live in government-provided accommodation; a licence fee is deducted instead."
+ }
+];
+const toc = [{"id": "earnings", "label": "Earnings"}, {"id": "deductions", "label": "Deductions"}, {"id": "check", "label": "Five checks"}, {"id": "example", "label": "Worked example"}, {"id": "faq", "label": "FAQ"}];
+const related = ["da-hra-calculator-8th-pay-commission", "8th-pay-commission-pay-matrix", "8th-pay-commission-salary-calculator"];
+---
+
+<SiteLayout title="Central Government Payslip Explained: Every Line in Plain English" description="How to read a central government payslip: basic pay, DA at 63%, HRA, TA, NPS or UPS, CGHS and CGEGIS deductions, with a worked example and five checks." slug="central-government-payslip-explained" h1="Central Government Payslip Explained" lead="Each line on your payslip, how it is worked out, and what to check." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Payslip Explained">
+
+<div class="answer"><p><strong>Short answer:</strong> A central government payslip lists earnings (basic pay, DA, HRA, Transport Allowance and others), then deductions (NPS or UPS, GPF, CGHS, CGEGIS, licence fee and tax), and ends with net pay. Basic pay comes from your pay level and cell in the 7th CPC pay matrix; DA is a percentage of basic pay, currently 63%.</p></div>
+<Figure name="payslip-anatomy" eager />
+
+<h2 id="earnings">Earnings: what each line means</h2>
+<div class="table-wrap"><table><thead><tr><th>Line</th><th>What it is</th><th>How it is worked out</th></tr></thead><tbody><tr><th scope="row">Basic pay</th><td>Your pay in the pay matrix</td><td>Level and cell; moves up about 3% each year</td></tr><tr><th scope="row">Dearness Allowance (DA)</th><td>Protection against inflation</td><td>63% of basic pay from 1 July 2026</td></tr><tr><th scope="row">House Rent Allowance (HRA)</th><td>Support for housing costs</td><td>30%, 20% or 10% of basic pay by city class</td></tr><tr><th scope="row">Transport Allowance (TA)</th><td>Commuting support</td><td>Fixed amount by level and city, plus DA</td></tr><tr><th scope="row">Other allowances</th><td>Special duty, night duty, running allowance, and so on</td><td>Depend on your cadre</td></tr></tbody></table></div>
+<p>For the allowance rules in detail, see <a href="/da-hra-calculator-8th-pay-commission/">the DA, HRA and TA calculator</a>.</p>
+
+<h2 id="deductions">Deductions: what comes out</h2>
+<div class="table-wrap"><table><thead><tr><th>Line</th><th>What it is</th></tr></thead><tbody><tr><th scope="row">NPS or UPS</th><td>10% of basic plus DA from the employee, for those joining after 2004 or opting for UPS</td></tr><tr><th scope="row">GPF</th><td>Subscription for employees under the old pension scheme</td></tr><tr><th scope="row">CGHS</th><td>Contribution to the Central Government Health Scheme, set by pay level</td></tr><tr><th scope="row">CGEGIS</th><td>Group insurance contribution</td></tr><tr><th scope="row">Licence fee</th><td>Rent for government accommodation, in place of HRA</td></tr><tr><th scope="row">Income tax</th><td>Tax deducted at source under the regime you have chosen</td></tr></tbody></table></div>
+
+<h2 id="check">Five checks to run on your own payslip</h2>
+<ol>
+<li>Confirm basic pay matches your level and cell in the matrix.</li>
+<li>Check DA equals 63% of basic pay (60% before July 2026).</li>
+<li>Check HRA uses the right city class for your place of posting.</li>
+<li>Check the NPS or UPS contribution is 10% of basic plus DA.</li>
+<li>Look for arrears or recoveries that you do not recognise and ask your accounts office.</li>
+</ol>
+
+<h2 id="example">Worked example</h2>
+<p>A Level 6 employee in a Class X city with basic pay of Rs 35,400 has DA of Rs 22,302, HRA of Rs 10,620 and Transport Allowance of Rs 2,934 with DA, for a gross of Rs 71,256. After a 10% NPS or UPS deduction of Rs 5,770 and Rs 1,000 of other deductions, net pay is Rs 64,486. See how this changes in the <a href="/8th-pay-commission-salary-calculator/">8th CPC salary calculator</a>.</p>
+
+</SiteLayout>

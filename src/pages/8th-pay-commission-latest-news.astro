@@ -1,0 +1,65 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Is there any official news on the 8th Pay Commission fitment factor?",
+  "a": "No. As of 3 November 2026 the government has not announced a fitment factor. Any figure you see is a projection."
+ },
+ {
+  "q": "When will the 8th Pay Commission report be submitted?",
+  "a": "Within 18 months of 3 November 2025, which points to about May 2027. The commission can also submit interim reports earlier."
+ },
+ {
+  "q": "Has the Cabinet approved the 8th Pay Commission?",
+  "a": "The Cabinet gave in-principle approval in January 2025 and approved the Terms of Reference in October 2025. It has not yet considered the commission's recommendations because the report is not ready."
+ },
+ {
+  "q": "Where can I check official 8th Pay Commission updates?",
+  "a": "On the commission's portal at 8cpc.gov.in, in Finance Ministry office memorandums, PIB releases and replies to Parliament questions."
+ }
+];
+const toc = [{"id": "timeline", "label": "Verified timeline"}, {"id": "what-is-confirmed", "label": "Confirmed vs open"}, {"id": "how-to-read-news", "label": "How to read headlines"}, {"id": "what-to-watch", "label": "What to watch next"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-implementation-date", "da-hike-latest-news", "fitment-factor-8th-pay-commission", "8th-pay-commission-faq"];
+---
+
+<SiteLayout title="8th Pay Commission Latest News: Verified Timeline and Status 2026" description="Verified 8th Pay Commission news: commission members, 18-month deadline (about May 2027), DA at 63%, and what is still not announced. Updated 3 Nov 2026." slug="8th-pay-commission-latest-news" h1="8th Pay Commission Latest News and Verified Timeline" lead="A dated, source-based summary of what has actually happened and what has not." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Latest News">
+
+<div class="answer"><p><strong>Short answer:</strong> The 8th Pay Commission has been formally constituted and is collecting evidence. It must submit its report within 18 months of 3 November 2025, which means about May 2027. The government has not announced a fitment factor, a new pay matrix or a payment date. Dearness Allowance was raised to 63% from 1 July 2026.</p></div>
+<Figure name="8th-cpc-timeline" eager />
+
+<h2 id="timeline">Verified timeline of the 8th Pay Commission</h2>
+<p>Each entry below is tied to an official announcement or a statement made to Parliament. Rumours and unsourced viral posts are left out on purpose.</p>
+<div class="table-wrap"><table><thead><tr><th>Date</th><th>Event</th><th>Why it matters</th></tr></thead><tbody><tr><th scope="row">16 Jan 2025</th><td>Union Cabinet gives in-principle approval to set up the 8th CPC.</td><td>Started the formal process; the commission itself was not yet named.</td></tr><tr><th scope="row">28 Oct 2025</th><td>Cabinet approves the Terms of Reference and the chair and members.</td><td>Defined what the commission must study.</td></tr><tr><th scope="row">3 Nov 2025</th><td>Finance Ministry notifies the commission and its Terms of Reference.</td><td>Starts the 18-month clock for the report.</td></tr><tr><th scope="row">5 Mar 2026</th><td>Commission opens its online memorandum window on 8cpc.gov.in.</td><td>Deadline moved from 30 April to 31 May and then to 15 June 2026, the final date. See <a href="/8th-pay-commission-memorandum-submission/">memorandum submission</a>.</td></tr><tr><th scope="row">Apr 2026</th><td>Staff-side NC-JCM finalises its memorandum.</td><td>Reported demands include Rs 69,000 minimum pay, 20% interim relief and 50% DA merger. See <a href="/8th-pay-commission-demands-interim-relief/">staff demands</a>.</td></tr><tr><th scope="row">18-22 Apr 2026</th><td>DA and DR raised from 58% to 60%, effective 1 January 2026.</td><td>Paid with arrears for the January to April gap.</td></tr><tr><th scope="row">28 Oct 2026</th><td>DA and DR raised from 60% to 63%, effective 1 July 2026.</td><td>Cost to the exchequer put at about Rs 10,016 crore a year; benefits 48.54 lakh employees and 68.71 lakh pensioners.</td></tr><tr><th scope="row">About May 2027</th><td>Report due.</td><td>Eighteen months from constitution, as the Finance Ministry told Parliament.</td></tr></tbody></table></div>
+
+<h2 id="what-is-confirmed">What is confirmed, and what is still open</h2>
+<h3>Confirmed</h3>
+<ul>
+<li>The memorandum window is closed (final date 15 June 2026). The commission accepted online submissions only.</li>
+<li>The commission is a three-member body: Justice Ranjana Prakash Desai (chairperson), Prof. Pulak Ghosh of IIM Bangalore (part-time member) and Pankaj Jain (member-secretary). See <a href="/8th-pay-commission-members-and-terms-of-reference/">members and Terms of Reference</a>.</li>
+<li>It may submit interim reports on specific subjects before the final report.</li>
+<li>It covers roughly 50 lakh central employees, including defence personnel, and about 69 lakh pensioners.</li>
+</ul>
+<h3>Not yet announced</h3>
+<ul>
+<li>The fitment factor and the revised pay matrix. Read our <a href="/fitment-factor-8th-pay-commission/">fitment factor guide</a> for scenarios.</li>
+<li>The date from which revised pay will be paid. Media reports point to 1 January 2026 as the reference date, but the government has not confirmed it. See <a href="/8th-pay-commission-implementation-date/">implementation date</a>.</li>
+<li>Whether DA will be merged into basic pay. See <a href="/da-merger-8th-pay-commission/">DA merger</a>.</li>
+<li>Whether any interim relief will be granted. Staff bodies have asked for 20%, but there is no government order. See <a href="/8th-pay-commission-demands-interim-relief/">demands and interim relief</a>.</li>
+</ul>
+
+<h2 id="how-to-read-news">How to read 8th Pay Commission headlines</h2>
+<p>Many headlines quote a "salary hike" of 30%, 100% or more. Those numbers usually come from one of three places: a staff-body demand, an analyst projection, or a calculator that multiplies basic pay by an assumed fitment factor. None of them is a government decision.</p>
+<p>A useful test is to ask who the source is. A Cabinet statement, a Finance Ministry office memorandum, a reply in Parliament or the commission's own portal is official. Everything else is commentary. To see why a big-looking fitment factor can be a small real raise, read <a href="/fitment-factor-8th-pay-commission/">how fitment and DA interact</a>.</p>
+<Figure name="commission-process-flow" />
+
+<h2 id="what-to-watch">What to watch over the next six months</h2>
+<ul>
+<li><strong>Interim reports.</strong> The commission may recommend early relief on a narrow topic.</li>
+<li><strong>The January 2027 DA revision.</strong> It will be decided by the AICPI-IW index and announced a few months into 2027.</li>
+<li><strong>Parliament replies.</strong> The Winter Session usually produces written answers on the commission's progress.</li>
+<li><strong>Portal notices.</strong> 8cpc.gov.in is where hearings, questionnaires and memoranda are announced.</li>
+</ul>
+
+</SiteLayout>

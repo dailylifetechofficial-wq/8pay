@@ -1,0 +1,56 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Who is the chairperson of the 8th Pay Commission?",
+  "a": "Justice (retd.) Ranjana Prakash Desai, a former judge of the Supreme Court of India."
+ },
+ {
+  "q": "Who are the other members of the 8th Pay Commission?",
+  "a": "Prof. Pulak Ghosh of IIM Bangalore is the part-time member and Pankaj Jain, Secretary in the Ministry of Petroleum and Natural Gas, is the member-secretary."
+ },
+ {
+  "q": "How long does the 8th Pay Commission have to submit its report?",
+  "a": "Eighteen months from the date of constitution on 3 November 2025, which is about May 2027."
+ },
+ {
+  "q": "Are the commission's recommendations binding?",
+  "a": "No. The government decides which recommendations to accept, modify or reject."
+ }
+];
+const toc = [{"id": "members", "label": "Members"}, {"id": "tor", "label": "Terms of Reference"}, {"id": "coverage", "label": "Who is covered"}, {"id": "process", "label": "How it works"}, {"id": "suggestions", "label": "Giving suggestions"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-latest-news", "8th-pay-commission-memorandum-submission", "8th-pay-commission-who-is-covered", "state-government-8th-pay-commission"];
+---
+
+<SiteLayout title="8th Pay Commission Members, Chairman and Terms of Reference" description="Who heads the 8th Pay Commission? Justice Ranjana Prakash Desai, Pulak Ghosh and Pankaj Jain, plus the Terms of Reference, 18-month timeline and coverage." slug="8th-pay-commission-members-and-terms-of-reference" h1="8th Pay Commission Members and Terms of Reference" lead="The people on the commission and the brief they have been given." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Members and ToR">
+
+<div class="answer"><p><strong>Short answer:</strong> The 8th Central Pay Commission is chaired by Justice (retd.) Ranjana Prakash Desai, a former Supreme Court judge. Prof. Pulak Ghosh of IIM Bangalore is the part-time member and Pankaj Jain, Secretary in the Ministry of Petroleum and Natural Gas, is the member-secretary. It was notified on 3 November 2025 and must report within 18 months.</p></div>
+
+<h2 id="members">Who is on the commission</h2>
+<div class="table-wrap"><table><thead><tr><th>Role</th><th>Name</th><th>Background</th></tr></thead><tbody><tr><th scope="row">Chairperson</th><td>Justice Ranjana Prakash Desai</td><td>Retired judge of the Supreme Court of India; reports also describe her as chair of the Press Council of India.</td></tr><tr><th scope="row">Part-time member</th><td>Prof. Pulak Ghosh</td><td>Professor at the Indian Institute of Management Bangalore.</td></tr><tr><th scope="row">Member-secretary</th><td>Pankaj Jain</td><td>Senior IAS officer; Secretary, Ministry of Petroleum and Natural Gas.</td></tr></tbody></table></div>
+<p>The commission is a temporary body. Its secretariat and staff are appointed by the Finance Ministry, and its official portal is <a href="https://8cpc.gov.in" rel="noopener nofollow">8cpc.gov.in</a>.</p>
+
+<h2 id="tor">Terms of Reference: what it must examine</h2>
+<p>The Terms of Reference are the commission's brief. According to the notified text and reports on it, the commission is to examine and recommend changes that are desirable and feasible in the emoluments, including pay, allowances and other facilities and benefits, in cash or kind. In doing so it must consider:</p>
+<ul>
+<li>The economic conditions of the country and the need for fiscal prudence.</li>
+<li>The need to ensure adequate resources for developmental expenditure and welfare measures.</li>
+<li>The impact of its recommendations on the finances of state governments, which often follow central scales.</li>
+<li>Pension-related matters, including a review of Death-cum-Retirement Gratuity for employees covered by the National Pension System.</li>
+</ul>
+<p>The notification also allows the commission to submit interim reports on specific subjects if it chooses.</p>
+<div class="note"><strong>Check the source.</strong> We summarise the Terms of Reference from published reports. For the exact wording, read the Gazette notification of 3 November 2025 on the commission's portal.</div>
+
+<h2 id="coverage">Who the recommendations will cover</h2>
+<p>Government statements put the number of central government employees at about 50 lakh, including defence services personnel, and the number of pensioners at about 69 lakh. State employees are not covered directly. States decide separately, as explained in our guide for <a href="/state-government-8th-pay-commission/">state government employees</a>.</p>
+
+<h2 id="process">How the commission works</h2>
+<Figure name="commission-process-flow" />
+<p>The commission collects data from ministries, departments, staff associations and state governments. It holds hearings, visits establishments and may commission studies. Its recommendations go to the Finance Ministry and then to the Cabinet, which decides what to accept. The report is not binding on the government.</p>
+
+<h2 id="suggestions">Giving suggestions to the commission</h2>
+<p>The commission opened an online memorandum window on 5 March 2026 for employees, pensioners, associations and ministries. The deadline was extended twice and closed on 15 June 2026. Only submissions through 8cpc.gov.in were accepted. Details are on our <a href="/8th-pay-commission-memorandum-submission/">memorandum submission page</a>; watch the portal for hearings or further consultations.</p>
+
+</SiteLayout>

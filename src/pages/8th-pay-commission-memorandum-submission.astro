@@ -1,0 +1,58 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What was the last date to submit a memorandum to the 8th Pay Commission?",
+  "a": "15 June 2026, after two extensions from the original 30 April deadline."
+ },
+ {
+  "q": "Can I still submit suggestions to the 8th Pay Commission?",
+  "a": "The memorandum window has closed. Check 8cpc.gov.in for any further consultation or hearing notices."
+ },
+ {
+  "q": "Can I send my memorandum by email or post?",
+  "a": "No. The commission said it would consider submissions made on its online portal only."
+ },
+ {
+  "q": "Who could submit a memorandum?",
+  "a": "Employees, pensioners, associations and unions, ministries and departments, and defence personnel."
+ }
+];
+const toc = [{"id": "timeline", "label": "Dates and extensions"}, {"id": "who", "label": "Who could submit"}, {"id": "how", "label": "How it worked"}, {"id": "what", "label": "What a memorandum is"}, {"id": "next", "label": "What happens next"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-demands-interim-relief", "8th-pay-commission-latest-news", "8th-pay-commission-members-and-terms-of-reference"];
+---
+
+<SiteLayout title="8th Pay Commission Memorandum: Dates, Deadline and How to Submit" description="8th Pay Commission memorandum window ran from March to 15 June 2026 on 8cpc.gov.in. See deadlines, who could submit, how it worked and what happens next." slug="8th-pay-commission-memorandum-submission" h1="8th Pay Commission Memorandum Submission" lead="Dates, extensions and how the 2026 consultation worked." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Memorandum Submission">
+
+<div class="answer"><p><strong>Short answer:</strong> The 8th Pay Commission opened an online memorandum window in March 2026 and closed it on <strong>15 June 2026</strong> after extending the original 30 April deadline twice. Only submissions made through the commission's portal at 8cpc.gov.in were accepted; emails, hard copies and separate PDFs were not.</p></div>
+<Figure name="memorandum-timeline" eager />
+
+<h2 id="timeline">Memorandum window: dates and extensions</h2>
+<div class="table-wrap"><table><thead><tr><th>Date</th><th>What happened</th></tr></thead><tbody><tr><th scope="row">Early Mar 2026</th><td>Commission invites memoranda and suggestions from central employees, pensioners, associations and ministries through 8cpc.gov.in.</td></tr><tr><th scope="row">30 Apr 2026</th><td>Original deadline for online submissions.</td></tr><tr><th scope="row">31 May 2026</th><td>Deadline extended after reports of technical difficulties and requests from staff bodies.</td></tr><tr><th scope="row">15 Jun 2026</th><td>Deadline extended a second time; reported as the final date.</td></tr></tbody></table></div>
+<p>The commission also arranged direct meetings with associations and stakeholders in several cities during the consultation.</p>
+
+<h2 id="who">Who could submit</h2>
+<ul>
+<li>Individual central government employees and pensioners.</li>
+<li>Recognised service associations, federations and unions.</li>
+<li>Ministries, departments and Union Territory administrations, through authorised nodal officers.</li>
+<li>Defence personnel and ex-servicemen.</li>
+</ul>
+
+<h2 id="how">How submission worked</h2>
+<ol>
+<li>Visit the commission's portal (the MyGov "Innovate India" page also linked to it).</li>
+<li>Choose a category: individual employee or pensioner, association or union, ministry or department, or defence.</li>
+<li>Fill in the structured form and upload supporting suggestions.</li>
+<li>Submit before the deadline. Paper, email and loose PDFs were not considered.</li>
+</ol>
+
+<h2 id="what">What a memorandum is</h2>
+<p>A memorandum is a formal document that states a group's case on pay, pension, allowances, promotions and working conditions. It normally includes data, comparisons and reasons, not only a list of demands. Staff associations usually file one combined memorandum for all their members, which is why individual submissions carry less weight than collective ones.</p>
+
+<h2 id="next">What happens next</h2>
+<p>The commission studies the memoranda, calls witnesses, collects data from ministries and states, and then writes its report, due about May 2027. See the <a href="/8th-pay-commission-latest-news/">latest news</a> for the timeline and <a href="/8th-pay-commission-demands-interim-relief/">staff demands</a> for what the main bodies asked for.</p>
+
+</SiteLayout>

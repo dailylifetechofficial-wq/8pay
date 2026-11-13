@@ -1,0 +1,53 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the minimum salary in the 8th Pay Commission?",
+  "a": "Not announced. Today it is Rs 18,000. At a 2.28 factor it would be Rs 41,040 and at 2.86 it would be Rs 51,480, but those are scenarios. Staff bodies have asked for Rs 69,000."
+ },
+ {
+  "q": "What is the minimum pension at present?",
+  "a": "Rs 9,000 a month for central government pensioners, plus Dearness Relief at 63%."
+ },
+ {
+  "q": "Was Rs 51,480 announced as minimum pay?",
+  "a": "No. It is Rs 18,000 multiplied by 2.86, a figure from media projections. The staff-side memorandum asks for Rs 69,000."
+ },
+ {
+  "q": "What is the Aykroyd formula?",
+  "a": "A method for calculating a minimum wage from the cost of food, clothing, housing and fuel for a family of three consumption units, with additions for other needs."
+ }
+];
+const toc = [{"id": "history", "label": "History"}, {"id": "scenarios", "label": "Scenarios"}, {"id": "aykroyd", "label": "Aykroyd formula"}, {"id": "level1", "label": "Level 1 today"}, {"id": "faq", "label": "FAQ"}];
+const related = ["fitment-factor-8th-pay-commission", "8th-pay-commission-pay-matrix", "8th-pay-commission-pension-calculator"];
+---
+
+<SiteLayout title="8th Pay Commission Minimum Salary: Rs 18,000 to Rs 51,480?" description="Minimum basic pay is Rs 18,000 today. See what 1.92, 2.28, 2.57 and 2.86 fitment would mean for minimum salary and pension, with history since 1986." slug="minimum-basic-pay-8th-pay-commission" h1="8th Pay Commission Minimum Salary and Minimum Basic Pay" lead="Today's Rs 18,000, how it was set, and what scenarios imply." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Minimum Basic Pay">
+
+<div class="answer"><p><strong>Short answer:</strong> The minimum basic pay for central government employees is Rs 18,000 a month (Level 1 of the 7th CPC pay matrix). The 8th CPC has not announced a new minimum. At illustrative fitment factors of 1.92, 2.28, 2.57 and 2.86 it would work out to Rs 34,560, Rs 41,040, Rs 46,260 and Rs 51,480.</p></div>
+<Figure name="minimum-pay-across-commissions" eager />
+
+<h2 id="history">Minimum pay across commissions</h2>
+<div class="table-wrap"><table><thead><tr><th>Commission</th><th class="num">Minimum basic pay</th><th class="num">Increase over previous</th></tr></thead><tbody><tr><th scope="row">4th CPC (1986)</th><td class="num">₹750</td><td class="num">-</td></tr><tr><th scope="row">5th CPC (1996)</th><td class="num">₹2,550</td><td class="num">3.4 times</td></tr><tr><th scope="row">6th CPC (2006)</th><td class="num">₹7,000</td><td class="num">2.7 times</td></tr><tr><th scope="row">7th CPC (2016)</th><td class="num">₹18,000</td><td class="num">2.57 times</td></tr></tbody></table></div>
+<p>Each commission has reset the minimum in a new structure, which is why comparing across eras needs care. The 6th CPC figure of Rs 7,000 is pay band plus grade pay (Rs 5,200 plus Rs 1,800).</p>
+
+<h2 id="scenarios">Minimum pay and minimum pension under 8th CPC scenarios</h2>
+<div class="table-wrap"><table><thead><tr><th>Fitment factor</th><th class="num">Minimum basic pay</th><th class="num">Minimum pension at 50%</th><th class="num">Rise over today</th></tr></thead><tbody><tr><th scope="row">1.92</th><td class="num">₹34,560</td><td class="num">₹17,280</td><td class="num">92%</td></tr><tr><th scope="row">2.28</th><td class="num">₹41,040</td><td class="num">₹20,520</td><td class="num">128%</td></tr><tr><th scope="row">2.57</th><td class="num">₹46,260</td><td class="num">₹23,130</td><td class="num">157%</td></tr><tr><th scope="row">2.86</th><td class="num">₹51,480</td><td class="num">₹25,740</td><td class="num">186%</td></tr><tr><th scope="row">3.83 (staff demand)</th><td class="num">₹69,000</td><td class="num">₹34,500</td><td class="num">283%</td></tr></tbody></table></div>
+<p>The minimum pension today is Rs 9,000, exactly half of Rs 18,000. Compare these figures with today's Level 1 payslip, where DA at 63% takes the monthly total to about Rs 29,340 before HRA. The real increase is smaller than the percentage in the last column; see <a href="/fitment-factor-8th-pay-commission/">fitment factor</a>.</p>
+
+<h2 id="aykroyd">How a minimum wage is derived: the Aykroyd formula</h2>
+<p>Since the 7th CPC the minimum pay has been reasoned from the Aykroyd formula, named after nutrition scientist Wallace Aykroyd. It estimates the cost of a basic family basket and then adds items for education, health, recreation and contingencies.</p>
+<ul>
+<li>It assumes a family of three consumption units: the employee, a spouse and two children.</li>
+<li>It prices a calorie-based food requirement, clothing, housing and fuel at current costs.</li>
+<li>It adds an allowance for education, medical needs and other expenses.</li>
+</ul>
+<p>Staff associations argue that updating the basket to current prices justifies a much higher minimum. The government side points to fiscal limits. The commission will set out its own working in the report.</p>
+
+<h2 id="level1">What Level 1 looks like today</h2>
+<Calc name="allowance" title="Level 1 allowances today" intro="Set the pay level to Level 1 to see current allowances on Rs 18,000." />
+<p>Level 1 covers multi-tasking staff and other entry posts. The first cell of the matrix is Rs 18,000 and each annual increment adds roughly 3%. See the full <a href="/8th-pay-commission-pay-matrix/">pay matrix</a>.</p>
+
+</SiteLayout>

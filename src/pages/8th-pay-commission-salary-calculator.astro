@@ -1,0 +1,70 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Is this an official 8th Pay Commission salary calculator?",
+  "a": "No. It is an independent estimator that applies assumed fitment factors to 7th CPC pay. The commission has not announced any fitment factor."
+ },
+ {
+  "q": "Which fitment factor should I choose?",
+  "a": "There is no right answer yet. Use 1.92 for a cautious case, 2.28 for a middle case and 2.86 for the staff-side demand. Compare the real increase, not just the headline multiplier."
+ },
+ {
+  "q": "Why does DA drop to zero in the calculator?",
+  "a": "Previous commissions merged accumulated DA into basic pay through the fitment factor and restarted DA at zero. You can change the DA after revision field to test other assumptions."
+ },
+ {
+  "q": "Are my numbers saved?",
+  "a": "No. The calculation runs in your browser and nothing is sent to our servers."
+ }
+];
+const toc = [{"id": "example", "label": "Worked example"}, {"id": "inputs", "label": "Inputs explained"}, {"id": "limits", "label": "What it does not model"}, {"id": "faq", "label": "FAQ"}];
+const related = ["fitment-factor-8th-pay-commission", "8th-pay-commission-pay-matrix", "8th-pay-commission-arrears-calculator", "da-merger-8th-pay-commission"];
+---
+
+<SiteLayout title="8th Pay Commission Salary Calculator: In-Hand Pay by Level (2026)" description="Free 8th Pay Commission salary calculator. Compare current pay with 1.92, 2.28, 2.57 and 2.86 fitment scenarios, with DA, HRA, TA and NPS/UPS deductions." slug="8th-pay-commission-salary-calculator" h1="8th Pay Commission Salary Calculator" lead="Estimate monthly pay under four fitment scenarios and compare it with today." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Salary Calculator" alternate="hi/8th-pay-commission-salary-calculator">
+
+<div class="answer"><p><strong>How it works:</strong> The calculator multiplies your current basic pay by an assumed fitment factor, adds DA, HRA and Transport Allowance, and subtracts NPS/UPS and other deductions. It then sets the result beside your pay today (DA 63%). Every 8th CPC input is an assumption, because the commission has not announced any figure.</p></div>
+<Calc name="salary" title="8th Pay Commission salary calculator" intro="Choose your level, a fitment scenario and the city class. Change the DA and HRA assumptions to test different outcomes." />
+<Figure name="salary-calculation-flow" />
+
+<h2 id="example">Worked example: Level 6, Class X city</h2>
+<p>Take a Level 6 employee with basic pay of Rs 35,400 in a Class X city who pays 10% to NPS or UPS and has Rs 1,000 of other deductions. Assume a fitment factor of 2.28, DA restarting at 0% and HRA at the 24% fresh-start rate.</p>
+<div class="table-wrap"><table><thead><tr><th>Component</th><th class="num">Today (7th CPC, DA 63%)</th><th class="num">8th CPC scenario</th></tr></thead><tbody><tr><th scope="row">Basic pay</th><td class="num">₹35,400</td><td class="num">₹80,700</td></tr><tr><th scope="row">Dearness Allowance</th><td class="num">₹22,302</td><td class="num">₹0</td></tr><tr><th scope="row">HRA</th><td class="num">₹10,620 (30%)</td><td class="num">₹19,368 (24%)</td></tr><tr><th scope="row">Transport Allowance with DA</th><td class="num">₹2,934</td><td class="num">₹1,800</td></tr><tr><th scope="row">Gross pay</th><td class="num">₹71,256</td><td class="num">₹1,01,868</td></tr><tr><th scope="row">NPS / UPS contribution</th><td class="num">-₹5,770</td><td class="num">-₹8,070</td></tr><tr><th scope="row">Other deductions</th><td class="num">-₹1,000</td><td class="num">-₹1,000</td></tr><tr><th scope="row">Estimated net pay</th><td class="num">₹64,486</td><td class="num">₹92,798</td></tr></tbody></table></div>
+<p>That is a rise of about Rs 28,300 a month, or 44%. A 2.28 factor sounds like a 128% increase in basic pay, but most of that simply replaces the 63% DA that disappears from the payslip. The real gain is far smaller than the headline. Our guide to the <a href="/fitment-factor-8th-pay-commission/">fitment factor</a> shows how to separate the two.</p>
+
+<h2 id="inputs">What each input means</h2>
+<ul>
+<li><strong>Pay level and basic pay.</strong> Level sets the default entry pay from the 7th CPC pay matrix. If you have had increments, type your actual basic pay.</li>
+<li><strong>Fitment factor.</strong> The multiplier applied to existing basic pay. See the scenarios on our <a href="/fitment-factor-8th-pay-commission/">fitment factor page</a>.</li>
+<li><strong>DA after revision.</strong> After the 6th and 7th commissions DA restarted from zero. The default of 0% follows that pattern; raise it to test a different assumption.</li>
+<li><strong>HRA rate set.</strong> HRA is 30%, 20% and 10% of basic for X, Y and Z cities today. After the 7th CPC reset it started at 24%, 16% and 8%. See <a href="/hra-slabs-8th-pay-commission/">HRA slabs</a>.</li>
+<li><strong>Transport Allowance.</strong> Based on pay level and whether your city is a higher-TPTA city, with DA on top.</li>
+<li><strong>Deductions.</strong> NPS and UPS both take 10% of basic plus DA from the employee. CGHS, CGEGIS, licence fee and professional tax vary, so enter your own total.</li>
+</ul>
+
+<h2 id="limits">What the calculator does not model</h2>
+<ul>
+<li>Income tax. Use your payslip tax figure, as slabs and regimes differ.</li>
+<li>Special pay, risk allowances, running allowance or other cadre-specific items.</li>
+<li>Any change the commission may make to allowance rates, the pay matrix structure or the number of levels.</li>
+<li>Increments between now and the effective date.</li>
+</ul>
+
+
+<h2 id="by-level">Estimated gross pay by level</h2>
+<p>The table applies the same assumptions as the worked example (entry-cell basic pay, Class X city, not a higher-TPTA city, DA restarting at 0%, HRA at 24% after revision and 30% today). Gross pay is before NPS, UPS and other deductions.</p>
+<div class="table-wrap"><table><thead><tr><th>Level</th><th>Basic today</th><th>Gross today (DA 63%)</th><th>Gross at 1.92</th><th>Gross at 2.28</th><th>Gross at 2.86</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">₹18,000</td><td class="num">₹36,207</td><td class="num">₹43,804</td><td class="num">₹51,740</td><td class="num">₹64,760</td></tr><tr><th scope="row">Level 2</th><td class="num">₹19,900</td><td class="num">₹39,874</td><td class="num">₹48,268</td><td class="num">₹57,196</td><td class="num">₹71,456</td></tr><tr><th scope="row">Level 4</th><td class="num">₹25,500</td><td class="num">₹52,149</td><td class="num">₹62,560</td><td class="num">₹73,844</td><td class="num">₹92,196</td></tr><tr><th scope="row">Level 6</th><td class="num">₹35,400</td><td class="num">₹71,256</td><td class="num">₹86,120</td><td class="num">₹1,01,868</td><td class="num">₹1,27,288</td></tr><tr><th scope="row">Level 8</th><td class="num">₹47,600</td><td class="num">₹94,802</td><td class="num">₹1,15,136</td><td class="num">₹1,36,340</td><td class="num">₹1,70,564</td></tr><tr><th scope="row">Level 10</th><td class="num">₹56,100</td><td class="num">₹1,14,141</td><td class="num">₹1,37,148</td><td class="num">₹1,62,196</td><td class="num">₹2,02,496</td></tr><tr><th scope="row">Level 12</th><td class="num">₹78,800</td><td class="num">₹1,57,952</td><td class="num">₹1,91,212</td><td class="num">₹2,26,428</td><td class="num">₹2,83,096</td></tr></tbody></table></div>
+<p>The pattern matters more than any single figure: lower levels gain proportionally more because their Transport Allowance and fixed items are a small part of pay, while at higher levels the fall in HRA percentage eats into the gain. These are not forecasts.</p>
+<h2 id="mistakes">Five mistakes to avoid when reading an estimate</h2>
+<ol>
+<li><strong>Comparing the new basic with today's basic.</strong> Compare new basic with basic plus DA, otherwise every scenario looks like a 90% to 190% raise.</li>
+<li><strong>Ignoring the HRA slab.</strong> If HRA restarts at 24%, a good part of the headline gain disappears in Class X cities.</li>
+<li><strong>Using today's DA.</strong> DA will be higher by the time of any reset; the January 2027 revision is due first.</li>
+<li><strong>Forgetting deductions.</strong> NPS or UPS takes 10% of basic plus DA, so a bigger basic raises your contribution too.</li>
+<li><strong>Treating arrears as monthly pay.</strong> Arrears are a one-time payment, taxed in the year received.</li>
+</ol>
+
+</SiteLayout>

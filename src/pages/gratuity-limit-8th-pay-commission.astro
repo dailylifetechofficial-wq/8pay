@@ -1,0 +1,51 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the gratuity limit for central government employees?",
+  "a": "Rs 25 lakh since 1 January 2024."
+ },
+ {
+  "q": "Will the gratuity limit increase in the 8th Pay Commission?",
+  "a": "Not announced. The commission is expected to review it, and earlier commissions have raised it. The ceiling has historically risen by 25% whenever DA crossed 50%."
+ },
+ {
+  "q": "How is gratuity calculated?",
+  "a": "One quarter of last drawn basic pay plus DA for each completed six-month period of service, up to 66 periods and the ceiling."
+ },
+ {
+  "q": "Is gratuity taxable?",
+  "a": "For central government employees, retirement and death gratuity is exempt from income tax. Check the latest rules."
+ }
+];
+const toc = [{"id": "formula", "label": "Formula"}, {"id": "ceiling", "label": "Ceiling history"}, {"id": "nps", "label": "NPS and UPS employees"}, {"id": "tax", "label": "Tax"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-pension-calculator", "ups-unified-pension-scheme-8th-cpc", "da-merger-8th-pay-commission"];
+---
+
+<SiteLayout title="Gratuity Limit and Calculator for Central Employees (8th CPC)" description="Central government gratuity limit is Rs 25 lakh. See the DCRG formula, ceiling history, a gratuity calculator and what the 8th Pay Commission may change." slug="gratuity-limit-8th-pay-commission" h1="Gratuity Limit and Calculator: Will It Rise in the 8th CPC?" lead="The formula, the Rs 25 lakh ceiling and an estimator for an 8th CPC scenario." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Gratuity Calculator">
+
+<div class="answer"><p><strong>Current rule:</strong> Retirement gratuity for central government employees is one quarter of last drawn basic pay plus DA for each completed six-month period of service, up to 66 periods (33 years). The ceiling has been <strong>Rs 25 lakh</strong> since 1 January 2024, when DA crossed 50%. The 8th CPC may revise it.</p></div>
+<Calc name="gratuity" title="Gratuity calculator" intro="Enter your last drawn basic pay and service. You can also test an 8th CPC scenario with a revised basic and a different DA assumption." />
+<Figure name="gratuity-formula" />
+
+<h2 id="formula">How the formula works</h2>
+<p>Gratuity = (basic pay + DA) &divide; 4 &times; number of completed six-month periods, subject to a maximum of 66 periods (16.5 times monthly emoluments) and the rupee ceiling. For example, a Level 12 employee with basic pay of Rs 78,800, DA at 63% and 33 years of service has emoluments of Rs 1,28,444 and a formula result of about Rs 21.2 lakh, below the ceiling.</p>
+
+<h2 id="ceiling">How the ceiling has moved</h2>
+<div class="table-wrap"><table><thead><tr><th>Period</th><th>Ceiling</th><th>Trigger</th></tr></thead><tbody><tr><th scope="row">6th CPC period</th><td>₹10 lakh</td><td>Raised in line with the 6th CPC</td></tr><tr><th scope="row">From 1 Jan 2016</th><td>₹20 lakh</td><td>Government decision after the 7th CPC</td></tr><tr><th scope="row">From 1 Jan 2024</th><td>₹25 lakh</td><td>DA crossed 50%, which raises the ceiling by 25%</td></tr><tr><th scope="row">8th CPC</th><td>Not announced</td><td>Likely to be reviewed once DA is reset</td></tr></tbody></table></div>
+<p>Because the ceiling rises by 25% each time DA crosses 50%, a DA reset to zero could lead the commission to set a fresh ceiling in the 8th CPC report rather than keep a rule tied to DA.</p>
+
+<h2 id="nps">Gratuity for NPS and UPS employees</h2>
+<p>The Terms of Reference ask the commission to review Death-cum-Retirement Gratuity for employees covered by the National Pension System. Gratuity is paid in addition to NPS or UPS benefits, so any change would add to what these employees receive on retirement.</p>
+
+<h2 id="tax">Tax treatment</h2>
+<p>Gratuity paid to central government employees on retirement or death is fully exempt from income tax. Leave encashment on retirement has its own limit. Check current rules at the time you retire.</p>
+
+
+<h2 id="example">Example by service length</h2>
+<p>With emoluments (basic plus DA) of Rs 1,00,000, gratuity is Rs 25,000 per completed six months. At 20 years (40 periods) gratuity is Rs 10 lakh; at 30 years (60 periods) it is Rs 15 lakh; at 33 years (66 periods) it is Rs 16.5 lakh. The Rs 25 lakh ceiling applies to higher emoluments.</p>
+<p>Use the calculator above for exact figures. Gratuity is paid by your department after you submit the retirement papers, so keep service records complete.</p>
+
+</SiteLayout>

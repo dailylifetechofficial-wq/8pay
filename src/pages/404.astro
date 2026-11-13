@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [];
+const toc = [];
+const related = [];
+---
+
+<SiteLayout title="Page Not Found | 8PayCommission" description="The page you requested was not found on 8PayCommission. Use the links to reach the latest news, calculators or the site map for the page you need." slug="404" h1="Page not found" lead="" faq={faq} toc={toc} related={related} pageType="info" noindex={true} breadcrumbLabel="Not found">
+<p>The page you want may have moved. Try the links below.</p><ul><li><a href="/">Home</a></li><li><a href="/8th-pay-commission-latest-news/">Latest news</a></li><li><a href="/8th-pay-commission-salary-calculator/">Salary calculator</a></li><li><a href="/site-map/">Site map</a></li></ul>
+</SiteLayout>

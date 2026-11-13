@@ -1,0 +1,28 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [];
+const toc = [];
+const related = ["editorial-policy", "contact-us"];
+---
+
+<SiteLayout title="About 8PayCommission: Independent 8th Pay Commission Guides" description="About 8PayCommission, an independent publisher of 8th Pay Commission guides and calculators. Our mission, sources, verification method and advertising policy." slug="about-us" h1="About 8PayCommission" lead="An independent site explaining the 8th Pay Commission." faq={faq} toc={toc} related={related} pageType="info" breadcrumbLabel="About Us">
+
+<p>8PayCommission is an independent website that explains the 8th Central Pay Commission in plain language and provides calculators for central government employees and pensioners. We are not part of the Government of India, the Ministry of Finance or the commission.</p>
+<h2 id="mission">Why this site exists</h2>
+<p>Pay commission news is full of large numbers that are not official. Our aim is to show what is confirmed, what is projected and what that means in rupees for your pay level, so you can plan without relying on rumours.</p>
+<h2 id="covers">What we cover</h2>
+<ul>
+<li>Verified updates on the commission, its timeline and Dearness Allowance.</li>
+<li>Calculators for salary, arrears, pension, gratuity and allowances.</li>
+<li>Explainers on the fitment factor, pay matrix, DA merger, HRA and UPS.</li>
+</ul>
+<h2 id="method">How we verify information</h2>
+<p>We rely on Cabinet and PIB statements, Finance Ministry and DoPT orders, replies in Parliament and the commission's own portal. Each page shows when it was last updated. Projections are labelled as projections. Read the full <a href="/editorial-policy/">editorial policy</a>.</p>
+<h2 id="independence">Independence and advertising</h2>
+<p>We are funded by advertising. Ads never influence what we publish, and we do not accept payment to promote a view about the commission. See our <a href="/privacy-policy/">privacy policy</a> for how advertising cookies work.</p>
+<h2 id="contact">Contact</h2>
+<p>Write to us at <a href="mailto:dailylifetech.official@gmail.com">dailylifetech.official@gmail.com</a> for corrections, questions or feedback. See the <a href="/contact-us/">contact page</a>.</p>
+
+</SiteLayout>

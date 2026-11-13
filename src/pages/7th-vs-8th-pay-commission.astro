@@ -1,0 +1,65 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the difference between the 7th and 8th Pay Commission?",
+  "a": "The 7th CPC is in force (effective 2016, fitment 2.57, minimum Rs 18,000). The 8th CPC is working on its report and has announced no outcome."
+ },
+ {
+  "q": "Who chaired the 7th Pay Commission?",
+  "a": "Justice A. K. Mathur."
+ },
+ {
+  "q": "When did the 7th Pay Commission come into effect?",
+  "a": "1 January 2016."
+ },
+ {
+  "q": "Will the 8th CPC use the same pay matrix?",
+  "a": "Not decided. The commission will recommend the structure in its report."
+ }
+];
+const toc = [{"id": "table", "label": "Comparison table"}, {"id": "what-changed", "label": "What the 7th changed"}, {"id": "what-may", "label": "What may change"}, {"id": "numbers", "label": "Same step today"}, {"id": "faq", "label": "FAQ"}];
+const related = ["fitment-factor-8th-pay-commission", "8th-pay-commission-pay-matrix", "8th-pay-commission-implementation-date"];
+---
+
+<SiteLayout title="7th vs 8th Pay Commission: Differences, Timeline and Pay" description="Compare the 7th and 8th Pay Commissions: dates, chairs, fitment factor (2.57 vs not announced), minimum pay, pay matrix and what may change in the 8th." slug="7th-vs-8th-pay-commission" h1="7th vs 8th Pay Commission: What Changes?" lead="A side-by-side look at what is known, what is not, and what a repeat of 2016 would mean." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="7th vs 8th">
+
+<div class="answer"><p><strong>Short answer:</strong> The 7th CPC took effect on 1 January 2016 with a fitment factor of 2.57, a minimum pay of Rs 18,000 and a pay matrix. The 8th CPC is still collecting evidence. Its fitment factor, matrix and effective date are not announced, so any comparison of outcomes is a scenario.</p></div>
+<Figure name="7th-vs-8th-pay-commission" eager />
+
+<h2 id="table">Side-by-side comparison</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>7th CPC</th><th>8th CPC</th></tr></thead><tbody><tr><th scope="row">Constituted</th><td>February 2014</td><td>3 November 2025</td></tr><tr><th scope="row">Chairperson</th><td>Justice A. K. Mathur</td><td>Justice Ranjana Prakash Desai</td></tr><tr><th scope="row">Report</th><td>November 2015</td><td>Due about May 2027</td></tr><tr><th scope="row">Effective from</th><td>1 January 2016</td><td>Expected 1 Jan 2026 (unconfirmed)</td></tr><tr><th scope="row">Fitment factor</th><td>2.57</td><td>Not announced</td></tr><tr><th scope="row">Minimum basic pay</th><td>₹18,000</td><td>Not announced</td></tr><tr><th scope="row">Highest pay</th><td>₹2,50,000 (Cabinet Secretary)</td><td>Not announced</td></tr><tr><th scope="row">Pay structure</th><td>Pay matrix with 18 levels</td><td>To be decided</td></tr><tr><th scope="row">Annual increment</th><td>3%</td><td>To be decided</td></tr><tr><th scope="row">Pension covered</th><td>Pensioners revised by 2.57</td><td>To be decided</td></tr></tbody></table></div>
+
+<h2 id="what-changed">What the 7th CPC changed from the 6th</h2>
+<ul>
+<li>Replaced pay bands and grade pay with a single pay matrix.</li>
+<li>Raised the minimum pay from Rs 7,000 to Rs 18,000.</li>
+<li>Set a 3% annual increment applied across the matrix.</li>
+<li>Introduced Modified Assured Career Progression with three financial upgrades.</li>
+<li>Reset DA to zero from January 2016.</li>
+</ul>
+
+<h2 id="what-may">What could change in the 8th</h2>
+<ul>
+<li>Whether the matrix design stays or is restructured.</li>
+<li>Treatment of DA and whether it merges into basic pay.</li>
+<li>Pension reforms, including the review of gratuity for NPS employees and the interplay with UPS.</li>
+<li>Allowances, many of which are reviewed in each commission.</li>
+</ul>
+
+<h2 id="numbers">What the same step would mean today</h2>
+<p>The 7th CPC raise in total pay was reported as about 14.3% in real terms. A repeat of that is more like a fitment factor of 1.86 today (1.63 x 1.14), which is below the 1.92 scenario. This is why a real increase is more informative than the headline factor. See <a href="/fitment-factor-8th-pay-commission/">fitment factor</a>.</p>
+
+
+<h2 id="timeline">Timeline comparison</h2>
+<p>The 7th CPC was constituted in February 2014, reported 21 months later and was implemented from January 2016. The 8th was constituted in November 2025 with an 18-month deadline, so its report is expected sooner after constitution. Whether payment starts earlier depends on the Cabinet decision, not the report date.</p>
+<h2 id="tools">Tools to compare for yourself</h2>
+<ul>
+<li><a href="/8th-pay-commission-pay-matrix/">Pay matrix with scenario columns</a></li>
+<li><a href="/8th-pay-commission-salary-calculator/">Salary calculator</a></li>
+<li><a href="/fitment-factor-8th-pay-commission/">Fitment factor simulator</a></li>
+</ul>
+
+</SiteLayout>

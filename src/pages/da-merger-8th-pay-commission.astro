@@ -1,0 +1,65 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is DA merger?",
+  "a": "Adding accumulated Dearness Allowance to basic pay so that DA restarts from a low base."
+ },
+ {
+  "q": "Will DA be merged in the 8th Pay Commission?",
+  "a": "Not announced. Earlier commissions absorbed DA through the fitment factor and reset it to zero."
+ },
+ {
+  "q": "Does a DA merger increase take-home pay?",
+  "a": "Not by itself. Basic pay rises but DA falls by the same amount. The gain comes from the part of the fitment factor above the DA already paid."
+ },
+ {
+  "q": "Why do unions ask for DA merger before the commission?",
+  "a": "Allowances and retirement benefits calculated on basic pay would rise sooner."
+ }
+];
+const toc = [{"id": "example", "label": "Example"}, {"id": "history", "label": "Past commissions"}, {"id": "demand", "label": "50% merger demand"}, {"id": "effects", "label": "Wider effects"}, {"id": "faq", "label": "FAQ"}];
+const related = ["fitment-factor-8th-pay-commission", "da-hike-latest-news", "8th-pay-commission-demands-interim-relief", "8th-pay-commission-salary-calculator"];
+---
+
+<SiteLayout title="DA Merger in the 8th Pay Commission: What Happens to DA?" description="What is DA merger and will DA reset to zero in the 8th Pay Commission? Worked example, past commissions, 50% merger demand and effect on HRA and pension." slug="da-merger-8th-pay-commission" h1="DA Merger in the 8th Pay Commission" lead="How DA gets absorbed into basic pay and why it shapes your real raise." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="DA Merger">
+
+<div class="answer"><p><strong>Short answer:</strong> A DA merger means folding accumulated Dearness Allowance into basic pay so that DA restarts near zero. Pay commissions have done this through the fitment factor. The government has not said whether the 8th CPC will do it the same way. If it does, your raise is the fitment factor minus the DA you already receive.</p></div>
+
+<h2 id="example">A simple example</h2>
+<p>An employee has basic pay of Rs 18,000 and DA at 63%, which adds Rs 11,340. Basic plus DA is Rs 29,340.</p>
+<div class="table-wrap"><table><thead><tr><th>Fitment factor</th><th class="num">New basic</th><th>DA after reset</th><th class="num">Total (basic + DA)</th><th class="num">Change vs Rs 29,340</th></tr></thead><tbody><tr><th scope="row">1.63</th><td class="num">₹29,340</td><td>0%</td><td class="num">₹29,340</td><td class="num">0%</td></tr><tr><th scope="row">1.92</th><td class="num">₹34,560</td><td>0%</td><td class="num">₹34,560</td><td class="num">+17.8%</td></tr><tr><th scope="row">2.28</th><td class="num">₹41,040</td><td>0%</td><td class="num">₹41,040</td><td class="num">+39.9%</td></tr><tr><th scope="row">2.86</th><td class="num">₹51,480</td><td>0%</td><td class="num">₹51,480</td><td class="num">+75.5%</td></tr></tbody></table></div>
+<p>At 1.63 nothing changes, even though basic pay rose by 63%. This is why <a href="/fitment-factor-8th-pay-commission/">fitment factor</a> and DA must be read together.</p>
+
+<h2 id="history">How past commissions handled DA</h2>
+<ul>
+<li><strong>6th CPC.</strong> Merged DA through its fitment factor of 1.86 and introduced pay bands and grade pay.</li>
+<li><strong>7th CPC.</strong> Absorbed 125% DA in its 2.57 factor, which is about 2.25 for DA times 1.14 for a real raise, and DA restarted from zero in January 2016.</li>
+</ul>
+
+<h2 id="demand">The 50% DA merger demand</h2>
+<p>Staff bodies have asked the government to merge 50% DA (and later more) into basic pay before the commission reports, so that allowances like HRA and TA and retirement benefits rise earlier. The government has indicated in the past that there is no such proposal, and the matter is expected to be settled by the commission. DA continues to be paid at the 7th CPC rates; see the <a href="/da-hike-latest-news/">DA hike</a> page.</p>
+
+<h2 id="effects">What a reset changes beyond the basic pay</h2>
+<ul>
+<li><strong>HRA.</strong> The percentage may restart at lower rates, as it did after the 7th CPC.</li>
+<li><strong>Transport Allowance.</strong> DA on it falls with the reset, but the base amount may be revised.</li>
+<li><strong>Gratuity.</strong> Calculated on basic plus DA, so a larger basic with zero DA gives a different base. The ceiling may be reset.</li>
+<li><strong>Pension.</strong> Dearness Relief restarts on a larger basic pension.</li>
+<li><strong>Future DA.</strong> DA is a percentage of a bigger basic pay, so each percentage point is worth more in rupees.</li>
+</ul>
+<p>Our <a href="/da-hra-calculator-8th-pay-commission/">DA, HRA and TA calculator</a> lets you test the effect on a payslip.</p>
+
+
+<h2 id="after">What stays the same after a reset</h2>
+<ul>
+<li>DA will still be revised every January and July, against the same price index method unless the commission changes it.</li>
+<li>Pensioners will continue to receive Dearness Relief at the DA rate.</li>
+<li>The index base (2016=100) may be updated by the Labour Bureau, which affects the DA formula.</li>
+</ul>
+<h2 id="what-to-watch">What to watch</h2>
+<p>The interplay between a DA reset and the fitment factor decides whether a 2.28 scenario is a 40% raise or a 128% one. Read the commission's language on "neutralisation of price rise" in its report when it is published.</p>
+
+</SiteLayout>

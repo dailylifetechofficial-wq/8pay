@@ -1,0 +1,47 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "How is HRA calculated for central government employees?",
+  "a": "HRA is a percentage of basic pay: 30% for Class X cities, 20% for Class Y and 10% for Class Z at the current DA level."
+ },
+ {
+  "q": "Is DA paid on Transport Allowance?",
+  "a": "Yes. DA is added to the base Transport Allowance at the prevailing DA rate."
+ },
+ {
+  "q": "What is the Transport Allowance for Level 1?",
+  "a": "Rs 900 a month in other cities and Rs 1,350 in higher-TPTA cities, plus DA, under 7th CPC orders."
+ },
+ {
+  "q": "Will allowances change in the 8th Pay Commission?",
+  "a": "The commission is reviewing allowances as part of its brief. Rates and structures have not been announced."
+ }
+];
+const toc = [{"id": "da", "label": "DA"}, {"id": "hra", "label": "HRA"}, {"id": "ta", "label": "Transport Allowance"}, {"id": "example", "label": "Example"}, {"id": "faq", "label": "FAQ"}];
+const related = ["hra-slabs-8th-pay-commission", "da-hike-latest-news", "8th-pay-commission-salary-calculator"];
+---
+
+<SiteLayout title="DA, HRA and TA Calculator for Central Government Employees" description="Calculate DA at 63%, HRA (X, Y, Z cities) and Transport Allowance by pay level. Includes current rates, TA slabs and a worked example. Updated Nov 2026." slug="da-hra-calculator-8th-pay-commission" h1="DA, HRA and TA Calculator" lead="One calculator for the three main allowances on a central government payslip." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="DA, HRA and TA Calculator">
+
+<div class="answer"><p><strong>Current rates:</strong> DA is 63% of basic pay from 1 July 2026. HRA is 30%, 20% and 10% of basic pay for X, Y and Z cities. Transport Allowance is a fixed amount by pay level and city, with DA added. Use the calculator below to see all three together.</p></div>
+<Calc name="allowance" title="DA, HRA and TA calculator" intro="Select your level, city class and DA rate to see each allowance and the gross pay." />
+
+<h2 id="da">Dearness Allowance</h2>
+<p>DA offsets inflation and is a percentage of basic pay. It is revised every six months. See the <a href="/da-hike-latest-news/">DA hike page</a> for history and the formula. After a pay commission, DA has historically restarted at zero; see <a href="/da-merger-8th-pay-commission/">DA merger</a>.</p>
+
+<h2 id="hra">House Rent Allowance</h2>
+<p>HRA depends on the class of the city where you are posted: X, Y or Z. The rate stepped up from 24/16/8 to 27/18/9 when DA crossed 25% and to 30/20/10 when it crossed 50%. Full rules are on the <a href="/hra-slabs-8th-pay-commission/">HRA slabs page</a>.</p>
+
+<h2 id="ta">Transport Allowance</h2>
+<p>Transport Allowance is a fixed monthly amount that depends on pay level and on whether you are posted in a higher-TPTA city. DA is paid on top of it.</p>
+<div class="table-wrap"><table><thead><tr><th>Pay level</th><th class="num">Other cities</th><th class="num">Higher-TPTA cities</th></tr></thead><tbody><tr><th scope="row">Levels 1 and 2</th><td class="num">₹900</td><td class="num">₹1,350</td></tr><tr><th scope="row">Levels 3 to 8</th><td class="num">₹1,800</td><td class="num">₹3,600</td></tr><tr><th scope="row">Level 9 and above</th><td class="num">₹3,600</td><td class="num">₹7,200</td></tr></tbody></table></div>
+<p>These are the base amounts under 7th CPC orders. The Finance Ministry's list of about 19 higher-TPTA cities is published in its orders. Employees with disabilities receive a higher rate, and officers at the top levels can opt for a staff car instead. Transport Allowance is not paid during extended leave or when official transport is provided; check the current instructions.</p>
+
+<h2 id="example">Example: Level 6 in a Class X city</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th class="num">Amount</th></tr></thead><tbody><tr><th scope="row">Basic pay</th><td class="num">₹35,400</td></tr><tr><th scope="row">DA at 63%</th><td class="num">₹22,302</td></tr><tr><th scope="row">HRA at 30%</th><td class="num">₹10,620</td></tr><tr><th scope="row">TA (Levels 3 to 8, other city) ₹1,800 plus 63% DA</th><td class="num">₹2,934</td></tr><tr><th scope="row">Gross pay</th><td class="num">₹71,256</td></tr></tbody></table></div>
+<p>After a pay commission, DA falls to a low figure while basic rises. The salary calculator shows both sides together. See the <a href="/8th-pay-commission-salary-calculator/">8th Pay Commission salary calculator</a>.</p>
+
+</SiteLayout>

@@ -1,0 +1,51 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Are armed forces personnel covered by the 8th Pay Commission?",
+  "a": "Yes. Defence personnel and ex-servicemen are within the commission's scope."
+ },
+ {
+  "q": "What is OROP?",
+  "a": "One Rank One Pension, under which the same rank and length of service get the same pension regardless of retirement date."
+ },
+ {
+  "q": "Will Military Service Pay change?",
+  "a": "Not announced. It is part of the pay structure the commission can review."
+ },
+ {
+  "q": "Which pay level is a sepoy?",
+  "a": "Level 3 of the 7th CPC pay matrix, with entry pay of Rs 21,700."
+ }
+];
+const toc = [{"id": "pay", "label": "Military pay"}, {"id": "consult", "label": "Consultation"}, {"id": "orop", "label": "OROP"}, {"id": "issues", "label": "Issues raised"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-who-is-covered", "8th-pay-commission-pension-calculator", "8th-pay-commission-pay-matrix"];
+---
+
+<SiteLayout title="8th Pay Commission for Defence and Armed Forces: Pay and OROP" description="What the 8th Pay Commission means for defence personnel and ex-servicemen: pay levels, Military Service Pay, OROP and issues raised. Updated Nov 2026." slug="8th-pay-commission-defence-armed-forces" h1="8th Pay Commission for Defence and Armed Forces" lead="Military pay, OROP and what defence groups are asking." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Defence">
+
+<div class="answer"><p><strong>Short answer:</strong> Defence personnel are within the scope of the 8th Pay Commission, and the commission has invited inputs from defence stakeholders and ex-servicemen. Military pay uses its own levels in the pay matrix and its own allowances. No military-specific recommendation has been announced yet.</p></div>
+
+<h2 id="pay">How military pay is structured</h2>
+<p>Armed forces use the same pay matrix as civilian staff but with their own mapping of rank to level, along with Military Service Pay for officers and Military Service Pay for certain other ranks, plus allowances for field, high altitude and risk duties. Examples from the 7th CPC matrix:</p>
+<div class="table-wrap"><table><thead><tr><th>Rank (example)</th><th>Pay level</th><th class="num">Entry pay</th></tr></thead><tbody><tr><th scope="row">Sepoy and equivalents</th><td>Level 3</td><td class="num">₹21,700</td></tr><tr><th scope="row">Lieutenant</th><td>Level 10</td><td class="num">₹56,100</td></tr></tbody></table></div>
+<p>Use the <a href="/8th-pay-commission-salary-calculator/">salary calculator</a> with your level for a basic comparison. Military Service Pay and special allowances are not modelled.</p>
+
+<h2 id="consult">What the commission is doing for defence</h2>
+<p>The commission invited memoranda from defence personnel and ex-servicemen alongside civilian groups and met defence stakeholders during its consultation. See the <a href="/8th-pay-commission-memorandum-submission/">memorandum page</a>.</p>
+
+<h2 id="orop">One Rank One Pension (OROP)</h2>
+<p>OROP means that personnel of the same rank who retire with the same length of service receive the same pension regardless of when they retired. It has been in effect since 1 July 2014 and is revised periodically by the government, not by the Pay Commission. Ex-servicemen's groups have asked that the 8th CPC be aligned with OROP revisions. Check the Department of Ex-Servicemen Welfare for current rates.</p>
+
+<h2 id="issues">Issues defence groups raise</h2>
+<ul>
+<li>Pay parity with civilian services at equivalent levels.</li>
+<li>Higher Military Service Pay and risk allowances.</li>
+<li>Disability and war-injury pension rules.</li>
+<li>Pension anomalies between those who retired before and after past commissions.</li>
+</ul>
+<p>These are concerns raised in public, not decisions. Read our <a href="/8th-pay-commission-who-is-covered/">coverage guide</a> for who falls within the commission.</p>
+
+</SiteLayout>
