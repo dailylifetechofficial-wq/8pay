@@ -1,5 +1,5 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
-export const SITE_TITLE = "Astro Blog";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+// Global constants (kept for backward compatibility with older components).
+export const SITE_TITLE = '8PayCommission';
+export const SITE_DESCRIPTION = 'Independent calculators and explainers on the 8th Pay Commission: salary, DA, fitment factor, pay matrix, pension and arrears.';
+export const SITE_URL = 'https://8paycommission.com';
+export const SITE_AUTHOR = '8PayCommission Editorial Team';
