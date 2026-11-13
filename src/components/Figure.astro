@@ -1,0 +1,20 @@
+---
+import { IMAGES } from '../data/site';
+export interface Props { name: string; eager?: boolean; alt?: string; caption?: string }
+const { name, eager = false, alt, caption } = Astro.props;
+const img = IMAGES[name];
+---
+{img && (
+	<figure class="fig">
+		<img
+			src={`/images/${name}.webp`}
+			width={img.w}
+			height={img.h}
+			alt={alt || img.alt}
+			loading={eager ? 'eager' : 'lazy'}
+			decoding="async"
+			fetchpriority={eager ? 'high' : 'auto'}
+		/>
+		<figcaption>{caption || img.caption}</figcaption>
+	</figure>
+)}
