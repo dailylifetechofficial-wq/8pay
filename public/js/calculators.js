@@ -32,6 +32,13 @@
   }
   function levelNum(lv) { return parseInt(String(lv), 10); }
 
+  // Pay matrix cell: each cell is the previous cell plus 3%, rounded to the nearest Rs 100 (integer maths, half rounds up).
+  function cellPay(entry, cell) {
+    var b = entry, n = Math.max(1, Math.min(40, Math.round(cell || 1)));
+    for (var i = 1; i < n; i++) { b = Math.floor((b * 103 + 5000) / 10000) * 100; }
+    return b;
+  }
+
   // Transport Allowance slabs (7th CPC, OM of 2017): [other cities, higher TPTA cities]
   function taBase(lv, higher) {
     var n = levelNum(lv);
@@ -134,11 +141,32 @@
 
   calc.matrix = function (v) {
     var e = levelEntry(v.level), cell = Math.max(1, Math.min(40, Math.round(num(v.cell, 1))));
-    var b = Math.round(e * Math.pow(1.03, cell - 1) / 100) * 100;
+    var b = cellPay(e, cell);
     var rows = [];
     var fs = [1.92, 2.28, 2.57, 2.86];
     for (var i = 0; i < fs.length; i++) rows.push({ f: fs[i], nb: Math.round(b * fs[i] / 100) * 100 });
     return { entry: e, cell: cell, basic: b, rows: rows };
+  };
+
+  // Current (7th CPC) gross pay for a level and cell.
+  calc.cgsalary = function (v) {
+    var entry = levelEntry(v.level), cell = Math.max(1, Math.min(40, Math.round(num(v.cell, 1))));
+    var basic = cellPay(entry, cell), da = num(v.da, DA_NOW);
+    var higher = v.higher === 'yes';
+    var rate = (HRA_SETS[v.hraSet] || HRA_SETS['30'])[v.city] || 0;
+    var p = calc.pay({ basic: basic, da: da, hraRate: rate, ta: taBase(v.level, higher), schemeRate: 0, other: 0 });
+    return { entry: entry, cell: cell, basic: basic, da: p.da, hra: p.hra, ta: taBase(v.level, higher), taDa: p.ta - taBase(v.level, higher), gross: p.gross, rate: rate, next: cellPay(entry, cell + 1) };
+  };
+
+  // Current (7th CPC) take-home pay after deductions.
+  calc.inhand = function (v) {
+    var entry = levelEntry(v.level), cell = Math.max(1, Math.min(40, Math.round(num(v.cell, 1))));
+    var basic = cellPay(entry, cell), da = num(v.da, DA_NOW);
+    var higher = v.higher === 'yes';
+    var rate = (HRA_SETS[v.hraSet] || HRA_SETS['30'])[v.city] || 0;
+    var other = num(v.cghs) + num(v.cgegis) + num(v.other);
+    var p = calc.pay({ basic: basic, da: da, hraRate: rate, ta: taBase(v.level, higher), schemeRate: num(v.scheme), other: other });
+    return { basic: basic, p: p, cghs: num(v.cghs), cgegis: num(v.cgegis), other: num(v.other), deductions: p.scheme + other, share: p.gross ? p.net / p.gross * 100 : 0 };
   };
 
   // ---------- tiny UI toolkit ----------
@@ -166,6 +194,16 @@
     var uid = 'c' + Math.random().toString(36).slice(2, 7);
     var html = '<form class="calc-form" onsubmit="return false">' + spec.fields.map(function (f) { return buildField(f, uid); }).join('') + '</form><div class="calc-out" aria-live="polite"></div>';
     el.innerHTML = html;
+    var presetAttr = el.getAttribute('data-preset');
+    if (presetAttr) {
+      try {
+        var preset = JSON.parse(presetAttr);
+        Object.keys(preset).forEach(function (k) {
+          var inp = el.querySelector('[name="' + k + '"]');
+          if (inp) inp.value = String(preset[k]);
+        });
+      } catch (err) { /* ignore a malformed preset */ }
+    }
     var out = el.querySelector('.calc-out');
     function read() {
       var v = {};
@@ -348,6 +386,53 @@
     }
   };
 
+  function cityHraFields() {
+    return [
+      { id: 'city', label: 'City class for HRA', type: 'select', options: CITY, value: 'X' },
+      { id: 'hraSet', label: 'HRA rate set', type: 'select', options: hraOptions(), value: '30', hint: 'Use 30 / 20 / 10 while DA is 50% or more.' },
+      { id: 'higher', label: 'Posted in a higher-TPTA city?', type: 'select', options: [['no', 'No'], ['yes', 'Yes']], value: 'no', hint: 'Affects Transport Allowance. Check the official list of higher-TPTA cities.' }
+    ];
+  }
+
+  specs.cgsalary = {
+    fields: [
+      { id: 'level', label: 'Pay level (7th CPC)', type: 'select', options: levelOptions(), value: '6' },
+      { id: 'cell', label: 'Cell in the level (1 = entry, one cell per annual increment)', value: 1, min: 1, max: 40, step: '1' },
+      { id: 'da', label: 'DA rate (%)', value: DA_NOW, min: 0, hint: DA_NOW + '% from 1 July 2026.' }
+    ].concat(cityHraFields()),
+    note: 'Current 7th CPC pay structure. Rates follow orders in force; check your own payslip and the latest Finance Ministry orders. Not an 8th CPC estimate.',
+    render: function (v) {
+      var c = calc.cgsalary(v);
+      var rows = row('Basic pay (level ' + esc(v.level) + ', cell ' + c.cell + ')', fmt(c.basic)) + row('Dearness Allowance', fmt(c.da)) +
+        row('HRA at ' + Math.round(c.rate * 100) + '% of basic', fmt(c.hra)) + row('Transport Allowance (base)', fmt(c.ta)) +
+        row('DA on Transport Allowance', fmt(c.taDa)) + row('Gross monthly salary', fmt(c.gross), 'total') + row('Gross per year', fmt(c.gross * 12));
+      return '<h3>Gross monthly salary</h3><div class="table-wrap"><table class="result-table"><tbody>' + rows + '</tbody></table></div>' +
+        '<p class="calc-result">After the next annual increment, basic pay becomes <strong>' + fmt(c.next) + '</strong>.</p>';
+    }
+  };
+
+  specs.inhand = {
+    fields: [
+      { id: 'level', label: 'Pay level (7th CPC)', type: 'select', options: levelOptions(), value: '6' },
+      { id: 'cell', label: 'Cell in the level (1 = entry)', value: 1, min: 1, max: 40, step: '1' },
+      { id: 'da', label: 'DA rate (%)', value: DA_NOW, min: 0 }
+    ].concat(cityHraFields()).concat([
+      { id: 'scheme', label: 'Pension scheme deduction', type: 'select', options: [['0.10', 'NPS or UPS (10% of basic + DA)'], ['0', 'OPS / GPF (none)']], value: '0.10' },
+      { id: 'cghs', label: 'CGHS contribution (INR per month)', value: 0, min: 0, hint: 'Enter the amount on your payslip.' },
+      { id: 'cgegis', label: 'CGEGIS (INR per month)', value: 0, min: 0, hint: 'Group insurance; enter the amount on your payslip.' },
+      { id: 'other', label: 'Other deductions: licence fee, income tax, recoveries (INR per month)', value: 0, min: 0 }
+    ]),
+    note: 'Estimate for the current 7th CPC pay structure. Income tax and other recoveries vary by person, so enter them yourself. Your payslip is the final authority.',
+    render: function (v) {
+      var r = calc.inhand(v), p = r.p;
+      var rows = row('Basic pay', fmt(p.basic)) + row('Dearness Allowance', fmt(p.da)) + row('HRA', fmt(p.hra)) + row('Transport Allowance with DA', fmt(p.ta)) +
+        row('Gross salary', fmt(p.gross), 'total') + row('NPS / UPS contribution', '-' + fmt(p.scheme)) + row('CGHS', '-' + fmt(r.cghs)) +
+        row('CGEGIS', '-' + fmt(r.cgegis)) + row('Other deductions', '-' + fmt(r.other)) + row('Estimated in-hand salary', fmt(p.net), 'total');
+      return '<h3>Estimated monthly in-hand salary</h3><div class="table-wrap"><table class="result-table"><tbody>' + rows + '</tbody></table></div>' +
+        '<p class="calc-result">In-hand pay is <strong>' + pct(r.share) + '</strong> of gross salary.</p>';
+    }
+  };
+
   specs.matrix = {
     fields: [
       { id: 'level', label: 'Pay level', type: 'select', options: levelOptions(), value: '1' },
@@ -369,7 +454,7 @@
     });
   }
 
-  root.PayCalc = { calc: calc, levels: LEVELS };
+  root.PayCalc = { calc: calc, levels: LEVELS, cellPay: cellPay };
   if (typeof module !== 'undefined' && module.exports) { module.exports = root.PayCalc; }
   if (root.document) {
     if (root.document.readyState === 'loading') root.document.addEventListener('DOMContentLoaded', init); else init();
