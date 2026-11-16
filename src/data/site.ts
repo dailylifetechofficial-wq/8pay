@@ -2,15 +2,19 @@
 export const SITE_NAME = '8PayCommission';
 export const SITE_URL = 'https://8paycommission.com';
 export const ADSENSE_CLIENT = 'ca-pub-7557955393674418';
+// One place for the contact address. Change it to your domain email (for example contact@8paycommission.com) once you have it.
+export const CONTACT_EMAIL = 'dailylifetech.official@gmail.com';
+// Add real people here (name, role, bio). The About page shows this section only when the list is not empty.
+export const AUTHORS: { name: string; role: string; bio: string }[] = [];
 export const DA_NOW = 63;
-export const UPDATED_ISO = '2026-11-03';
-export const UPDATED_LABEL = '3 November 2026';
+export const UPDATED_ISO = '2026-11-16';
+export const UPDATED_LABEL = '16 November 2026';
 export const PUBLISHED_ISO = '2026-03-28';
 
 export interface PageInfo {
 	slug: string; // '' = home
 	title: string; // short label for navigation and cards
-	group: 'Latest' | 'Calculators' | 'Pay and allowances' | 'Pension' | 'Guides' | 'About';
+	group: 'Latest' | 'Calculators' | 'Pay and allowances' | 'Salary by level' | 'Pension' | 'Guides' | 'About';
 	blurb: string;
 }
 
@@ -19,6 +23,11 @@ export const PAGES: PageInfo[] = [
 	{ slug: '8th-pay-commission-implementation-date', title: 'Implementation Date', group: 'Latest', blurb: 'When revised pay is likely to start and how arrears work.' },
 	{ slug: '8th-pay-commission-members-and-terms-of-reference', title: 'Members and Terms of Reference', group: 'Latest', blurb: 'Who is on the commission and what it must examine.' },
 	{ slug: 'da-hike-latest-news', title: 'DA Hike (63%)', group: 'Latest', blurb: 'Latest Dearness Allowance rate, history and a DA hike calculator.' },
+	{ slug: 'da-hike-january-2027', title: 'DA Hike January 2027', group: 'Latest', blurb: 'Expected DA from January 2027: the 12-month index data and the formula.' },
+	{ slug: '8th-pay-commission-pensioners-retired-before-2026', title: 'Pensioners Retired Before 2026', group: 'Latest', blurb: 'Will those who retired before 1 January 2026 get the revised pension?' },
+	{ slug: '8th-pay-commission-five-year-pay-revision', title: 'Five-Year Pay Revision Demand', group: 'Latest', blurb: 'The demand to revise pay every five years and a permanent pay review body.' },
+	{ slug: '8th-pay-commission-consultations', title: 'Commission Consultations', group: 'Latest', blurb: 'Cities visited, how consultations work and what happens after the report.' },
+	{ slug: '8th-pay-commission-salary-all-levels', title: 'Salary by Level (1 to 18)', group: 'Salary by level', blurb: 'Entry pay for all 18 levels under four fitment scenarios.' },
 	{ slug: '8th-pay-commission-salary-calculator', title: 'Salary Calculator', group: 'Calculators', blurb: 'Estimate monthly pay under 8th CPC scenarios.' },
 	{ slug: '8th-pay-commission-arrears-calculator', title: 'Arrears Calculator', group: 'Calculators', blurb: 'Estimate arrears between the effective date and payout.' },
 	{ slug: '8th-pay-commission-pension-calculator', title: 'Pension Calculator', group: 'Calculators', blurb: 'Revised pension, family pension and expected hike.' },
@@ -42,6 +51,28 @@ export const PAGES: PageInfo[] = [
 	{ slug: 'central-government-payslip-explained', title: 'Payslip Explained', group: 'Pay and allowances', blurb: 'Every line on a central government payslip in plain words.' },
 	{ slug: 'macp-scheme-explained', title: 'MACP Scheme', group: 'Pay and allowances', blurb: 'Financial upgrades after 10, 20 and 30 years.' },
 	{ slug: 'pay-commission-glossary', title: 'Glossary', group: 'Guides', blurb: 'Pay commission terms from AICPI-IW to UPS.' },
+	{ slug: '8th-pay-commission-level-1-salary', title: 'Level 1 Salary', group: 'Salary by level', blurb: 'Level 1: Rs 18,000 today, scenario pay and promotion.' },
+	{ slug: '8th-pay-commission-level-3-salary', title: 'Level 3 Salary', group: 'Salary by level', blurb: 'Level 3: Rs 21,700 today, scenario pay and promotion.' },
+	{ slug: '8th-pay-commission-level-5-salary', title: 'Level 5 Salary', group: 'Salary by level', blurb: 'Level 5: Rs 29,200 today, scenario pay and promotion.' },
+	{ slug: '8th-pay-commission-level-6-salary', title: 'Level 6 Salary', group: 'Salary by level', blurb: 'Level 6: Rs 35,400 today, scenario pay and promotion.' },
+	{ slug: '8th-pay-commission-level-7-salary', title: 'Level 7 Salary', group: 'Salary by level', blurb: 'Level 7: Rs 44,900 today, scenario pay and promotion.' },
+	{ slug: '8th-pay-commission-level-8-salary', title: 'Level 8 Salary', group: 'Salary by level', blurb: 'Level 8: Rs 47,600 today, scenario pay and promotion.' },
+	{ slug: '8th-pay-commission-level-9-salary', title: 'Level 9 Salary', group: 'Salary by level', blurb: 'Level 9: Rs 53,100 today, scenario pay and promotion.' },
+	{ slug: '8th-pay-commission-level-10-salary', title: 'Level 10 Salary', group: 'Salary by level', blurb: 'Level 10: Rs 56,100 today, scenario pay and promotion.' },
+	{ slug: '8th-pay-commission-level-11-salary', title: 'Level 11 Salary', group: 'Salary by level', blurb: 'Level 11: Rs 67,700 today, scenario pay and promotion.' },
+	{ slug: '8th-pay-commission-calculator', title: 'All Calculators', group: 'Calculators', blurb: 'Salary, arrears, pension and allowance calculators in one place.' },
+	{ slug: 'central-government-salary-calculator', title: 'Current Salary Calculator', group: 'Calculators', blurb: 'Gross pay today by level and cell.' },
+	{ slug: 'government-employee-in-hand-salary-calculator', title: 'In-Hand Salary Calculator', group: 'Calculators', blurb: 'Take-home pay after NPS or UPS, CGHS and other deductions.' },
+	{ slug: '8th-cpc-update-2026', title: '8th CPC Update 2026', group: 'Latest', blurb: 'A month-by-month review of the 8th CPC in 2026.' },
+	{ slug: 'when-will-8th-pay-commission-start', title: 'When Will It Start?', group: 'Latest', blurb: 'Likely timeline from report to first revised payslip.' },
+	{ slug: '8th-pay-commission-effective-date', title: 'Effective Date', group: 'Latest', blurb: 'The expected effective date and how it drives arrears.' },
+	{ slug: '8th-pay-commission-cabinet-approval-status', title: 'Cabinet Approval Status', group: 'Latest', blurb: 'What the Cabinet has and has not approved.' },
+	{ slug: '8th-pay-commission-da-calculation-rules', title: 'DA Calculation Rules', group: 'Pay and allowances', blurb: 'How DA is worked out and when it changes.' },
+	{ slug: 'how-basic-pay-is-fixed-in-pay-commission', title: 'How Basic Pay Is Fixed', group: 'Pay and allowances', blurb: 'How fitment turns old pay into new pay.' },
+	{ slug: 'central-government-employee-allowance-revisions', title: 'Allowance Revisions', group: 'Pay and allowances', blurb: 'Which allowances change with basic pay, DA or orders.' },
+	{ slug: 'ups-vs-nps-under-8th-pay-commission', title: 'UPS vs NPS', group: 'Pension', blurb: 'UPS and NPS compared, and what the 8th CPC does to each.' },
+	{ slug: 'retired-central-government-employee-pension-revision-8th-cpc', title: 'Pensioners: Revision', group: 'Pension', blurb: 'Pension revision for retired employees, with scenario table.' },
+	{ slug: '8th-pay-commission-pay-scale-chart-pdf', title: 'Pay Scale Chart PDF', group: 'Pay and allowances', blurb: 'Free PDF of the 7th CPC pay matrix with scenario columns.' },
 	{ slug: 'about-us', title: 'About Us', group: 'About', blurb: 'Who runs this site and how we verify facts.' },
 	{ slug: 'editorial-policy', title: 'Editorial Policy', group: 'About', blurb: 'Sourcing standards, corrections and update practice.' },
 	{ slug: 'contact-us', title: 'Contact Us', group: 'About', blurb: 'Send corrections, questions or feedback.' },
@@ -50,10 +81,11 @@ export const PAGES: PageInfo[] = [
 ];
 
 export const NAV_GROUPS: { label: string; slugs: string[] }[] = [
-	{ label: 'Latest', slugs: ['8th-pay-commission-latest-news', '8th-pay-commission-implementation-date', 'da-hike-latest-news', '8th-pay-commission-demands-interim-relief', '8th-pay-commission-memorandum-submission', '8th-pay-commission-members-and-terms-of-reference'] },
-	{ label: 'Calculators', slugs: ['8th-pay-commission-salary-calculator', '8th-pay-commission-arrears-calculator', '8th-pay-commission-pension-calculator', 'gratuity-limit-8th-pay-commission', 'da-hra-calculator-8th-pay-commission'] },
-	{ label: 'Pay and allowances', slugs: ['fitment-factor-8th-pay-commission', 'minimum-basic-pay-8th-pay-commission', '8th-pay-commission-pay-matrix', 'da-merger-8th-pay-commission', 'hra-slabs-8th-pay-commission', 'central-government-payslip-explained', 'macp-scheme-explained'] },
-	{ label: 'Guides', slugs: ['7th-vs-8th-pay-commission', 'pay-commissions-in-india-history', '8th-pay-commission-who-is-covered', 'ups-unified-pension-scheme-8th-cpc', '8th-pay-commission-railway-employees', '8th-pay-commission-defence-armed-forces', 'state-government-8th-pay-commission', 'pay-commission-glossary', '8th-pay-commission-faq'] },
+	{ label: 'Latest', slugs: ['8th-pay-commission-latest-news', 'da-hike-january-2027', '8th-pay-commission-pensioners-retired-before-2026', '8th-pay-commission-five-year-pay-revision', '8th-pay-commission-consultations', '8th-cpc-update-2026', 'when-will-8th-pay-commission-start', '8th-pay-commission-effective-date', '8th-pay-commission-cabinet-approval-status', '8th-pay-commission-implementation-date', 'da-hike-latest-news', '8th-pay-commission-demands-interim-relief', '8th-pay-commission-memorandum-submission', '8th-pay-commission-members-and-terms-of-reference'] },
+	{ label: 'Calculators', slugs: ['8th-pay-commission-calculator', '8th-pay-commission-salary-calculator', 'central-government-salary-calculator', 'government-employee-in-hand-salary-calculator', '8th-pay-commission-arrears-calculator', '8th-pay-commission-pension-calculator', 'gratuity-limit-8th-pay-commission', 'da-hra-calculator-8th-pay-commission'] },
+	{ label: 'Pay and allowances', slugs: ['fitment-factor-8th-pay-commission', 'minimum-basic-pay-8th-pay-commission', '8th-pay-commission-pay-matrix', 'da-merger-8th-pay-commission', 'hra-slabs-8th-pay-commission', 'central-government-payslip-explained', 'macp-scheme-explained', '8th-pay-commission-da-calculation-rules', 'how-basic-pay-is-fixed-in-pay-commission', 'central-government-employee-allowance-revisions', '8th-pay-commission-pay-scale-chart-pdf'] },
+	{ label: 'Salary by level', slugs: ['8th-pay-commission-salary-all-levels', '8th-pay-commission-level-1-salary', '8th-pay-commission-level-3-salary', '8th-pay-commission-level-5-salary', '8th-pay-commission-level-6-salary', '8th-pay-commission-level-7-salary', '8th-pay-commission-level-8-salary', '8th-pay-commission-level-9-salary', '8th-pay-commission-level-10-salary', '8th-pay-commission-level-11-salary'] },
+	{ label: 'Guides', slugs: ['7th-vs-8th-pay-commission', 'pay-commissions-in-india-history', '8th-pay-commission-who-is-covered', 'ups-unified-pension-scheme-8th-cpc', '8th-pay-commission-railway-employees', '8th-pay-commission-defence-armed-forces', 'state-government-8th-pay-commission', 'pay-commission-glossary', '8th-pay-commission-faq', 'ups-vs-nps-under-8th-pay-commission', 'retired-central-government-employee-pension-revision-8th-cpc'] },
 ];
 
 export const HI_PAGES: { slug: string; title: string }[] = [
@@ -62,6 +94,7 @@ export const HI_PAGES: { slug: string; title: string }[] = [
 	{ slug: 'hi/da-hike-63-percent', title: 'DA 63%: महंगाई भत्ता' },
 	{ slug: 'hi/8th-pay-commission-salary-calculator', title: 'सैलरी कैलकुलेटर' },
 	{ slug: 'hi/8th-pay-commission-kab-lagu-hoga', title: 'कब लागू होगा' },
+	{ slug: 'hi/da-hike-january-2027', title: 'जनवरी 2027 में DA' },
 ];
 
 export function pageBySlug(slug: string): PageInfo | undefined {
@@ -91,4 +124,25 @@ export const IMAGES: Record<string, ImageInfo> = {
 	'who-is-covered': { w: 1200, h: 470, alt: 'Three cards showing who the 8th Pay Commission covers: central employees, with states and PSUs handled separately', caption: 'Scope of the 8th Pay Commission.' },
 	'pay-commission-chairs': { w: 1200, h: 675, alt: 'Timeline of the chairpersons of the first to eighth Central Pay Commissions', caption: 'Chairpersons of the eight Central Pay Commissions.' },
 	'pay-matrix-levels': { w: 1200, h: 600, alt: 'Four cards summarising the 18 levels of the 7th CPC pay matrix with entry pay ranges', caption: 'The 7th CPC pay matrix grouped into four bands of levels.' },
+	'level-1-salary-scenarios': { w: 1200, h: 675, alt: 'Bar chart of Level 1 basic pay today (Rs 18,000), basic plus 63 percent DA (Rs 29,340) and 8th CPC scenarios at 1.92, 2.28, 2.57, 2.86 and the staff demand of 3.83', caption: 'Level 1 basic pay today and under illustrative 8th CPC fitment factors. No official factor has been announced.' },
+	'level-3-salary-scenarios': { w: 1200, h: 675, alt: 'Bar chart of Level 3 basic pay today (Rs 21,700), basic plus 63 percent DA (Rs 35,371) and 8th CPC scenarios at 1.92, 2.28, 2.57, 2.86 and the staff demand of 3.83', caption: 'Level 3 basic pay today and under illustrative 8th CPC fitment factors. No official factor has been announced.' },
+	'level-5-salary-scenarios': { w: 1200, h: 675, alt: 'Bar chart of Level 5 basic pay today (Rs 29,200), basic plus 63 percent DA (Rs 47,596) and 8th CPC scenarios at 1.92, 2.28, 2.57, 2.86 and the staff demand of 3.83', caption: 'Level 5 basic pay today and under illustrative 8th CPC fitment factors. No official factor has been announced.' },
+	'level-6-salary-scenarios': { w: 1200, h: 675, alt: 'Bar chart of Level 6 basic pay today (Rs 35,400), basic plus 63 percent DA (Rs 57,702) and 8th CPC scenarios at 1.92, 2.28, 2.57, 2.86 and the staff demand of 3.83', caption: 'Level 6 basic pay today and under illustrative 8th CPC fitment factors. No official factor has been announced.' },
+	'level-7-salary-scenarios': { w: 1200, h: 675, alt: 'Bar chart of Level 7 basic pay today (Rs 44,900), basic plus 63 percent DA (Rs 73,187) and 8th CPC scenarios at 1.92, 2.28, 2.57, 2.86 and the staff demand of 3.83', caption: 'Level 7 basic pay today and under illustrative 8th CPC fitment factors. No official factor has been announced.' },
+	'level-8-salary-scenarios': { w: 1200, h: 675, alt: 'Bar chart of Level 8 basic pay today (Rs 47,600), basic plus 63 percent DA (Rs 77,588) and 8th CPC scenarios at 1.92, 2.28, 2.57, 2.86 and the staff demand of 3.83', caption: 'Level 8 basic pay today and under illustrative 8th CPC fitment factors. No official factor has been announced.' },
+	'level-9-salary-scenarios': { w: 1200, h: 675, alt: 'Bar chart of Level 9 basic pay today (Rs 53,100), basic plus 63 percent DA (Rs 86,553) and 8th CPC scenarios at 1.92, 2.28, 2.57, 2.86 and the staff demand of 3.83', caption: 'Level 9 basic pay today and under illustrative 8th CPC fitment factors. No official factor has been announced.' },
+	'level-10-salary-scenarios': { w: 1200, h: 675, alt: 'Bar chart of Level 10 basic pay today (Rs 56,100), basic plus 63 percent DA (Rs 91,443) and 8th CPC scenarios at 1.92, 2.28, 2.57, 2.86 and the staff demand of 3.83', caption: 'Level 10 basic pay today and under illustrative 8th CPC fitment factors. No official factor has been announced.' },
+	'level-11-salary-scenarios': { w: 1200, h: 675, alt: 'Bar chart of Level 11 basic pay today (Rs 67,700), basic plus 63 percent DA (Rs 1,10,351) and 8th CPC scenarios at 1.92, 2.28, 2.57, 2.86 and the staff demand of 3.83', caption: 'Level 11 basic pay today and under illustrative 8th CPC fitment factors. No official factor has been announced.' },
+	'calculators-overview': { w: 1200, h: 500, alt: 'Grid of eight calculators on 8PayCommission: salary, arrears, pension, gratuity, DA HRA TA, current salary, in-hand salary and pay matrix lookup', caption: 'Every calculator on this site and the question each one answers.' },
+	'pay-matrix-entry-pay-by-level': { w: 1200, h: 675, alt: 'Bar chart of entry basic pay for every pay level from Level 1 at Rs 18,000 to Level 18 at Rs 2,50,000 under the 7th CPC', caption: 'Entry basic pay by level in the 7th CPC pay matrix.' },
+	'in-hand-salary-by-level': { w: 1200, h: 675, alt: 'Bar chart of estimated in-hand monthly salary at the entry cell of pay levels 1, 3, 5, 6, 7, 8, 9, 10 and 11 after a 10 percent NPS or UPS contribution', caption: 'Estimated in-hand salary by pay level at the entry cell, Class X city, DA 63%.' },
+	'8th-cpc-2026-timeline': { w: 1200, h: 675, alt: 'Timeline of 2026 showing the memorandum window opening on 5 March, DA at 60 percent in April, the final memorandum date of 15 June, stakeholder visits in September and DA at 63 percent on 28 October', caption: 'Key 8th Pay Commission and DA events in 2026.' },
+	'when-8th-pay-commission-start-timeline': { w: 1200, h: 675, alt: 'Timeline with three scenarios showing the commission report, Cabinet decision and first revised payslip between 2027 and 2028', caption: 'Three illustrative timelines for the 8th Pay Commission, based on gaps seen in the 6th and 7th commissions.' },
+	'effective-date-vs-payment-date': { w: 1200, h: 675, alt: 'Chart showing arrears of about 20, 24 and 33 months between an effective date of 1 January 2026 and a payment date in three scenarios', caption: 'Arrears build up between the effective date and the payment date.' },
+	'cabinet-approval-stages': { w: 1200, h: 560, alt: 'Five-stage diagram of the 8th Pay Commission approval process showing two completed stages and three pending stages', caption: 'Approval stages for the 8th Pay Commission and where each stands.' },
+	'da-calculation-formula': { w: 1200, h: 500, alt: 'Four-step diagram of the DA formula: take 12 months of AICPI-IW, average them, convert and apply the formula, then round and announce', caption: 'How the Dearness Allowance rate is worked out from the consumer price index.' },
+	'basic-pay-fixation-steps': { w: 1200, h: 500, alt: 'Four-step diagram of pay fixation: take existing basic pay, multiply by the fitment factor, find the level, fix at the same or next higher cell', caption: 'How basic pay is fixed after a pay commission.' },
+	'allowances-linked-to-da': { w: 1200, h: 500, alt: 'Four-step diagram showing HRA rates rising from 24 percent to 27 and then 30 percent as DA crosses 25 and 50 percent', caption: 'Allowance rates that move when DA crosses set thresholds.' },
+	'pension-revision-scenarios': { w: 1200, h: 675, alt: 'Bar chart of a Rs 30,000 basic pension: Rs 48,900 with 63 percent DR today versus Rs 57,600, 68,400, 77,100 and 85,800 at factors 1.92, 2.28, 2.57 and 2.86', caption: 'Revised pension on a Rs 30,000 basic pension under illustrative fitment factors.' },
+	'pay-matrix-chart-preview': { w: 1200, h: 675, alt: 'Table preview of the 7th CPC pay matrix showing levels 1 to 10 and cells 1 to 8 in rupees', caption: 'Preview of the pay scale chart: 7th CPC pay matrix cells for levels 1 to 10.' },
 };
