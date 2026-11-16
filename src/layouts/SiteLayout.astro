@@ -65,7 +65,7 @@ if (faq.length) {
 }
 const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 const relatedPages: PageInfo[] = related.map((s) => pageBySlug(s)).filter((p): p is PageInfo => !!p);
-const footerGroups = ['Latest', 'Calculators', 'Pay and allowances', 'Guides'];
+const footerGroups = ['Latest', 'Calculators', 'Pay and allowances', 'Salary by level', 'Pension', 'Guides'];
 const searchIndex = JSON.stringify(PAGES.map((p) => ({ u: `/${p.slug}/`, t: p.title, d: p.blurb })));
 const hasAside = toc.length > 0;
 ---
