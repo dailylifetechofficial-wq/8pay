@@ -1,0 +1,34 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+const faq = [
+ {
+  "q": "जनवरी 2027 में DA कितना होगा?",
+  "a": "अभी घोषित नहीं। सूचकांक 155.5 पर रहे तो फॉर्मूले से 67.86%, यानी घटाकर 67%। प्रेस अनुमान 66% से 67% है।"
+ },
+ {
+  "q": "क्या पेंशनरों को भी यही बढ़ोतरी मिलेगी?",
+  "a": "हाँ, पेंशनरों को उतनी ही महंगाई राहत (DR) मिलती है।"
+ }
+];
+const toc = [{"id": "data", "label": "AICPI-IW आंकड़े"}, {"id": "formula", "label": "फॉर्मूला"}, {"id": "anuman", "label": "अनुमान"}];
+const related = ["da-hike-latest-news", "8th-pay-commission-da-calculation-rules"];
+---
+
+<SiteLayout title="जनवरी 2027 में DA कितना बढ़ेगा? अनुमान और फॉर्मूला" description="जनवरी 2027 के DA का अनुमान: सितंबर 2026 का AICPI-IW 155.5, फॉर्मूला, अलग-अलग स्थितियों का हिसाब और घोषणा कब होगी।" slug="hi/da-hike-january-2027" h1="जनवरी 2027 में DA कितना बढ़ेगा?" lead="2026 के सूचकांक और आधिकारिक फॉर्मूले से अनुमान।" faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="जनवरी 2027 में DA" lang="hi" alternate="da-hike-january-2027">
+
+<div class="answer"><p><strong>संक्षेप में:</strong> जनवरी 2027 के DA के लिए 12 में से 9 महीनों का AICPI-IW आ चुका है। अगर अक्टूबर, नवंबर और दिसंबर में सूचकांक 155.5 पर ही रहा, तो फॉर्मूले से <strong>67.86%</strong> आता है, जिसे सरकार आम तौर पर घटाकर <strong>67%</strong> करती है (63% से 4 अंक ज्यादा)। अंतिम दर कैबिनेट की मंज़ूरी के बाद ही तय होगी।</p></div>
+
+<h2 id="data">2026 के AICPI-IW आंकड़े</h2>
+<p>जनवरी 2027 का DA जनवरी से दिसंबर 2026 के 12 महीनों के औसत (आधार 2016=100) पर निर्भर है। श्रम ब्यूरो ने 30 अक्टूबर 2026 को सितंबर का आंकड़ा जारी किया: 1.1 अंक बढ़कर 155.5।</p>
+<div class="table-wrap"><table><thead><tr><th>महीना (2026)</th><th class="num">AICPI-IW</th></tr></thead><tbody><tr><th scope="row">जनवरी</th><td class="num">148.6</td></tr><tr><th scope="row">फरवरी</th><td class="num">148.5</td></tr><tr><th scope="row">मार्च</th><td class="num">149.1</td></tr><tr><th scope="row">अप्रैल</th><td class="num">149.9</td></tr><tr><th scope="row">मई</th><td class="num">150.8</td></tr><tr><th scope="row">जून</th><td class="num">151.9</td></tr><tr><th scope="row">जुलाई</th><td class="num">153.2</td></tr><tr><th scope="row">अगस्त</th><td class="num">154.4</td></tr><tr><th scope="row">सितंबर</th><td class="num">155.5</td></tr><tr><th scope="row">अक्टूबर से दिसंबर</th><td class="num">अभी जारी नहीं</td></tr></tbody></table></div>
+
+<h2 id="formula">DA का फॉर्मूला</h2>
+<p><strong>DA % = [(औसत AICPI-IW x 2.88) - 261.42] / 261.42 x 100</strong></p>
+<p>नतीजे का दशमलव हटाकर पूर्णांक में DA घोषित किया जाता है।</p>
+
+<h2 id="anuman">जनवरी 2027 में DA कितना हो सकता है</h2>
+<p>बाकी तीन महीनों के लिए अलग-अलग मान लेने पर नतीजा नीचे है। ये उदाहरण हैं, पूर्वानुमान नहीं।</p>
+<div class="table-wrap"><table><thead><tr><th>अक्टूबर से दिसंबर</th><th class="num">12 महीने का औसत</th><th class="num">फॉर्मूले का नतीजा</th><th class="num">पूर्णांक में DA</th></tr></thead><tbody><tr><th scope="row">सूचकांक 155.5 पर स्थिर</th><td class="num">152.37</td><td class="num">67.86%</td><td class="num">67%</td></tr><tr><th scope="row">हर महीने 0.5 अंक बढ़ा</th><td class="num">152.62</td><td class="num">68.13%</td><td class="num">68%</td></tr><tr><th scope="row">हर महीने 1.0 अंक बढ़ा</th><td class="num">152.87</td><td class="num">68.41%</td><td class="num">68%</td></tr></tbody></table></div>
+<p>प्रेस में भी 66% से 67% का अनुमान है। घोषणा आम तौर पर कुछ महीने बाद (हाल के सालों में मार्च में) होती है और 1 जनवरी से एरियर मिलता है। अंग्रेज़ी में विस्तार: <a href="/da-hike-january-2027/">DA Hike January 2027</a>।</p>
+
+</SiteLayout>
