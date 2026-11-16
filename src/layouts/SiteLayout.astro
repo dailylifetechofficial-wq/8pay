@@ -222,7 +222,18 @@ const hasAside = toc.length > 0;
 				var t = document.querySelector('.nav-toggle'), n = document.getElementById('site-nav');
 				if (t && n) t.addEventListener('click', function () { var o = n.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
 				document.querySelectorAll('.menu-btn').forEach(function (b) {
-					b.addEventListener('click', function () { var li = b.parentElement, o = li.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+					b.addEventListener('click', function () {
+						var li = b.parentElement, o = !li.classList.contains('open');
+						document.querySelectorAll('.has-menu').forEach(function (item) {
+							item.classList.remove('open');
+							var button = item.querySelector('.menu-btn');
+							if (button) button.setAttribute('aria-expanded', 'false');
+						});
+						if (o) {
+							li.classList.add('open');
+							b.setAttribute('aria-expanded', 'true');
+						}
+					});
 				});
 			})();
 		</script>
