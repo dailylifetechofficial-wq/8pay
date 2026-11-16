@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import { CONTACT_EMAIL } from '../data/site';
 import Figure from '../components/Figure.astro';
 import Calc from '../components/Calc.astro';
 const faq = [];
@@ -25,6 +26,6 @@ const related = ["privacy-policy", "about-us"];
 <h2 id="law">Governing law</h2>
 <p>These terms are governed by the laws of India.</p>
 <h2 id="contact">Contact</h2>
-<p>Questions: <a href="mailto:dailylifetech.official@gmail.com">dailylifetech.official@gmail.com</a>.</p>
+<p>Questions: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
 
 </SiteLayout>

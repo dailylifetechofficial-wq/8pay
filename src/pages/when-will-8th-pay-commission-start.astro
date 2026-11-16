@@ -1,0 +1,46 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "When will the 8th Pay Commission be implemented?",
+  "a": "There is no official date. If past patterns hold, the first revised payslip would come between late 2027 and 2028, with arrears from the effective date."
+ },
+ {
+  "q": "Will the 8th Pay Commission start from January 2027?",
+  "a": "There is no indication of that. Media reports point to 1 January 2026 as the date from which pay is counted, but the commission has not even reported yet."
+ },
+ {
+  "q": "Can the 8th Pay Commission be implemented before May 2027?",
+  "a": "Only if interim recommendations are accepted early. The Terms of Reference allow interim reports, but none has been announced."
+ },
+ {
+  "q": "Will I get arrears?",
+  "a": "If revised pay is counted from 1 January 2026, yes: the gap between that date and your first revised payslip is paid as arrears. Use the arrears calculator for an estimate."
+ }
+];
+const toc = [{"id": "two", "label": "Two meanings of \"start\""}, {"id": "precedent", "label": "What the 6th and 7th commissions tell us"}, {"id": "scenarios", "label": "Three scenarios"}, {"id": "steps", "label": "What happens between the report and your payslip"}, {"id": "speed", "label": "What could speed it up or slow it down"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-effective-date", "8th-pay-commission-implementation-date", "8th-pay-commission-arrears-calculator", "8th-pay-commission-latest-news"];
+---
+
+<SiteLayout title="When Will the 8th Pay Commission Start? Likely Timeline" description="No official start date yet. Past commissions point to a first revised payslip in late 2027 or 2028, with arrears from 1 January 2026. See the three scenarios." slug="when-will-8th-pay-commission-start" h1="When Will the 8th Pay Commission Start?" lead="The commission is already at work, but revised pay starts only after the report, the Cabinet decision and a notification." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="When Will It Start?">
+
+<div class="answer"><p><strong>Short answer:</strong> There is no official date. The commission must report by about May 2027. The 6th and 7th commissions took five and seven months from report to Cabinet decision, which points to a first revised payslip between late 2027 and early 2028, with arrears counted from the effective date.</p></div>
+
+<h2 id="two">Two meanings of "start"</h2>
+<p>People ask when the 8th Pay Commission will "start" and mean two different things. The commission itself started work when it was notified on 3 November 2025. What employees want to know is when the revised salary starts, which depends on the effective date and the payment date. See <a href="/8th-pay-commission-effective-date/">effective date</a> for the difference.</p>
+
+<h2 id="precedent">What the 6th and 7th commissions tell us</h2>
+<div class="table-wrap"><table><thead><tr><th>Commission</th><th>Constituted</th><th>Report submitted</th><th>Cabinet decision</th><th>Effective from</th></tr></thead><tbody><tr><th scope="row">6th CPC</th><td>Oct 2006</td><td>Mar 2008 (about 17 months)</td><td>Aug 2008 (about 5 months later)</td><td>1 Jan 2006</td></tr><tr><th scope="row">7th CPC</th><td>Feb 2014</td><td>Nov 2015 (about 21 months, after an extension)</td><td>Jun 2016 (about 7 months later)</td><td>1 Jan 2016</td></tr><tr><th scope="row">8th CPC</th><td>Nov 2025</td><td>Due about May 2027 (18 months)</td><td>Not yet</td><td>Expected 1 Jan 2026 (unconfirmed)</td></tr></tbody></table></div><p>Both earlier commissions used up their time and then needed a further several months between the report and the Cabinet. If the 8th follows the pattern, the Cabinet decision falls between October 2027 and January 2028. This is arithmetic from precedent, not a government forecast.</p>
+
+<h2 id="scenarios">Three scenarios</h2>
+<Figure name="when-8th-pay-commission-start-timeline" /><div class="table-wrap"><table><thead><tr><th>Scenario</th><th>Report</th><th>Cabinet decision</th><th>First revised payslip</th><th>Arrears if effective 1 Jan 2026</th></tr></thead><tbody><tr><th scope="row">Faster</th><td>Interim and final reports early (Q1 2027)</td><td>Mid 2027</td><td>Late 2027</td><td>About 20 months</td></tr><tr><th scope="row">Base case (precedent)</th><td>May 2027</td><td>Oct 2027 to Jan 2028</td><td>Early 2028</td><td>About 24 months</td></tr><tr><th scope="row">Slower</th><td>Extended deadline, mid 2028</td><td>Late 2028</td><td>Late 2028</td><td>About 33 months</td></tr></tbody></table></div><p>These are the same scenarios as on the <a href="/8th-pay-commission-implementation-date/">implementation date</a> page. Turn any of them into rupees with the <a href="/8th-pay-commission-arrears-calculator/">arrears calculator</a>.</p>
+
+<h2 id="steps">What happens between the report and your payslip</h2>
+<ol><li><strong>Report submitted.</strong> The commission hands its recommendations to the Government.</li><li><strong>Examination.</strong> The Finance Ministry and a high-level committee of senior officers examine the cost and the recommendations. For the 7th CPC this stage took months.</li><li><strong>Cabinet decision.</strong> The Union Cabinet accepts, changes or rejects individual recommendations.</li><li><strong>Notification.</strong> The Finance Ministry issues the revised pay rules and the new matrix.</li><li><strong>Fixation and payment.</strong> Departments fix each employee's pay and payroll is updated. Arrears are then calculated and paid. The 6th CPC arrears, for example, were paid in two instalments across two financial years.</li></ol>
+
+<h2 id="speed">What could speed it up or slow it down</h2>
+<ul><li><strong>Interim reports</strong> on narrow subjects can be acted on before the final report.</li><li><strong>The Budget.</strong> The Union Budget for 2027-28 will show whether money has been set aside.</li><li><strong>Politics.</strong> Governments have moved faster before major elections.</li><li><strong>Extensions.</strong> Commissions have asked for more time before, as the 7th did.</li></ul>
+
+</SiteLayout>

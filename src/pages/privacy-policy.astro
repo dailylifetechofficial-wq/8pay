@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import { CONTACT_EMAIL } from '../data/site';
 import Figure from '../components/Figure.astro';
 import Calc from '../components/Calc.astro';
 const faq = [];
@@ -7,7 +8,7 @@ const toc = [];
 const related = ["terms-of-condition", "contact-us"];
 ---
 
-<SiteLayout title="Privacy Policy: Data, Cookies and Advertising | 8PayCommission" description="Privacy policy for 8paycommission.com: browser-only calculators, Google AdSense cookies, server logs, your choices and your rights under Indian law." slug="privacy-policy" h1="Privacy Policy" lead="What we collect, how ads work and your choices." faq={faq} toc={toc} related={related} pageType="info" breadcrumbLabel="Privacy Policy">
+<SiteLayout title="Privacy Policy | 8PayCommission" description="Privacy policy for 8paycommission.com: browser-only calculators, Google AdSense cookies, server logs, your choices and your rights under Indian law." slug="privacy-policy" h1="Privacy Policy" lead="What we collect, how ads work and your choices." faq={faq} toc={toc} related={related} pageType="info" breadcrumbLabel="Privacy Policy">
 
 <p>Last revised: 3 November 2026. This policy explains what 8paycommission.com collects, how advertising cookies work and your choices.</p>
 <h2 id="calculators">Calculators run in your browser</h2>
@@ -29,7 +30,7 @@ const related = ["terms-of-condition", "contact-us"];
 <h2 id="links">External links</h2>
 <p>We link to government and other sites. We do not control their content or privacy practices.</p>
 <h2 id="rights">Your rights</h2>
-<p>Under the Digital Personal Data Protection Act, 2023 and similar laws, you may ask us to access, correct or delete personal data we hold, such as emails you sent. Write to <a href="mailto:dailylifetech.official@gmail.com">dailylifetech.official@gmail.com</a>.</p>
+<p>Under the Digital Personal Data Protection Act, 2023 and similar laws, you may ask us to access, correct or delete personal data we hold, such as emails you sent. Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
 <h2 id="children">Children</h2>
 <p>This site is intended for adults and does not knowingly collect information from children.</p>
 <h2 id="changes">Changes</h2>

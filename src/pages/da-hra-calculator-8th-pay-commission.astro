@@ -20,11 +20,11 @@ const faq = [
   "a": "The commission is reviewing allowances as part of its brief. Rates and structures have not been announced."
  }
 ];
-const toc = [{"id": "da", "label": "DA"}, {"id": "hra", "label": "HRA"}, {"id": "ta", "label": "Transport Allowance"}, {"id": "example", "label": "Example"}, {"id": "faq", "label": "FAQ"}];
+const toc = [{"id": "da", "label": "DA"}, {"id": "hra", "label": "HRA"}, {"id": "ta", "label": "Transport Allowance"}, {"id": "example", "label": "Example"}, {"id": "current-pay", "label": "Current pay"}, {"id": "faq", "label": "FAQ"}];
 const related = ["hra-slabs-8th-pay-commission", "da-hike-latest-news", "8th-pay-commission-salary-calculator"];
 ---
 
-<SiteLayout title="DA, HRA and TA Calculator for Central Government Employees" description="Calculate DA at 63%, HRA (X, Y, Z cities) and Transport Allowance by pay level. Includes current rates, TA slabs and a worked example. Updated Nov 2026." slug="da-hra-calculator-8th-pay-commission" h1="DA, HRA and TA Calculator" lead="One calculator for the three main allowances on a central government payslip." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="DA, HRA and TA Calculator">
+<SiteLayout title="8th Pay Commission HRA Calculator: DA, HRA and TA by Level" description="Calculate DA at 63%, HRA (X, Y, Z cities) and Transport Allowance by pay level. Includes current rates, TA slabs and a worked example. Updated Nov 2026." slug="da-hra-calculator-8th-pay-commission" h1="8th Pay Commission HRA, DA and TA Calculator" lead="One calculator for the three main allowances on a central government payslip." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="DA, HRA and TA Calculator">
 
 <div class="answer"><p><strong>Current rates:</strong> DA is 63% of basic pay from 1 July 2026. HRA is 30%, 20% and 10% of basic pay for X, Y and Z cities. Transport Allowance is a fixed amount by pay level and city, with DA added. Use the calculator below to see all three together.</p></div>
 <Calc name="allowance" title="DA, HRA and TA calculator" intro="Select your level, city class and DA rate to see each allowance and the gross pay." />
@@ -43,5 +43,9 @@ const related = ["hra-slabs-8th-pay-commission", "da-hike-latest-news", "8th-pay
 <h2 id="example">Example: Level 6 in a Class X city</h2>
 <div class="table-wrap"><table><thead><tr><th>Item</th><th class="num">Amount</th></tr></thead><tbody><tr><th scope="row">Basic pay</th><td class="num">₹35,400</td></tr><tr><th scope="row">DA at 63%</th><td class="num">₹22,302</td></tr><tr><th scope="row">HRA at 30%</th><td class="num">₹10,620</td></tr><tr><th scope="row">TA (Levels 3 to 8, other city) ₹1,800 plus 63% DA</th><td class="num">₹2,934</td></tr><tr><th scope="row">Gross pay</th><td class="num">₹71,256</td></tr></tbody></table></div>
 <p>After a pay commission, DA falls to a low figure while basic rises. The salary calculator shows both sides together. See the <a href="/8th-pay-commission-salary-calculator/">8th Pay Commission salary calculator</a>.</p>
+
+
+<h2 id="current-pay">Current pay</h2>
+<p>To see your salary today, use the <a href="/central-government-salary-calculator/">current salary calculator</a> or the <a href="/government-employee-in-hand-salary-calculator/">in-hand calculator</a>.</p>
 
 </SiteLayout>

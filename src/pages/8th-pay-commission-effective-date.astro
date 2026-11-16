@@ -1,0 +1,43 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What is the effective date of the 8th Pay Commission?",
+  "a": "Media reports point to 1 January 2026, following the 6th and 7th commissions. The government has not formally confirmed it."
+ },
+ {
+  "q": "Is the effective date the same as the implementation date?",
+  "a": "No. The effective date is when new pay is counted from. The implementation or payment date is when your payslip first shows it. The difference is paid as arrears."
+ },
+ {
+  "q": "How many months of arrears will I get?",
+  "a": "That depends on the payment date. If revised pay is paid from early 2028, arrears would cover about 24 months from 1 January 2026."
+ },
+ {
+  "q": "Can the effective date change?",
+  "a": "Yes. It is decided by the Government after the commission reports, so it could differ from 1 January 2026."
+ }
+];
+const toc = [{"id": "meaning", "label": "What an effective date means"}, {"id": "why2026", "label": "Why 1 January 2026 is the expected date"}, {"id": "arrears", "label": "What the gap is worth"}, {"id": "what", "label": "What you should and should not assume"}, {"id": "faq", "label": "FAQ"}];
+const related = ["when-will-8th-pay-commission-start", "8th-pay-commission-implementation-date", "8th-pay-commission-arrears-calculator", "da-merger-8th-pay-commission"];
+---
+
+<SiteLayout title="8th Pay Commission Effective Date: 1 January 2026?" description="The 8th Pay Commission effective date is widely reported as 1 January 2026 but unconfirmed. See how it differs from the payment date and affects arrears." slug="8th-pay-commission-effective-date" h1="8th Pay Commission Effective Date Explained" lead="The effective date decides how far back your arrears go. The payment date decides when you see money." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Effective Date">
+
+<div class="answer"><p><strong>Short answer:</strong> The effective date of the 8th Pay Commission is widely reported as 1 January 2026, but it has not been formally notified. It is the date from which revised pay is calculated. The payment date, when your payslip first shows the new pay, will come later, and the gap is paid as arrears.</p></div>
+
+<h2 id="meaning">What an effective date means</h2>
+<p>The effective date is the day from which the new pay structure is treated as being in force. The payment date is the month in which your salary actually reflects it. Arrears bridge the two.</p><div class="table-wrap"><table><thead><tr><th></th><th>Effective date</th><th>Payment date</th></tr></thead><tbody><tr><th scope="row">Meaning</th><td>The date from which new pay is calculated</td><td>The month the first revised payslip is paid</td></tr><tr><th scope="row">Who sets it</th><td>The Government, in the notification</td><td>Depends on report, Cabinet and payroll</td></tr><tr><th scope="row">Status for the 8th CPC</th><td>Widely reported as 1 January 2026; not notified</td><td>Unknown</td></tr><tr><th scope="row">Effect on you</th><td>Decides how many months of arrears you get</td><td>Decides when you receive them</td></tr></tbody></table></div>
+
+<h2 id="why2026">Why 1 January 2026 is the expected date</h2>
+<p>The 6th and 7th commissions both made their revised pay effective from 1 January of the year the previous structure's ten-year cycle ended (2006 and 2016). The 7th CPC pay structure took effect on 1 January 2016, so a ten-year cycle ends on 31 December 2025. Media reports therefore point to 1 January 2026 as the reference date for the 8th CPC. The government has not confirmed it, and the final date will be set when the Cabinet decides.</p>
+
+<h2 id="arrears">What the gap is worth</h2>
+<Figure name="effective-date-vs-payment-date" /><p>Arrears equal the monthly gross difference between revised and current pay multiplied by the months between the effective date and the first revised payslip. This table uses the salary calculator's defaults (Class X city, 2.28 fitment, DA restarting at 0% and HRA at 24% after revision) and the three payment scenarios from <a href="/when-will-8th-pay-commission-start/">when will it start</a>.</p><div class="table-wrap"><table><thead><tr><th>Pay level</th><th class="num">Monthly gross gain</th><th class="num">Arrears at 20 months</th><th class="num">At 24 months</th><th class="num">At 33 months</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">₹15,533</td><td class="num">₹3,10,660</td><td class="num">₹3,72,792</td><td class="num">₹5,12,589</td></tr><tr><th scope="row">Level 6</th><td class="num">₹30,612</td><td class="num">₹6,12,240</td><td class="num">₹7,34,688</td><td class="num">₹10,10,196</td></tr><tr><th scope="row">Level 10</th><td class="num">₹48,055</td><td class="num">₹9,61,100</td><td class="num">₹11,53,320</td><td class="num">₹15,85,815</td></tr></tbody></table></div><p>The same assumptions at Level 6 show how the fitment factor changes the result:</p><div class="table-wrap"><table><thead><tr><th>Fitment factor</th><th class="num">Monthly gross gain (Level 6)</th><th class="num">Arrears at 24 months</th></tr></thead><tbody><tr><th scope="row">1.92</th><td class="num">₹14,864</td><td class="num">₹3,56,736</td></tr><tr><th scope="row">2.28</th><td class="num">₹30,612</td><td class="num">₹7,34,688</td></tr><tr><th scope="row">2.57</th><td class="num">₹43,384</td><td class="num">₹10,41,216</td></tr><tr><th scope="row">2.86</th><td class="num">₹56,032</td><td class="num">₹13,44,768</td></tr></tbody></table></div><p>These are estimates before tax. Arrears are taxable, and tax relief for salary received in arrears may be available under current law.</p>
+
+<h2 id="what">What you should and should not assume</h2>
+<ul><li>Do not assume a date until the Cabinet notifies one.</li><li>Keep records of your pay history from 1 January 2026, because arrears depend on it.</li><li>DA will keep rising under 7th CPC rules until a new structure is notified, and DA already paid is usually absorbed into the new basic pay.</li><li>Check the <a href="/8th-pay-commission-arrears-calculator/">arrears calculator</a> for your own level.</li></ul>
+
+</SiteLayout>

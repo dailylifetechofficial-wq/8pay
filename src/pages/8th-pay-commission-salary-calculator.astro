@@ -20,11 +20,11 @@ const faq = [
   "a": "No. The calculation runs in your browser and nothing is sent to our servers."
  }
 ];
-const toc = [{"id": "example", "label": "Worked example"}, {"id": "inputs", "label": "Inputs explained"}, {"id": "limits", "label": "What it does not model"}, {"id": "faq", "label": "FAQ"}];
-const related = ["fitment-factor-8th-pay-commission", "8th-pay-commission-pay-matrix", "8th-pay-commission-arrears-calculator", "da-merger-8th-pay-commission"];
+const toc = [{"id": "example", "label": "Worked example"}, {"id": "inputs", "label": "Inputs explained"}, {"id": "limits", "label": "What it does not model"}, {"id": "more-calcs", "label": "More calculators and level pages"}, {"id": "faq", "label": "FAQ"}];
+const related = ["fitment-factor-8th-pay-commission", "8th-pay-commission-pay-matrix", "8th-pay-commission-arrears-calculator", "da-merger-8th-pay-commission", "8th-pay-commission-calculator", "central-government-salary-calculator", "8th-pay-commission-level-6-salary"];
 ---
 
-<SiteLayout title="8th Pay Commission Salary Calculator: In-Hand Pay by Level (2026)" description="Free 8th Pay Commission salary calculator. Compare current pay with 1.92, 2.28, 2.57 and 2.86 fitment scenarios, with DA, HRA, TA and NPS/UPS deductions." slug="8th-pay-commission-salary-calculator" h1="8th Pay Commission Salary Calculator" lead="Estimate monthly pay under four fitment scenarios and compare it with today." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Salary Calculator" alternate="hi/8th-pay-commission-salary-calculator">
+<SiteLayout title="8th Pay Commission Salary Calculator: In-Hand Pay 2026" description="Free 8th Pay Commission salary calculator. Compare current pay with 1.92, 2.28, 2.57 and 2.86 fitment, with DA, HRA, TA and NPS." slug="8th-pay-commission-salary-calculator" h1="8th Pay Commission Salary Calculator (8th CPC)" lead="Estimate monthly pay under four fitment scenarios and compare it with today." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Salary Calculator" alternate="hi/8th-pay-commission-salary-calculator">
 
 <div class="answer"><p><strong>How it works:</strong> The calculator multiplies your current basic pay by an assumed fitment factor, adds DA, HRA and Transport Allowance, and subtracts NPS/UPS and other deductions. It then sets the result beside your pay today (DA 63%). Every 8th CPC input is an assumption, because the commission has not announced any figure.</p></div>
 <Calc name="salary" title="8th Pay Commission salary calculator" intro="Choose your level, a fitment scenario and the city class. Change the DA and HRA assumptions to test different outcomes." />
@@ -66,5 +66,9 @@ const related = ["fitment-factor-8th-pay-commission", "8th-pay-commission-pay-ma
 <li><strong>Forgetting deductions.</strong> NPS or UPS takes 10% of basic plus DA, so a bigger basic raises your contribution too.</li>
 <li><strong>Treating arrears as monthly pay.</strong> Arrears are a one-time payment, taxed in the year received.</li>
 </ol>
+
+
+<h2 id="more-calcs">More calculators and level pages</h2>
+<p>For pay today use the <a href="/central-government-salary-calculator/">current salary calculator</a> or the <a href="/government-employee-in-hand-salary-calculator/">in-hand salary calculator</a>. Every tool is listed on the <a href="/8th-pay-commission-calculator/">8th Pay Commission calculator</a> page. Level-wise estimates: <a href="/8th-pay-commission-level-1-salary/">Level 1</a>, <a href="/8th-pay-commission-level-3-salary/">Level 3</a>, <a href="/8th-pay-commission-level-5-salary/">Level 5</a>, <a href="/8th-pay-commission-level-6-salary/">Level 6</a>, <a href="/8th-pay-commission-level-7-salary/">Level 7</a>, <a href="/8th-pay-commission-level-8-salary/">Level 8</a>, <a href="/8th-pay-commission-level-9-salary/">Level 9</a>, <a href="/8th-pay-commission-level-10-salary/">Level 10</a>, <a href="/8th-pay-commission-level-11-salary/">Level 11</a>.</p>
 
 </SiteLayout>

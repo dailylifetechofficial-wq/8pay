@@ -1,0 +1,43 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "What happened on the 8th Pay Commission in 2026?",
+  "a": "The commission invited memoranda between 5 March and 15 June 2026, held stakeholder consultations, and has not yet reported. DA rose to 60% in April and to 63% on 28 October."
+ },
+ {
+  "q": "Has the 8th Pay Commission submitted its report?",
+  "a": "No. The report is due about May 2027, 18 months after the commission was notified on 3 November 2025."
+ },
+ {
+  "q": "Will the 8th Pay Commission start in 2027?",
+  "a": "The effective date is widely reported as 1 January 2026, but revised pay can start only after the report and Cabinet approval. Past patterns point to late 2027 or 2028 for the first revised payslip."
+ },
+ {
+  "q": "What is the DA now?",
+  "a": "63% of basic pay from 1 July 2026. The next revision, from 1 January 2027, has not been announced."
+ }
+];
+const toc = [{"id": "status", "label": "Where things stand"}, {"id": "months", "label": "2026 month by month"}, {"id": "next", "label": "What to watch before the report"}, {"id": "headlines", "label": "How to read the headlines"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-latest-news", "when-will-8th-pay-commission-start", "8th-pay-commission-effective-date", "da-hike-latest-news"];
+---
+
+<SiteLayout title="8th CPC Update 2026: Timeline, DA, Fitment and What Is Next" description="Everything that happened on the 8th CPC in 2026: memorandum window, DA at 60% and 63%, stakeholder visits, and what to expect before the report in May 2027." slug="8th-cpc-update-2026" h1="8th CPC Update 2026: What Has Happened and What Comes Next" lead="A month-by-month review of 2026, a status table and a list of the dates to watch before the commission reports." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="8th CPC Update 2026">
+
+<div class="answer"><p><strong>Short answer:</strong> In 2026 the 8th Pay Commission collected evidence, DA rose to 60% and then 63%, and no fitment factor, matrix or payment date was announced. The report is due about May 2027. Until the Cabinet accepts it, no revised salary can be paid.</p></div>
+
+<h2 id="status">Where things stand</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Status at 3 November 2026</th></tr></thead><tbody><tr><th scope="row">Commission constituted</th><td>Yes. Notified on 3 November 2025 by the Finance Ministry.</td></tr><tr><th scope="row">Members</th><td>Justice Ranjana Prakash Desai (chair), Prof. Pulak Ghosh (part-time member), Pankaj Jain (member-secretary).</td></tr><tr><th scope="row">Report due</th><td>About May 2027, 18 months after constitution.</td></tr><tr><th scope="row">Memoranda</th><td>Window closed on 15 June 2026 after two extensions.</td></tr><tr><th scope="row">Fitment factor</th><td>Not announced.</td></tr><tr><th scope="row">New pay matrix</th><td>Not announced.</td></tr><tr><th scope="row">Effective date</th><td>Widely reported as 1 January 2026; not formally notified.</td></tr><tr><th scope="row">DA</th><td>63% from 1 July 2026, approved by the Cabinet on 28 October 2026.</td></tr></tbody></table></div>
+
+<h2 id="months">2026 month by month</h2>
+<Figure name="8th-cpc-2026-timeline" /><ul><li><strong>5 March.</strong> The commission opened its online memorandum window at 8cpc.gov.in. The first deadline of 30 April was extended to 31 May and then to 15 June.</li><li><strong>April.</strong> DA and DR rose from 58% to 60%, effective from 1 January 2026, and were paid with arrears.</li><li><strong>15 June.</strong> Final date for memoranda. Staff-side bodies had made their demands public by then: Rs 69,000 minimum pay, 3.83 fitment, 20% interim relief and 50% DA merger. See <a href="/8th-pay-commission-demands-interim-relief/">staff demands</a>.</li><li><strong>August.</strong> In replies to Parliament the government said the commission had not yet submitted its report and that no fitment factor had been decided, as reported in the press.</li><li><strong>September.</strong> Press reports described stakeholder interactions planned in Chennai, Puducherry and Chandigarh as part of the commission's consultation.</li><li><strong>28 October.</strong> The Cabinet approved DA and DR at 63% from 1 July 2026, at a cost of about Rs 10,016 crore a year. See <a href="/da-hike-latest-news/">DA hike</a>.</li></ul>
+
+<h2 id="next">What to watch before the report</h2>
+<p>These are the dated or predictable events between now and the commission's deadline.</p><div class="table-wrap"><table><thead><tr><th>When</th><th>What</th><th>Why it matters</th></tr></thead><tbody><tr><th scope="row">From 1 January 2027</th><td>Next DA and DR revision</td><td>Announced after the fact, usually in March or April, and paid with arrears.</td></tr><tr><th scope="row">February 2027</th><td>Union Budget 2027-28</td><td>Shows whether money has been set aside for a pay revision.</td></tr><tr><th scope="row">Any time</th><td>Interim report</td><td>The Terms of Reference allow reports on specific subjects, which could be acted on early.</td></tr><tr><th scope="row">About May 2027</th><td>Final report due</td><td>After this the Finance Ministry and the Cabinet decide what to accept.</td></tr></tbody></table></div>
+
+<h2 id="headlines">How to read the headlines</h2>
+<p>Most "salary hike" figures in 2026 headlines came from analysts or staff bodies, not from the government. A useful test is the source: a Cabinet statement, a Finance Ministry order, a reply in Parliament or the commission's own portal is official. Our <a href="/8th-pay-commission-latest-news/">latest news page</a> keeps a timeline tied to official sources, and <a href="/when-will-8th-pay-commission-start/">when will it start</a> explains the likely schedule.</p>
+
+</SiteLayout>

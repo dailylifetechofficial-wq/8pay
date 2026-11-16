@@ -1,0 +1,43 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Has the 8th Pay Commission been approved by the Cabinet?",
+  "a": "Yes. The Cabinet gave in-principle approval on 16 January 2025 and approved the Terms of Reference, chair and members on 28 October 2025."
+ },
+ {
+  "q": "Is the 8th Pay Commission salary hike approved?",
+  "a": "No. The commission has not reported, and no fitment factor, matrix or implementation date has been approved."
+ },
+ {
+  "q": "When will the Cabinet decide on the 8th Pay Commission report?",
+  "a": "After the report, which is due about May 2027. For the 7th CPC the gap between report and Cabinet decision was seven months."
+ },
+ {
+  "q": "Where can I see the official documents?",
+  "a": "The Finance Ministry publishes notifications, and the commission's own portal is 8cpc.gov.in. Our latest news page links the timeline to official sources."
+ }
+];
+const toc = [{"id": "stages", "label": "Approval stages and status"}, {"id": "qa", "label": "What has and has not been approved"}, {"id": "next", "label": "How the Cabinet decision will come about"}, {"id": "members", "label": "Who is on the commission"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-members-and-terms-of-reference", "when-will-8th-pay-commission-start", "8th-pay-commission-latest-news", "8th-pay-commission-implementation-date"];
+---
+
+<SiteLayout title="8th Pay Commission Cabinet Approval: Done and Pending" description="The Cabinet approved the 8th Pay Commission and its terms of reference. It has not yet decided on any pay recommendation. See each stage and what comes next." slug="8th-pay-commission-cabinet-approval-status" h1="8th Pay Commission Cabinet Approval Status" lead="Two approvals are complete. The ones that decide your salary are still ahead." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Cabinet Approval Status">
+
+<div class="answer"><p><strong>Short answer:</strong> The Union Cabinet has approved the 8th Pay Commission itself: in-principle approval on 16 January 2025 and approval of its Terms of Reference, chair and members on 28 October 2025. It has not approved any recommendation, because the commission has not yet reported.</p></div>
+
+<h2 id="stages">Approval stages and status</h2>
+<Figure name="cabinet-approval-stages" /><div class="table-wrap"><table><thead><tr><th>Stage</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><th scope="row">Cabinet in-principle approval to set up the commission</th><td>16 Jan 2025</td><td>Done</td></tr><tr><th scope="row">Cabinet approves Terms of Reference, chair and members</th><td>28 Oct 2025</td><td>Done</td></tr><tr><th scope="row">Finance Ministry notifies the commission</th><td>3 Nov 2025</td><td>Done</td></tr><tr><th scope="row">Commission submits its report</th><td>Due about May 2027</td><td>Pending</td></tr><tr><th scope="row">Cabinet decision on the recommendations</th><td>After the report</td><td>Pending</td></tr><tr><th scope="row">Finance Ministry notifies revised pay rules and matrix</th><td>After the Cabinet decision</td><td>Pending</td></tr></tbody></table></div>
+
+<h2 id="qa">What has and has not been approved</h2>
+<div class="table-wrap"><table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody><tr><th scope="row">Has the Cabinet approved the 8th Pay Commission?</th><td>Yes. Formation and Terms of Reference are approved.</td></tr><tr><th scope="row">Has the Cabinet approved a salary hike?</th><td>No. There is no approved fitment factor, matrix or payment date.</td></tr><tr><th scope="row">Has the Cabinet approved the 8th CPC report?</th><td>No. The report has not been submitted.</td></tr><tr><th scope="row">Has the Cabinet approved DA?</th><td>Yes, but DA is a separate decision: 63% from 1 July 2026, approved on 28 October 2026.</td></tr></tbody></table></div>
+
+<h2 id="next">How the Cabinet decision will come about</h2>
+<p>After a commission reports, the Finance Ministry examines the cost and the recommendations, and a high-level committee of senior officers reviews them. The Cabinet then decides item by item. After the 7th CPC reported in November 2015, the Cabinet approved its recommendations in June 2016 and the resolution was notified in July 2016. The Cabinet may accept, modify or reject any recommendation.</p><p>For the 8th CPC, this stage cannot begin until the report arrives, due about May 2027. The <a href="/when-will-8th-pay-commission-start/">timeline page</a> shows what that implies for the first revised payslip.</p>
+
+<h2 id="members">Who is on the commission</h2>
+<p>The commission is a three-member body: Justice Ranjana Prakash Desai (chairperson), Prof. Pulak Ghosh of IIM Bangalore (part-time member) and Pankaj Jain (member-secretary). See <a href="/8th-pay-commission-members-and-terms-of-reference/">members and Terms of Reference</a>.</p>
+
+</SiteLayout>

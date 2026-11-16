@@ -20,11 +20,11 @@ const faq = [
   "a": "Not announced. Earlier commissions absorbed accumulated DR into the revised basic pension through the fitment factor."
  }
 ];
-const toc = [{"id": "hike", "label": "Expected pension hike"}, {"id": "rules", "label": "Rules that matter"}, {"id": "nps-ups", "label": "NPS and UPS"}, {"id": "faq", "label": "FAQ"}];
-const related = ["ups-unified-pension-scheme-8th-cpc", "gratuity-limit-8th-pay-commission", "8th-pay-commission-arrears-calculator", "da-merger-8th-pay-commission"];
+const toc = [{"id": "hike", "label": "Expected pension hike"}, {"id": "rules", "label": "Rules that matter"}, {"id": "nps-ups", "label": "NPS and UPS"}, {"id": "pensioners", "label": "Related pension guides"}, {"id": "faq", "label": "FAQ"}];
+const related = ["ups-unified-pension-scheme-8th-cpc", "gratuity-limit-8th-pay-commission", "8th-pay-commission-arrears-calculator", "da-merger-8th-pay-commission", "retired-central-government-employee-pension-revision-8th-cpc", "ups-vs-nps-under-8th-pay-commission"];
 ---
 
-<SiteLayout title="8th Pay Commission Pension Calculator and Expected Pension Hike" description="Estimate your revised pension under 8th Pay Commission scenarios. Minimum pension, DR at 63%, family pension and commutation rules explained with examples." slug="8th-pay-commission-pension-calculator" h1="8th Pay Commission Pension Calculator and Pension Hike" lead="Revised pension for existing pensioners under assumed fitment scenarios." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Pension Calculator">
+<SiteLayout title="8th Pay Commission Pension Calculator and Expected Hike" description="Estimate your revised pension under 8th Pay Commission scenarios. Minimum pension, DR at 63%, family pension and commutation rules explained with examples." slug="8th-pay-commission-pension-calculator" h1="8th Pay Commission Pension Calculator and Pension Hike" lead="Revised pension for existing pensioners under assumed fitment scenarios." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Pension Calculator">
 
 <div class="answer"><p><strong>How pensions are revised:</strong> In the 7th CPC, existing basic pensions were multiplied by the same 2.57 factor as pay. If the 8th CPC repeats that approach, revised pension = current basic pension &times; fitment factor, with Dearness Relief restarting from a low base. The commission has not announced the factor.</p></div>
 <Calc name="pensionExisting" title="8th Pay Commission pension calculator" intro="Enter the basic pension shown in your PPO, before Dearness Relief." />
@@ -61,5 +61,9 @@ const related = ["ups-unified-pension-scheme-8th-cpc", "gratuity-limit-8th-pay-c
 <li>Submit your annual Jeevan Pramaan life certificate on time so that revised pension and arrears are not held up.</li>
 <li>Pensioners who retired before 2016 were revised using the 2.57 factor on their pension as of 31 December 2015, so check your PPO shows that revision.</li>
 </ul>
+
+
+<h2 id="pensioners">Related pension guides</h2>
+<p>See <a href="/retired-central-government-employee-pension-revision-8th-cpc/">pension revision for retired employees</a> for the break-even factor and <a href="/ups-vs-nps-under-8th-pay-commission/">UPS vs NPS</a> for employees still in service.</p>
 
 </SiteLayout>

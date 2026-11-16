@@ -1,0 +1,43 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Which is the best 8th Pay Commission calculator?",
+  "a": "There is no single best one because each answers a different question. Use the salary calculator for monthly pay, the arrears calculator for back pay, and the pension calculator if you are retired. All use the same assumptions so results can be compared."
+ },
+ {
+  "q": "Are these calculators official?",
+  "a": "No. They are independent estimators. The Finance Ministry and 8cpc.gov.in publish official orders. The 8th CPC has not announced a fitment factor or matrix."
+ },
+ {
+  "q": "Why does the new column show lower DA?",
+  "a": "Past commissions merged the DA earned into basic pay through the fitment factor and restarted DA near zero. The calculators default to that pattern but let you change it."
+ },
+ {
+  "q": "Do the calculators store my data?",
+  "a": "No. They run in your browser and nothing you type is sent to a server by the calculators."
+ }
+];
+const toc = [{"id": "quick", "label": "Quick 8th Pay Commission salary calculator"}, {"id": "which", "label": "Which calculator should you use?"}, {"id": "how", "label": "How the calculators work"}, {"id": "limits", "label": "What the calculators cannot tell you"}, {"id": "faq", "label": "FAQ"}];
+const related = ["8th-pay-commission-salary-calculator", "8th-pay-commission-pay-matrix", "fitment-factor-8th-pay-commission", "8th-pay-commission-arrears-calculator", "8th-pay-commission-pension-calculator"];
+---
+
+<SiteLayout title="8th Pay Commission Calculator 2026: Salary, DA, Pension" description="Free 8th Pay Commission calculator: estimate salary, arrears, pension, gratuity and DA using 7th CPC rules and clear fitment scenarios. Updated Nov 2026." slug="8th-pay-commission-calculator" h1="8th Pay Commission Calculator: Salary, Arrears, Pension and DA" lead="Start with the salary calculator below, then use the guide to pick the right tool for arrears, pension, gratuity and allowances." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="All Calculators">
+
+<div class="answer"><p><strong>Short answer:</strong> The 8th Pay Commission has not announced a fitment factor, so every calculator here applies scenarios (1.92, 2.28, 2.57 and 2.86) to your current 7th CPC pay. Use the salary calculator below first, then the arrears, pension, gratuity and allowance tools for the rest.</p></div>
+
+<h2 id="quick">Quick 8th Pay Commission salary calculator</h2>
+<Calc name="salary" title="Estimate your 8th Pay Commission salary" intro="Choose your level, a fitment scenario and the city class. Change DA after revision to test a merger." />
+
+<h2 id="which">Which calculator should you use?</h2>
+<p>Each tool answers a different question. Pick by what you want to know, not by the name.</p><div class="table-wrap"><table><thead><tr><th>Your question</th><th>Calculator</th><th>What you enter</th></tr></thead><tbody><tr><th scope="row">What will my monthly pay be under the 8th CPC?</th><td><a href="/8th-pay-commission-salary-calculator/">Salary calculator</a></td><td>Pay level, basic pay, fitment scenario, city class</td></tr><tr><th scope="row">How much arrears could I get?</th><td><a href="/8th-pay-commission-arrears-calculator/">Arrears calculator</a></td><td>Same inputs plus months between effective date and payout</td></tr><tr><th scope="row">What will my pension be after revision?</th><td><a href="/8th-pay-commission-pension-calculator/">Pension calculator</a></td><td>Basic pension from your PPO and a fitment scenario</td></tr><tr><th scope="row">How much gratuity will I get?</th><td><a href="/gratuity-limit-8th-pay-commission/">Gratuity calculator</a></td><td>Last basic pay, DA and years of service</td></tr><tr><th scope="row">What do DA, HRA and TA add up to?</th><td><a href="/da-hra-calculator-8th-pay-commission/">DA, HRA and TA calculator</a></td><td>Level, city class and DA rate</td></tr><tr><th scope="row">What is my gross salary today?</th><td><a href="/central-government-salary-calculator/">Current salary calculator</a></td><td>Level, cell, DA rate and city class</td></tr><tr><th scope="row">What do I actually take home?</th><td><a href="/government-employee-in-hand-salary-calculator/">In-hand salary calculator</a></td><td>Level, cell, NPS or UPS, CGHS and other deductions</td></tr><tr><th scope="row">How much is a given matrix cell worth?</th><td><a href="/8th-pay-commission-pay-matrix/">Pay matrix lookup</a></td><td>Level and cell number</td></tr><tr><th scope="row">How much of a raise is a fitment factor really?</th><td><a href="/fitment-factor-8th-pay-commission/">Fitment factor simulator</a></td><td>Basic pay and DA at the date of merger</td></tr></tbody></table></div><Figure name="calculators-overview" />
+
+<h2 id="how">How the calculators work</h2>
+<ol><li><strong>New basic pay.</strong> Your current basic pay is multiplied by the fitment factor you choose and rounded to the nearest Rs 100, which is how a pay matrix cell behaves.</li><li><strong>Dearness Allowance.</strong> Today it is 63% of basic pay. After a pay commission, DA usually restarts near zero because it is merged into the new basic pay, so the calculators let you set DA after revision (default 0%).</li><li><strong>HRA and Transport Allowance.</strong> HRA is 30, 20 or 10% of basic by city class today. After a reset the lower 24, 16 and 8% rates applied in 2016, which is the calculators' default for the revised column. Transport Allowance depends on level and city.</li><li><strong>Deductions.</strong> NPS or UPS is 10% of basic plus DA. Other deductions such as CGHS or CGEGIS are an input you can edit.</li></ol><p>For a closer look at one level, open the salary by level pages: <a href="/8th-pay-commission-level-1-salary/">Level 1</a>, <a href="/8th-pay-commission-level-3-salary/">Level 3</a>, <a href="/8th-pay-commission-level-5-salary/">Level 5</a>, <a href="/8th-pay-commission-level-6-salary/">Level 6</a>, <a href="/8th-pay-commission-level-7-salary/">Level 7</a>, <a href="/8th-pay-commission-level-8-salary/">Level 8</a>, <a href="/8th-pay-commission-level-9-salary/">Level 9</a>, <a href="/8th-pay-commission-level-10-salary/">Level 10</a>, <a href="/8th-pay-commission-level-11-salary/">Level 11</a>.</p>
+
+<h2 id="limits">What the calculators cannot tell you</h2>
+<ul><li>They cannot say what the 8th CPC will recommend. Every 8th CPC number is a scenario, not a forecast.</li><li>Official pay will be fixed at a cell of a new matrix, so your real figure can sit a cell above or below the rounded estimate.</li><li>Income tax, professional tax and recoveries vary by person and are not modelled.</li><li>State government employees follow their own state pay commissions. See <a href="/state-government-8th-pay-commission/">state government employees</a>.</li></ul>
+
+</SiteLayout>

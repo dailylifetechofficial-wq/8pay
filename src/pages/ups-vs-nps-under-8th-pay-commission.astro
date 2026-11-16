@@ -1,0 +1,43 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Which is better, UPS or NPS?",
+  "a": "There is no universal answer. UPS gives an assured payout tied to your basic pay, while NPS gives market-linked growth with no assured pension. The better choice depends on service length, risk appetite and family needs."
+ },
+ {
+  "q": "Does the 8th Pay Commission change UPS?",
+  "a": "Not the rules directly, but UPS pays 50% of the average basic pay of the last 12 months, so a revised basic pay raises the payout."
+ },
+ {
+  "q": "What is the minimum UPS pension?",
+  "a": "Rs 10,000 a month after at least 10 years of service, plus Dearness Relief."
+ },
+ {
+  "q": "Can I switch from UPS to NPS?",
+  "a": "A one-time switch back to NPS was allowed. Check the current Department of Financial Services orders for the latest option."
+ }
+];
+const toc = [{"id": "compare", "label": "UPS and NPS compared"}, {"id": "8thcpc", "label": "How the 8th Pay Commission affects each"}, {"id": "corpus", "label": "How big a corpus matches a UPS payout"}, {"id": "decide", "label": "Questions to ask before choosing"}, {"id": "faq", "label": "FAQ"}];
+const related = ["ups-unified-pension-scheme-8th-cpc", "8th-pay-commission-pension-calculator", "government-employee-in-hand-salary-calculator", "gratuity-limit-8th-pay-commission"];
+---
+
+<SiteLayout title="UPS vs NPS Under the 8th Pay Commission: Which Is Better?" description="Compare the Unified Pension Scheme and NPS for central government employees, how the 8th CPC pay revision affects each, and a corpus needed to match UPS." slug="ups-vs-nps-under-8th-pay-commission" h1="UPS vs NPS Under the 8th Pay Commission" lead="Both schemes depend on your basic pay, so the commission affects both. Here is how they differ and what a decision depends on." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="UPS vs NPS">
+
+<div class="answer"><p><strong>Short answer:</strong> UPS promises an assured payout of 50% of average basic pay over the last 12 months for 25 years of service. NPS gives a market-linked corpus with no assured pension. Both are tied to basic pay, so a higher basic from the 8th CPC raises either. This is general information, not financial advice.</p></div>
+
+<h2 id="compare">UPS and NPS compared</h2>
+<Figure name="ups-vs-nps-vs-ops" /><div class="table-wrap"><table><thead><tr><th>Feature</th><th>UPS</th><th>NPS</th></tr></thead><tbody><tr><th scope="row">Pension</th><td>Assured: 50% of the average basic pay of the last 12 months for 25 years of service, proportionate for 10 to 25 years</td><td>Not assured. Depends on the corpus and annuity rates</td></tr><tr><th scope="row">Minimum</th><td>Rs 10,000 a month after at least 10 years</td><td>None</td></tr><tr><th scope="row">Employee contribution</th><td>10% of basic plus DA</td><td>10% of basic plus DA</td></tr><tr><th scope="row">Government contribution</th><td>18.5%, with the extra above NPS going to a pooled corpus</td><td>14%</td></tr><tr><th scope="row">Inflation protection</th><td>Dearness Relief on the payout</td><td>Not assured</td></tr><tr><th scope="row">Family pension</th><td>60% of the pension at death</td><td>Depends on the annuity chosen</td></tr><tr><th scope="row">Lump sum at retirement</th><td>One-tenth of monthly pay plus DA for every six months of service, plus gratuity</td><td>Part of the corpus, with the rest used for an annuity</td></tr></tbody></table></div>
+
+<h2 id="8thcpc">How the 8th Pay Commission affects each</h2>
+<ul><li><strong>UPS.</strong> The payout is a percentage of basic pay at retirement, so a revised basic pay raises it directly. A Level 12 employee with Rs 78,800 basic would get an assured payout of about Rs 39,400 under 25 years of service. If basic were revised to Rs 1,79,700 (a 2.28 scenario), it would be about Rs 89,800, before Dearness Relief.</li><li><strong>NPS.</strong> Contributions are percentages of basic pay plus DA, so a larger basic raises monthly contributions. The result still depends on market returns.</li></ul><p>See <a href="/ups-unified-pension-scheme-8th-cpc/">UPS and the 8th CPC</a> for the full rules and an estimator.</p>
+
+<h2 id="corpus">How big a corpus matches a UPS payout</h2>
+<p>Take a UPS payout of Rs 50,000 a month, which is 50% of an average basic pay of Rs 1,00,000. To buy the same income from an annuity, you would need a corpus of the amount below, depending on the annuity rate. The last column shows the corpus needed if only 40% of it is used to buy an annuity, which is the minimum share for most NPS exits.</p><div class="table-wrap"><table><thead><tr><th>Annuity rate</th><th class="num">Corpus if all of it buys an annuity</th><th class="num">Corpus if 40% buys the annuity</th></tr></thead><tbody><tr><th scope="row">5%</th><td class="num">Rs 1,20,00,000</td><td class="num">Rs 3,00,00,000</td></tr><tr><th scope="row">6%</th><td class="num">Rs 1,00,00,000</td><td class="num">Rs 2,50,00,000</td></tr><tr><th scope="row">7%</th><td class="num">Rs 85,71,429</td><td class="num">Rs 2,14,28,571</td></tr></tbody></table></div><p>This ignores two things that favour UPS: its payout gets Dearness Relief, whereas a basic annuity usually does not rise, and its family pension is fixed at 60%. It also ignores something that favours NPS: the part of the corpus not used for an annuity remains yours to use or leave to heirs. The right choice depends on your own situation.</p>
+
+<h2 id="decide">Questions to ask before choosing</h2>
+<div class="table-wrap"><table><thead><tr><th>Your situation</th><th>What it points to</th></tr></thead><tbody><tr><th scope="row">You expect 25 or more years of service</th><td>UPS gives the full 50% payout, so it is more attractive</td></tr><tr><th scope="row">You will have fewer than 10 years of service</th><td>UPS minimum rules may not apply; compare carefully</td></tr><tr><th scope="row">You are comfortable with market risk and want upside</th><td>NPS keeps the corpus and its growth</td></tr><tr><th scope="row">You value certainty and Dearness Relief</th><td>UPS gives an assured, indexed payout</td></tr><tr><th scope="row">You may want to leave a corpus to heirs</th><td>NPS keeps more of the corpus yours</td></tr></tbody></table></div><p>Employees under NPS had a window to move to UPS, with a one-time switch back to NPS. Check the current Department of Financial Services orders for any open option, and speak to a qualified adviser before deciding.</p>
+
+</SiteLayout>

@@ -1,0 +1,46 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "How is basic pay fixed after a pay commission?",
+  "a": "Existing basic pay is multiplied by the fitment factor and the result is fixed at the same or the next higher cell of the new matrix level that matches the old pay."
+ },
+ {
+  "q": "What fitment factor was used in the 7th CPC?",
+  "a": "2.57 for all employees, applied to pay band pay plus grade pay."
+ },
+ {
+  "q": "Why did minimum pay become Rs 18,000?",
+  "a": "Rs 7,000 (pay band pay of Rs 5,200 plus grade pay of Rs 1,800) times 2.57 is Rs 17,990, and the first cell of Level 1 at or above that figure is Rs 18,000."
+ },
+ {
+  "q": "Does the fitment factor include DA?",
+  "a": "In past commissions it absorbed the DA earned, which is why the real raise is smaller than the factor suggests. The 8th CPC has not said how it will treat DA."
+ }
+];
+const toc = [{"id": "steps", "label": "The four steps"}, {"id": "example", "label": "A 7th CPC example"}, {"id": "mapping", "label": "How old grade pay maps to a level"}, {"id": "estimate", "label": "How our calculators approximate fixation"}, {"id": "open", "label": "What the 8th CPC may change"}, {"id": "faq", "label": "FAQ"}];
+const related = ["fitment-factor-8th-pay-commission", "8th-pay-commission-pay-matrix", "da-merger-8th-pay-commission", "8th-pay-commission-salary-calculator"];
+---
+
+<SiteLayout title="How Basic Pay Is Fixed After a Pay Commission" description="Learn how basic pay is fixed after a Pay Commission: existing pay times the fitment factor, placed at a cell of the new matrix. Includes the 7th CPC example." slug="how-basic-pay-is-fixed-in-pay-commission" h1="How Basic Pay Is Fixed After a Pay Commission" lead="Existing pay is multiplied by the fitment factor and placed at the matching cell of the new matrix. Here is the method, with an example." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="How Basic Pay Is Fixed">
+
+<div class="answer"><p><strong>Short answer:</strong> Basic pay is fixed by multiplying existing pay by the fitment factor and placing the result at the same or the next higher cell of the matching level in the new pay matrix. For the 7th CPC the factor was 2.57. The 8th CPC has not announced its factor.</p></div>
+
+<h2 id="steps">The four steps</h2>
+<Figure name="basic-pay-fixation-steps" /><ol><li><strong>Take existing basic pay.</strong> The pay on the last day of the old structure. Under the 7th CPC that was pay band pay plus grade pay.</li><li><strong>Multiply by the fitment factor.</strong> The 7th CPC used 2.57 for everyone.</li><li><strong>Find the level.</strong> Each old grade pay or pay band maps to a level in the new matrix.</li><li><strong>Fix at a cell.</strong> The result is placed at the same figure in that level, or the next higher cell if there is no exact match.</li></ol>
+
+<h2 id="example">A 7th CPC example</h2>
+<p>A new entrant at the bottom of the old structure had pay band pay of Rs 5,200 and grade pay of Rs 1,800, a total of Rs 7,000. Multiplying by 2.57 gives Rs 17,990. The nearest matrix cell at or above that figure is Rs 18,000, which is the first cell of Level 1. That is why Rs 18,000 became the minimum basic pay.</p><p>The same pay then moves along the level at about 3% per annual increment. See the <a href="/8th-pay-commission-pay-matrix/">pay matrix</a> for every level.</p>
+
+<h2 id="mapping">How old grade pay maps to a level</h2>
+<p>The 7th CPC placed each employee in the level that matched the grade pay in the 6th CPC. The 8th CPC will build its own mapping, but the table shows the structure that is in force.</p><div class="table-wrap"><table><thead><tr><th>Level today</th><th class="num">Old grade pay</th><th class="num">Entry basic pay today</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">₹1,800</td><td class="num">₹18,000</td></tr><tr><th scope="row">Level 2</th><td class="num">₹1,900</td><td class="num">₹19,900</td></tr><tr><th scope="row">Level 3</th><td class="num">₹2,000</td><td class="num">₹21,700</td></tr><tr><th scope="row">Level 4</th><td class="num">₹2,400</td><td class="num">₹25,500</td></tr><tr><th scope="row">Level 5</th><td class="num">₹2,800</td><td class="num">₹29,200</td></tr><tr><th scope="row">Level 6</th><td class="num">₹4,200</td><td class="num">₹35,400</td></tr><tr><th scope="row">Level 7</th><td class="num">₹4,600</td><td class="num">₹44,900</td></tr><tr><th scope="row">Level 8</th><td class="num">₹4,800</td><td class="num">₹47,600</td></tr><tr><th scope="row">Level 9</th><td class="num">₹5,400</td><td class="num">₹53,100</td></tr><tr><th scope="row">Level 10</th><td class="num">₹5,400</td><td class="num">₹56,100</td></tr><tr><th scope="row">Level 11</th><td class="num">₹6,600</td><td class="num">₹67,700</td></tr><tr><th scope="row">Level 12</th><td class="num">₹7,600</td><td class="num">₹78,800</td></tr><tr><th scope="row">Level 13</th><td class="num">₹8,700</td><td class="num">₹1,23,100</td></tr><tr><th scope="row">Level 13A</th><td class="num">₹8,900</td><td class="num">₹1,31,100</td></tr><tr><th scope="row">Level 14</th><td class="num">₹10,000</td><td class="num">₹1,44,200</td></tr></tbody></table></div><p>Levels 9 and 10 share a grade pay of Rs 5,400 but sat in different pay bands. Levels 15 to 18 had no grade pay.</p>
+
+<h2 id="estimate">How our calculators approximate fixation</h2>
+<p>Our calculators multiply your current basic by the fitment factor and round to the nearest Rs 100. An official fixation places pay at an actual cell of the new matrix, so your real figure will usually be within a cell of the estimate and can be one cell higher. For example, a Level 6 employee at cell 10 with Rs 46,200 and a 2.28 factor gets Rs 1,05,336 before rounding and Rs 1,05,300 in our table.</p>
+
+<h2 id="open">What the 8th CPC may change</h2>
+<ul><li><strong>One factor or several.</strong> A uniform factor keeps the spread between levels. Separate factors for different bands would change it.</li><li><strong>The matrix itself.</strong> The commission may redesign the number of levels and the increment rate.</li><li><strong>DA treatment.</strong> Whether DA is merged decides if the factor is a real raise. See <a href="/da-merger-8th-pay-commission/">DA merger</a>.</li></ul>
+
+</SiteLayout>

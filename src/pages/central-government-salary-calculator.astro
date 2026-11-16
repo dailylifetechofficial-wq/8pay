@@ -1,0 +1,46 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "How is central government salary calculated?",
+  "a": "Gross salary is basic pay plus Dearness Allowance, House Rent Allowance and Transport Allowance with DA. Net salary is gross minus deductions such as NPS or UPS, CGHS and CGEGIS."
+ },
+ {
+  "q": "What is the DA rate for central government employees now?",
+  "a": "63% of basic pay from 1 July 2026. It was 60% from 1 January 2026."
+ },
+ {
+  "q": "What is the HRA rate for central government employees?",
+  "a": "30% of basic pay for Class X cities, 20% for Class Y and 10% for Class Z. Rates rose to this level when DA crossed 50%."
+ },
+ {
+  "q": "Is this the 8th Pay Commission salary?",
+  "a": "No. It shows pay under the current 7th CPC structure. For 8th CPC estimates use the salary calculator, which applies fitment scenarios."
+ }
+];
+const toc = [{"id": "calc", "label": "Calculate your current salary"}, {"id": "parts", "label": "How monthly salary is built"}, {"id": "table", "label": "Gross salary by level at the entry cell"}, {"id": "da", "label": "What the next DA hike will add"}, {"id": "why", "label": "Why your payslip may differ from the calculator"}, {"id": "faq", "label": "FAQ"}];
+const related = ["government-employee-in-hand-salary-calculator", "central-government-payslip-explained", "da-hike-latest-news", "8th-pay-commission-salary-calculator"];
+---
+
+<SiteLayout title="Central Government Salary Calculator 2026: Basic, DA, HRA" description="Calculate central government gross salary for any pay level and cell under the 7th CPC with DA at 63%, HRA at 30/20/10 and Transport Allowance." slug="central-government-salary-calculator" h1="Central Government Salary Calculator (7th CPC, DA 63%)" lead="Pick your pay level and cell to see basic pay, DA, HRA, Transport Allowance and gross salary today." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Current Salary Calculator">
+
+<div class="answer"><p><strong>Short answer:</strong> A central government employee's gross monthly salary is basic pay plus DA at 63% of basic, HRA at 30%, 20% or 10% by city class, and Transport Allowance with DA. A Level 6 employee at the entry cell in a Class X city earns about Rs 71,256 gross. Use the calculator for your own level and cell.</p></div>
+
+<h2 id="calc">Calculate your current salary</h2>
+<Calc name="cgsalary" title="Central government salary calculator" intro="Select your level and cell. Basic pay comes from the 7th CPC pay matrix." />
+
+<h2 id="parts">How monthly salary is built</h2>
+<p>Every central government payslip starts with basic pay from the pay matrix and adds allowances on top.</p><ul><li><strong>Basic pay.</strong> The cell you are in. Each annual increment moves you one cell down the same level, about 3% higher.</li><li><strong>Dearness Allowance.</strong> 63% of basic pay from 1 July 2026. See <a href="/da-hike-latest-news/">DA hike</a>.</li><li><strong>House Rent Allowance.</strong> 30% of basic in Class X cities, 20% in Class Y and 10% in Class Z. See <a href="/hra-slabs-8th-pay-commission/">HRA slabs</a>.</li><li><strong>Transport Allowance.</strong> A fixed slab by level and city, with DA added on top.</li></ul><p>Our <a href="/central-government-payslip-explained/">payslip guide</a> explains every line, including deductions.</p>
+
+<h2 id="table">Gross salary by level at the entry cell</h2>
+<p>The table shows gross monthly salary for each level at the first cell of the matrix, in a Class X city that is not on the higher-TPTA list. Cities in Class Y or Z have lower HRA.</p><div class="table-wrap"><table><thead><tr><th>Level</th><th class="num">Basic pay</th><th class="num">DA at 63%</th><th class="num">HRA (Class X, 30%)</th><th class="num">Transport Allowance with DA</th><th class="num">Gross monthly salary</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">₹18,000</td><td class="num">₹11,340</td><td class="num">₹5,400</td><td class="num">₹1,467</td><td class="num"><strong>₹36,207</strong></td></tr><tr><th scope="row">Level 2</th><td class="num">₹19,900</td><td class="num">₹12,537</td><td class="num">₹5,970</td><td class="num">₹1,467</td><td class="num"><strong>₹39,874</strong></td></tr><tr><th scope="row">Level 3</th><td class="num">₹21,700</td><td class="num">₹13,671</td><td class="num">₹6,510</td><td class="num">₹2,934</td><td class="num"><strong>₹44,815</strong></td></tr><tr><th scope="row">Level 4</th><td class="num">₹25,500</td><td class="num">₹16,065</td><td class="num">₹7,650</td><td class="num">₹2,934</td><td class="num"><strong>₹52,149</strong></td></tr><tr><th scope="row">Level 5</th><td class="num">₹29,200</td><td class="num">₹18,396</td><td class="num">₹8,760</td><td class="num">₹2,934</td><td class="num"><strong>₹59,290</strong></td></tr><tr><th scope="row">Level 6</th><td class="num">₹35,400</td><td class="num">₹22,302</td><td class="num">₹10,620</td><td class="num">₹2,934</td><td class="num"><strong>₹71,256</strong></td></tr><tr><th scope="row">Level 7</th><td class="num">₹44,900</td><td class="num">₹28,287</td><td class="num">₹13,470</td><td class="num">₹2,934</td><td class="num"><strong>₹89,591</strong></td></tr><tr><th scope="row">Level 8</th><td class="num">₹47,600</td><td class="num">₹29,988</td><td class="num">₹14,280</td><td class="num">₹2,934</td><td class="num"><strong>₹94,802</strong></td></tr><tr><th scope="row">Level 9</th><td class="num">₹53,100</td><td class="num">₹33,453</td><td class="num">₹15,930</td><td class="num">₹5,868</td><td class="num"><strong>₹1,08,351</strong></td></tr><tr><th scope="row">Level 10</th><td class="num">₹56,100</td><td class="num">₹35,343</td><td class="num">₹16,830</td><td class="num">₹5,868</td><td class="num"><strong>₹1,14,141</strong></td></tr><tr><th scope="row">Level 11</th><td class="num">₹67,700</td><td class="num">₹42,651</td><td class="num">₹20,310</td><td class="num">₹5,868</td><td class="num"><strong>₹1,36,529</strong></td></tr><tr><th scope="row">Level 12</th><td class="num">₹78,800</td><td class="num">₹49,644</td><td class="num">₹23,640</td><td class="num">₹5,868</td><td class="num"><strong>₹1,57,952</strong></td></tr><tr><th scope="row">Level 13</th><td class="num">₹1,23,100</td><td class="num">₹77,553</td><td class="num">₹36,930</td><td class="num">₹5,868</td><td class="num"><strong>₹2,43,451</strong></td></tr><tr><th scope="row">Level 13A</th><td class="num">₹1,31,100</td><td class="num">₹82,593</td><td class="num">₹39,330</td><td class="num">₹5,868</td><td class="num"><strong>₹2,58,891</strong></td></tr><tr><th scope="row">Level 14</th><td class="num">₹1,44,200</td><td class="num">₹90,846</td><td class="num">₹43,260</td><td class="num">₹5,868</td><td class="num"><strong>₹2,84,174</strong></td></tr></tbody></table></div><Figure name="pay-matrix-entry-pay-by-level" />
+
+<h2 id="da">What the next DA hike will add</h2>
+<p>DA is revised every January and July, so your gross salary rises twice a year even before any pay commission. Each percentage point of DA adds 1% of basic pay.</p><div class="table-wrap"><table><thead><tr><th>Level</th><th class="num">Basic pay</th><th class="num">+1 point of DA</th><th class="num">+2 points</th><th class="num">+3 points</th><th class="num">+4 points</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">₹18,000</td><td class="num">₹180</td><td class="num">₹360</td><td class="num">₹540</td><td class="num">₹720</td></tr><tr><th scope="row">Level 6</th><td class="num">₹35,400</td><td class="num">₹354</td><td class="num">₹708</td><td class="num">₹1,062</td><td class="num">₹1,416</td></tr><tr><th scope="row">Level 10</th><td class="num">₹56,100</td><td class="num">₹561</td><td class="num">₹1,122</td><td class="num">₹1,683</td><td class="num">₹2,244</td></tr></tbody></table></div><p>The January 2027 revision has not been announced. When it arrives it will apply from 1 January 2027 and is normally paid with arrears.</p>
+
+<h2 id="why">Why your payslip may differ from the calculator</h2>
+<ul><li>Your city may be on the higher-TPTA list, which raises Transport Allowance.</li><li>HRA is not paid if you live in government accommodation.</li><li>Special pay, risk or hardship allowances and arrears are not included.</li><li>Your pay level or cell may differ if you have had promotions, MACP upgrades or an advance increment.</li></ul>
+
+</SiteLayout>

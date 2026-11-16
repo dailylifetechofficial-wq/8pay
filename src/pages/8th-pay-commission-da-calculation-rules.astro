@@ -1,0 +1,46 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "How is DA calculated for central government employees?",
+  "a": "From the 12-month average of AICPI-IW converted to the 2001 series, subtract 261.42, divide by 261.42 and multiply by 100, then round to a whole number."
+ },
+ {
+  "q": "When is DA revised?",
+  "a": "Twice a year, effective 1 January and 1 July. The Cabinet usually approves the rise a few months later and it is paid with arrears."
+ },
+ {
+  "q": "What is the DA now?",
+  "a": "63% of basic pay from 1 July 2026, approved on 28 October 2026. The revision from 1 January 2027 has not been announced."
+ },
+ {
+  "q": "Is DA calculated on basic pay or basic plus HRA?",
+  "a": "On basic pay only."
+ }
+];
+const toc = [{"id": "formula", "label": "The DA formula"}, {"id": "calendar", "label": "When DA is revised and announced"}, {"id": "value", "label": "What one point of DA is worth"}, {"id": "rules", "label": "Rules that apply to DA"}, {"id": "8thcpc", "label": "DA after the 8th Pay Commission"}, {"id": "faq", "label": "FAQ"}];
+const related = ["da-hike-latest-news", "da-merger-8th-pay-commission", "central-government-employee-allowance-revisions", "central-government-salary-calculator"];
+---
+
+<SiteLayout title="8th Pay Commission DA Calculation: Formula, Rules and Dates" description="How Dearness Allowance is calculated for central government employees: AICPI-IW formula, January and July revisions, DA at 63% and what the 8th CPC changes." slug="8th-pay-commission-da-calculation-rules" h1="DA Calculation Rules: Formula, Dates and What the 8th CPC Changes" lead="How the DA percentage is worked out, when it is announced, and why each point is worth more after a pay commission." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="DA Calculation Rules">
+
+<div class="answer"><p><strong>Short answer:</strong> DA is worked out from the 12-month average of the All India Consumer Price Index for Industrial Workers: convert the average to the 2001 series (times 2.88), subtract 261.42, divide by 261.42 and multiply by 100. It is revised every 1 January and 1 July and is 63% of basic pay from 1 July 2026.</p></div>
+
+<h2 id="formula">The DA formula</h2>
+<Figure name="da-calculation-formula" /><p>The Labour Bureau publishes the AICPI-IW every month. For the 7th CPC formula the 12-month average is converted from the current 2016=100 series to the old 2001=100 series using a linking factor of 2.88. The DA percentage is then:</p><p><strong>DA % = ((12-month average of the converted index minus 261.42) divided by 261.42) multiplied by 100</strong>, rounded to a whole number.</p><h3>Worked example (illustrative figures)</h3><p>Suppose the 12-month average of the published index is 148.0. Converted to the old series: 148.0 times 2.88 = 426.24. Subtract 261.42 to get 164.82. Divide by 261.42 to get 0.6305. Multiply by 100 to get 63.05%, which rounds to 63%. These index values are for illustration; use the Labour Bureau's published series for real calculations.</p>
+
+<h2 id="calendar">When DA is revised and announced</h2>
+<p>DA is revised twice a year, from 1 January and from 1 July. The Cabinet approves each increase a few months into the period, so it is paid with arrears for the months already gone.</p><div class="table-wrap"><table><thead><tr><th>Effective from</th><th>DA rate</th><th>Change</th><th>Approved</th></tr></thead><tbody><tr><th scope="row">1 Jan 2024</th><td>50%</td><td>+4 points</td><td>Mar 2024</td></tr><tr><th scope="row">1 Jul 2024</th><td>53%</td><td>+3 points</td><td>Oct 2024</td></tr><tr><th scope="row">1 Jan 2025</th><td>55%</td><td>+2 points</td><td>Mar 2025</td></tr><tr><th scope="row">1 Jul 2025</th><td>58%</td><td>+3 points</td><td>Oct 2025</td></tr><tr><th scope="row">1 Jan 2026</th><td>60%</td><td>+2 points</td><td>Apr 2026</td></tr><tr><th scope="row">1 Jul 2026</th><td>63%</td><td>+3 points</td><td>28 Oct 2026</td></tr></tbody></table></div><p>The pattern is two to four months of lag. Our <a href="/da-hike-latest-news/">DA hike page</a> has the full history since July 2021 and a calculator for the arrears.</p>
+
+<h2 id="value">What one point of DA is worth</h2>
+<p>DA is a percentage of basic pay, so one point is worth 1% of your basic. The table shows what that means at four levels, at the entry cell.</p><div class="table-wrap"><table><thead><tr><th>Pay level</th><th class="num">Basic pay</th><th class="num">DA at 63%</th><th class="num">Value of 1 point</th><th class="num">Value of a 3-point hike</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">₹18,000</td><td class="num">₹11,340</td><td class="num">₹180</td><td class="num">₹540</td></tr><tr><th scope="row">Level 6</th><td class="num">₹35,400</td><td class="num">₹22,302</td><td class="num">₹354</td><td class="num">₹1,062</td></tr><tr><th scope="row">Level 10</th><td class="num">₹56,100</td><td class="num">₹35,343</td><td class="num">₹561</td><td class="num">₹1,683</td></tr><tr><th scope="row">Level 12</th><td class="num">₹78,800</td><td class="num">₹49,644</td><td class="num">₹788</td><td class="num">₹2,364</td></tr></tbody></table></div><p>Transport Allowance also carries DA, so the full effect of a hike is slightly higher than the table shows.</p>
+
+<h2 id="rules">Rules that apply to DA</h2>
+<ul><li>DA is calculated on basic pay only, not on HRA or other allowances. It is paid on Transport Allowance as an addition.</li><li>Pensioners receive Dearness Relief at the same rate on basic pension.</li><li>DA is taxable income and counts for gratuity and leave encashment calculations.</li><li>The government can freeze DA, as it did from January 2020 to June 2021.</li><li>HRA rates and the gratuity ceiling have been linked to DA thresholds. See <a href="/central-government-employee-allowance-revisions/">allowance revisions</a>.</li></ul>
+
+<h2 id="8thcpc">DA after the 8th Pay Commission</h2>
+<p>Past commissions absorbed the DA earned into basic pay through the fitment factor and restarted DA near zero. Whether the 8th CPC does the same is not decided. If it does, each later DA point is a percentage of a bigger basic, and the real raise is the fitment factor against 1.63 (basic plus 63% DA). See <a href="/da-merger-8th-pay-commission/">DA merger</a> and the <a href="/fitment-factor-8th-pay-commission/">fitment factor</a> guide.</p>
+
+</SiteLayout>

@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import { CONTACT_EMAIL } from '../data/site';
 import Figure from '../components/Figure.astro';
 import Calc from '../components/Calc.astro';
 const faq = [];
@@ -20,7 +21,7 @@ const related = ["about-us", "contact-us"];
 <h2 id="updates">Updates</h2>
 <p>Pages carry a last-updated date. We review key pages when a new order or Cabinet decision is announced, and at least every quarter.</p>
 <h2 id="corrections">Corrections</h2>
-<p>If you find an error, email <a href="mailto:dailylifetech.official@gmail.com">dailylifetech.official@gmail.com</a> with the page address and a source. We correct confirmed errors promptly and note material changes on the page.</p>
+<p>If you find an error, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with the page address and a source. We correct confirmed errors promptly and note material changes on the page.</p>
 <h2 id="advice">Not professional advice</h2>
 <p>Our content is general information. It is not financial, legal or tax advice. Follow your department orders for decisions about your pay and benefits.</p>
 

@@ -1,0 +1,43 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "Which allowances change with the 8th Pay Commission?",
+  "a": "Percentage-based allowances such as DA and HRA move with the new basic pay. Fixed allowances change only when the government accepts the commission's recommendations and issues orders."
+ },
+ {
+  "q": "Is HRA linked to DA?",
+  "a": "Yes. HRA tiers were 24, 16 and 8% below 25% DA, 27, 18 and 9% at 25% or more and 30, 20 and 10% at 50% or more."
+ },
+ {
+  "q": "Will allowances be merged after the 8th CPC?",
+  "a": "That has not been decided. The 7th CPC merged or abolished many allowances, so the 8th may do the same."
+ },
+ {
+  "q": "Is Transport Allowance a percentage of basic pay?",
+  "a": "No. It is a fixed slab by pay level and city class, with DA added on top."
+ }
+];
+const toc = [{"id": "types", "label": "How each allowance is revised"}, {"id": "linkage", "label": "Rates that step up with DA"}, {"id": "commission", "label": "What a pay commission does to allowances"}, {"id": "check", "label": "How to check your own allowances"}, {"id": "faq", "label": "FAQ"}];
+const related = ["hra-slabs-8th-pay-commission", "da-hra-calculator-8th-pay-commission", "8th-pay-commission-da-calculation-rules", "central-government-payslip-explained"];
+---
+
+<SiteLayout title="Central Government Allowance Revisions: What Changes" description="How central government allowances are revised: HRA tiers linked to DA, Transport Allowance with DA, fixed allowances, and what the 8th CPC could change." slug="central-government-employee-allowance-revisions" h1="Central Government Employee Allowance Revisions" lead="Which allowances move with basic pay, which move with DA, and which change only when the government issues an order." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="Allowance Revisions">
+
+<div class="answer"><p><strong>Short answer:</strong> Allowances are revised in three ways. Some are percentages of basic pay, like HRA, and rise when basic pay rises. Some carry DA, like Transport Allowance. Others are fixed amounts that change only by government order or after a pay commission. HRA rose to 30%, 20% and 10% when DA crossed 50%.</p></div>
+
+<h2 id="types">How each allowance is revised</h2>
+<div class="table-wrap"><table><thead><tr><th>Allowance</th><th>Basis</th><th>Moves with basic pay?</th><th>Moves with DA?</th></tr></thead><tbody><tr><th scope="row">Dearness Allowance</th><td>Percentage of basic pay (63% now)</td><td>Yes</td><td>Is the DA</td></tr><tr><th scope="row">House Rent Allowance</th><td>30, 20 or 10% of basic by city class</td><td>Yes</td><td>Rate tier changes when DA crosses 25% and 50%</td></tr><tr><th scope="row">Transport Allowance</th><td>Fixed slab by level and city</td><td>No</td><td>DA is added on top</td></tr><tr><th scope="row">Children Education Allowance and hostel subsidy</th><td>Fixed amount per child</td><td>No</td><td>Revised by order</td></tr><tr><th scope="row">Special, risk and hardship allowances</th><td>Fixed amount or percentage under each scheme</td><td>Depends on the scheme</td><td>Depends on the scheme</td></tr><tr><th scope="row">Dearness Relief</th><td>Percentage of basic pension</td><td>Yes, on revised pension</td><td>Is the DA rate</td></tr></tbody></table></div>
+
+<h2 id="linkage">Rates that step up with DA</h2>
+<Figure name="allowances-linked-to-da" /><p>HRA was 24, 16 and 8% of basic when DA was below 25%. It moved to 27, 18 and 9% when DA crossed 25% and to 30, 20 and 10% when DA crossed 50%. The gratuity ceiling also rose to Rs 25 lakh when DA crossed 50%. DA is now 63%, so both thresholds are behind us. Details are on the <a href="/hra-slabs-8th-pay-commission/">HRA slabs</a> and <a href="/gratuity-limit-8th-pay-commission/">gratuity limit</a> pages.</p>
+
+<h2 id="commission">What a pay commission does to allowances</h2>
+<p>A commission reviews every allowance. The 7th CPC examined about 200 of them and recommended abolishing or merging many, while keeping others with revised rates. The 8th CPC's Terms of Reference cover allowances as part of the pay structure, so rates could be reset, merged or retained.</p><ul><li><strong>After a DA merger,</strong> DA-linked tiers such as HRA usually restart at the lower rates, as in 2016.</li><li><strong>Fixed allowances</strong> are re-examined and revised by order after the Government accepts the report.</li><li><strong>Percentage allowances</strong> rise automatically with the new basic pay.</li></ul>
+
+<h2 id="check">How to check your own allowances</h2>
+<ol><li>Read your latest payslip and note which allowances appear.</li><li>For each, look up the basis in the latest Finance Ministry order or your department's rules.</li><li>Use the <a href="/da-hra-calculator-8th-pay-commission/">DA, HRA and TA calculator</a> to compare your payslip with the calculation.</li><li>Ask your accounts office if an allowance has not changed after an order.</li></ol>
+
+</SiteLayout>

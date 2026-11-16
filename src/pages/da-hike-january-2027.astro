@@ -1,0 +1,59 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const faq = [
+ {
+  "q": "What will DA be from January 2027?",
+  "a": "Not announced. With nine months of 2026 data and the index held at 155.5, the formula gives 67.86%, rounded down to 67%. Press estimates are 66% to 67%."
+ },
+ {
+  "q": "Which months decide the January 2027 DA?",
+  "a": "The average of the AICPI-IW (2016=100) for January to December 2026."
+ },
+ {
+  "q": "When will the October 2026 index be released?",
+  "a": "The Labour Bureau normally publishes a month's index at the end of the following month, so October's figure is due around the end of November."
+ },
+ {
+  "q": "Is the January 2027 DA rise also for pensioners?",
+  "a": "Yes. Pensioners receive the same percentage as Dearness Relief (DR)."
+ }
+];
+const toc = [{"id": "data", "label": "AICPI-IW readings"}, {"id": "formula", "label": "The DA formula"}, {"id": "scenarios", "label": "Expected DA"}, {"id": "break-even", "label": "Index needed"}, {"id": "rupees", "label": "In rupees"}, {"id": "when", "label": "When announced"}];
+const related = ["da-hike-latest-news", "8th-pay-commission-da-calculation-rules", "da-merger-8th-pay-commission", "8th-pay-commission-latest-news"];
+---
+
+<SiteLayout title="DA Hike January 2027: Expected DA and Formula" description="Expected DA from January 2027 using the 2026 AICPI-IW data (155.5 in September). See the formula, scenarios, rupee impact and when it will be announced." slug="da-hike-january-2027" h1="DA Hike January 2027: What Will DA Be?" lead="Expected DA from 1 January 2027, worked out from the 2026 index data and the official formula." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="DA Hike January 2027">
+
+<div class="answer"><p><strong>Short answer:</strong> Nine of the twelve index readings for the January 2027 DA revision are out. If the Labour Bureau index stays at 155.5 for October, November and December, the formula gives <strong>67.86%</strong>, which the government normally rounds down to <strong>67%</strong> (a 4-point rise from 63%). The final rate depends on the last three readings and is not official until the Cabinet approves it.</p></div>
+
+<h2 id="data">AICPI-IW readings for 2026</h2>
+<p>The January 2027 revision uses the average of the All-India Consumer Price Index for Industrial Workers (base 2016 = 100) from January to December 2026. The Labour Bureau released the September figure on 30 October 2026. The index rose 1.1 points to 155.5. October's number is due around the end of November.</p>
+<div class="table-wrap"><table><thead><tr><th>Month (2026)</th><th class="num">AICPI-IW (2016=100)</th></tr></thead><tbody><tr><th scope="row">January</th><td class="num">148.6</td></tr><tr><th scope="row">February</th><td class="num">148.5</td></tr><tr><th scope="row">March</th><td class="num">149.1</td></tr><tr><th scope="row">April</th><td class="num">149.9</td></tr><tr><th scope="row">May</th><td class="num">150.8</td></tr><tr><th scope="row">June</th><td class="num">151.9</td></tr><tr><th scope="row">July</th><td class="num">153.2</td></tr><tr><th scope="row">August</th><td class="num">154.4</td></tr><tr><th scope="row">September</th><td class="num">155.5</td></tr><tr><th scope="row">October to December</th><td class="num">Not yet published</td></tr></tbody></table></div>
+<p>Source: Labour Bureau monthly releases, as reported by press and employee-news sites. Check the Labour Bureau website for the original release.</p>
+
+<h2 id="formula">The DA formula</h2>
+<p>For central government employees, the DA percentage is worked out from the 12-month average index:</p>
+<p><strong>DA % = [(average AICPI-IW x 2.88) - 261.42] / 261.42 x 100</strong></p>
+<p>The factor 2.88 converts the current 2016-based index to the older 2001-based series, and 261.42 is the base value used for DA since the 7th CPC. The result is rounded down to a whole number for the DA order. See the full method on <a href="/8th-pay-commission-da-calculation-rules/">DA calculation rules</a>.</p>
+
+<h2 id="scenarios">What DA could be from 1 January 2027</h2>
+<p>The table fills in the three missing months with four assumptions. These are illustrations, not forecasts.</p>
+<div class="table-wrap"><table><thead><tr><th>If October to December readings are</th><th class="num">12-month average</th><th class="num">Formula result</th><th class="num">DA after rounding down</th></tr></thead><tbody><tr><th scope="row">Index stays at 155.5 for Oct, Nov, Dec</th><td class="num">152.37</td><td class="num">67.86%</td><td class="num">67%</td></tr><tr><th scope="row">Rises 0.5 point a month (156.0, 156.5, 157.0)</th><td class="num">152.62</td><td class="num">68.13%</td><td class="num">68%</td></tr><tr><th scope="row">Rises 1.0 point a month (156.5, 157.5, 158.5)</th><td class="num">152.87</td><td class="num">68.41%</td><td class="num">68%</td></tr><tr><th scope="row">Rises 1.5 points a month (157.0, 158.5, 160.0)</th><td class="num">153.12</td><td class="num">68.68%</td><td class="num">68%</td></tr></tbody></table></div>
+<p>Press estimates published after the September release also point to about 66% to 67%.</p>
+
+<h2 id="break-even">What index is needed for each DA rate</h2>
+<p>To reach a given DA, the 12-month average must reach the value below. The last column shows the average monthly reading needed for October to December.</p>
+<div class="table-wrap"><table><thead><tr><th>Target DA</th><th class="num">Average index needed</th><th class="num">Average of Oct, Nov, Dec needed</th></tr></thead><tbody><tr><th scope="row">65%</th><td class="num">149.77</td><td class="num">145.1</td></tr><tr><th scope="row">66%</th><td class="num">150.68</td><td class="num">148.8</td></tr><tr><th scope="row">67%</th><td class="num">151.59</td><td class="num">152.4</td></tr><tr><th scope="row">68%</th><td class="num">152.50</td><td class="num">156.0</td></tr><tr><th scope="row">69%</th><td class="num">153.40</td><td class="num">159.6</td></tr></tbody></table></div>
+
+<h2 id="rupees">What it means in rupees</h2>
+<p>A higher DA is paid on basic pay. The extra monthly amount for a 3, 4 or 5 point rise over today's 63%, before any tax:</p>
+<div class="table-wrap"><table><thead><tr><th>Pay level (entry basic)</th><th class="num">Basic pay</th><th class="num">DA at 66% (+3 pts)</th><th class="num">DA at 67% (+4 pts)</th><th class="num">DA at 68% (+5 pts)</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">Rs 18,000</td><td class="num">Rs 540</td><td class="num">Rs 720</td><td class="num">Rs 900</td></tr><tr><th scope="row">Level 6</th><td class="num">Rs 35,400</td><td class="num">Rs 1,062</td><td class="num">Rs 1,416</td><td class="num">Rs 1,770</td></tr><tr><th scope="row">Level 10</th><td class="num">Rs 56,100</td><td class="num">Rs 1,683</td><td class="num">Rs 2,244</td><td class="num">Rs 2,805</td></tr><tr><th scope="row">Level 14</th><td class="num">Rs 1,44,200</td><td class="num">Rs 4,326</td><td class="num">Rs 5,768</td><td class="num">Rs 7,210</td></tr></tbody></table></div>
+<p>Pensioners receive the same rise as Dearness Relief (DR) on their basic pension.</p>
+
+<h2 id="when">When will it be announced?</h2>
+<p>The January revision is applicable from 1 January 2027, but the Cabinet decision usually comes a few months later. In recent years the January decision was taken in March. When it is approved, the arrears from 1 January are paid with the new rate. Our <a href="/da-hike-latest-news/">DA hike page</a> carries the DA chart since 2021 and will be updated when the order is issued.</p>
+
+<h2 id="8cpc">DA and the 8th Pay Commission</h2>
+<p>This DA rise happens under the 7th CPC rules. When the 8th CPC pay matrix is implemented, DA may reset or be merged into pay. Read about <a href="/da-merger-8th-pay-commission/">DA merger</a> and the <a href="/8th-pay-commission-demands-interim-relief/">staff demands</a>.</p>
+
+</SiteLayout>

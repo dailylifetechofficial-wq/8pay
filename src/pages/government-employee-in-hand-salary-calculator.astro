@@ -1,0 +1,43 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Figure from '../components/Figure.astro';
+import Calc from '../components/Calc.astro';
+const faq = [
+ {
+  "q": "How is in-hand salary calculated for government employees?",
+  "a": "In-hand salary equals gross pay (basic, DA, HRA and Transport Allowance) minus deductions such as the 10% NPS or UPS contribution, CGHS, CGEGIS, income tax and other recoveries."
+ },
+ {
+  "q": "Is NPS deducted on basic pay or on basic plus DA?",
+  "a": "The 10% employee contribution is calculated on basic pay plus Dearness Allowance."
+ },
+ {
+  "q": "Does this calculator include income tax?",
+  "a": "No. Income tax depends on your declarations and regime, so enter any tax deducted each month in the other deductions box."
+ },
+ {
+  "q": "Why is my payslip different from the result?",
+  "a": "Your payslip may include a higher-TPTA city allowance, arrears, special allowances or different CGHS and recovery amounts. The payslip is always the final authority."
+ }
+];
+const toc = [{"id": "calc", "label": "Calculate your in-hand salary"}, {"id": "deductions", "label": "What is deducted from a government salary"}, {"id": "table", "label": "In-hand salary by level at the entry cell"}, {"id": "8thcpc", "label": "What the 8th Pay Commission could do to in-hand pay"}, {"id": "faq", "label": "FAQ"}];
+const related = ["central-government-salary-calculator", "central-government-payslip-explained", "8th-pay-commission-salary-calculator", "ups-vs-nps-under-8th-pay-commission"];
+---
+
+<SiteLayout title="Government Employee In-Hand Salary Calculator 2026 (7th CPC)" description="Estimate your central government in-hand salary after NPS or UPS, CGHS, CGEGIS and other deductions. Level-wise examples with DA at 63%. Updated 3 Nov 2026." slug="government-employee-in-hand-salary-calculator" h1="Government Employee In-Hand Salary Calculator" lead="See what reaches your bank account after pension contribution, CGHS, CGEGIS and other deductions." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="In-Hand Salary Calculator">
+
+<div class="answer"><p><strong>Short answer:</strong> In-hand salary is gross pay minus deductions. For a central government employee the largest deduction is the 10% NPS or UPS contribution on basic plus DA. At Level 6, entry cell, Class X, in-hand pay is about Rs 65,486 before CGHS, CGEGIS and tax.</p></div>
+
+<h2 id="calc">Calculate your in-hand salary</h2>
+<Calc name="inhand" title="In-hand salary calculator" intro="Enter the CGHS, CGEGIS and other amounts from your last payslip." />
+
+<h2 id="deductions">What is deducted from a government salary</h2>
+<ul><li><strong>NPS or UPS contribution.</strong> 10% of basic pay plus DA for employees under the National Pension System or the Unified Pension Scheme. Employees under the old pension scheme have a GPF subscription instead, which is a choice.</li><li><strong>CGHS.</strong> A monthly contribution that depends on your pay level. Read the amount from your payslip.</li><li><strong>CGEGIS.</strong> Group insurance, a small monthly amount.</li><li><strong>Income tax.</strong> Deducted at source according to your declarations. It varies by person and is not modelled here.</li><li><strong>Other recoveries.</strong> Licence fee for government accommodation, loan instalments or advances.</li></ul>
+
+<h2 id="table">In-hand salary by level at the entry cell</h2>
+<p>The estimate uses a Class X city, DA at 63%, HRA at 30% and Transport Allowance with DA. Only the NPS or UPS contribution is deducted.</p><div class="table-wrap"><table><thead><tr><th>Level</th><th class="num">Gross salary</th><th class="num">NPS or UPS (10%)</th><th class="num">In-hand before other deductions</th><th class="num">In-hand as share of gross</th></tr></thead><tbody><tr><th scope="row">Level 1</th><td class="num">₹36,207</td><td class="num">₹2,934</td><td class="num"><strong>₹33,273</strong></td><td class="num">91.9%</td></tr><tr><th scope="row">Level 2</th><td class="num">₹39,874</td><td class="num">₹3,244</td><td class="num"><strong>₹36,630</strong></td><td class="num">91.9%</td></tr><tr><th scope="row">Level 3</th><td class="num">₹44,815</td><td class="num">₹3,537</td><td class="num"><strong>₹41,278</strong></td><td class="num">92.1%</td></tr><tr><th scope="row">Level 4</th><td class="num">₹52,149</td><td class="num">₹4,156</td><td class="num"><strong>₹47,992</strong></td><td class="num">92.0%</td></tr><tr><th scope="row">Level 5</th><td class="num">₹59,290</td><td class="num">₹4,760</td><td class="num"><strong>₹54,530</strong></td><td class="num">92.0%</td></tr><tr><th scope="row">Level 6</th><td class="num">₹71,256</td><td class="num">₹5,770</td><td class="num"><strong>₹65,486</strong></td><td class="num">91.9%</td></tr><tr><th scope="row">Level 7</th><td class="num">₹89,591</td><td class="num">₹7,319</td><td class="num"><strong>₹82,272</strong></td><td class="num">91.8%</td></tr><tr><th scope="row">Level 8</th><td class="num">₹94,802</td><td class="num">₹7,759</td><td class="num"><strong>₹87,043</strong></td><td class="num">91.8%</td></tr><tr><th scope="row">Level 9</th><td class="num">₹1,08,351</td><td class="num">₹8,655</td><td class="num"><strong>₹99,696</strong></td><td class="num">92.0%</td></tr><tr><th scope="row">Level 10</th><td class="num">₹1,14,141</td><td class="num">₹9,144</td><td class="num"><strong>₹1,04,997</strong></td><td class="num">92.0%</td></tr><tr><th scope="row">Level 11</th><td class="num">₹1,36,529</td><td class="num">₹11,035</td><td class="num"><strong>₹1,25,494</strong></td><td class="num">91.9%</td></tr><tr><th scope="row">Level 12</th><td class="num">₹1,57,952</td><td class="num">₹12,844</td><td class="num"><strong>₹1,45,108</strong></td><td class="num">91.9%</td></tr></tbody></table></div><Figure name="in-hand-salary-by-level" />
+
+<h2 id="8thcpc">What the 8th Pay Commission could do to in-hand pay</h2>
+<p>A pay revision changes in-hand pay by less than gross pay, because the NPS or UPS contribution rises with basic pay. It also changes DA and HRA together. Using the salary calculator's defaults for a Level 6 employee in a Class X city (2.28 fitment, DA restarting at 0%, HRA at 24%, NPS or UPS at 10% and Rs 1,000 of other deductions), net pay would move from about <strong>Rs 64,486</strong> to about <strong>Rs 92,798</strong> a month, a rise of about 44%.</p><p>That is an illustration, not a forecast. Test your own numbers in the <a href="/8th-pay-commission-salary-calculator/">8th CPC salary calculator</a>.</p>
+
+</SiteLayout>
