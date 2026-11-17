@@ -1,0 +1,49 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { STATES, CENTRE_DA, STATE_DATA_AS_OF, STATE_SOURCE, stateSlug } from '../data/states';
+const ready = STATES.filter((s) => s.ready);
+const withDa = ready.filter((s) => typeof s.da === 'number').sort((a, b) => (b.da as number) - (a.da as number));
+const noDa = ready.filter((s) => typeof s.da !== 'number');
+const notes = ready.filter((x) => x.hubNote);
+const pending = STATES.filter((s) => !s.ready);
+const faq = [
+  { q: 'Which states have a pay commission calculator on this site?', a: `${ready.map((s) => s.name).join(', ')}. More states are added once their official orders are checked.` },
+  { q: 'Why are some states missing?', a: 'A page is published only when its figures are backed by a dated report or order. Pages for the remaining states are added after that check, so that no page carries guesses.' },
+  { q: 'Does the 8th Pay Commission apply to state employees?', a: 'Not automatically. It covers central employees. Each state decides its own pay revision and DA.' },
+  { q: 'Which state has the highest DA?', a: `Among the states with a clear total in the reports reviewed, the highest rate is ${withDa[0].da}% (${withDa.filter((x) => x.da === withDa[0].da).map((x) => x.name).join(', ')}). Rates on different pay scales are not directly comparable, so check your own scale.` },
+];
+const toc = [{ id: 'table', label: 'DA by state' }, { id: 'states', label: 'State calculators' }, { id: 'method', label: 'How we verify' }, { id: 'more', label: 'More states' }];
+const related = ['state-government-8th-pay-commission', 'da-hike-latest-news', '8th-pay-commission-salary-calculator'];
+---
+<SiteLayout title="State Pay Commission Calculators: DA by State 2026" description={`State-wise pay commission calculators for ${ready.length} states with the latest reported DA, compared with the central ${CENTRE_DA}%. Updated November 2026.`} slug="state-pay-commission-calculators" h1="State-Wise Pay Commission Calculators" lead="Pick your state to calculate salary with its latest DA and compare it with the Centre." faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel="State Calculators">
+
+<div class="answer"><p><strong>Short answer:</strong> The 8th Pay Commission is central, so every state sets its own pay and DA. Each state page below has a calculator with that state's latest reported DA. The central DA is {CENTRE_DA}% from 1 July 2026, and states range from 53% to 63% on the main pay scale in the reports reviewed (Karnataka's 18% is on revised 2024 scales).</p></div>
+
+<h2 id="table">DA by state compared with the Centre ({CENTRE_DA}%)</h2>
+<div class="table-wrap"><table>
+	<thead><tr><th>State</th><th class="num">Reported DA</th><th class="num">Gap vs Centre</th><th>Calculator</th></tr></thead>
+	<tbody>
+		{withDa.map((s) => <tr><th scope="row">{s.name}</th><td class="num">{s.da}%</td><td class="num">{s.noCompare ? 'Not comparable' : CENTRE_DA - Number(s.da) > 0 ? `${CENTRE_DA - Number(s.da)} points lower` : 'Same as Centre'}</td><td><a href={`/${stateSlug(s)}/`}>Open calculator</a></td></tr>)}
+		{noDa.map((s) => <tr><th scope="row">{s.name}</th><td class="num">Total not stated</td><td class="num">Not known</td><td><a href={`/${stateSlug(s)}/`}>Open calculator</a></td></tr>)}
+	</tbody>
+</table></div>
+<p>Karnataka's 18% is counted on the 2024 Revised Pay Scales, after a pay revision, so it is not comparable with the others. Source: {STATE_SOURCE}, checked on {STATE_DATA_AS_OF}.</p>
+{notes.map((x) => <p class="calc-note">{x.hubNote}</p>)}
+
+<h2 id="states">Choose your state</h2>
+<div class="cards">
+	{ready.map((s) => <a href={`/${stateSlug(s)}/`}><strong>{s.name}</strong><span>{typeof s.da === 'number' ? `DA ${s.da}%` : 'Latest DA rise reported'}</span></a>)}
+</div>
+
+<h2 id="method">How we verify state figures</h2>
+<ul>
+	<li>We publish a state page only when its DA and effective date are backed by a dated news report citing the government order, or the order itself.</li>
+	<li>Every page names its source and the date it was checked.</li>
+	<li>Where reports disagree (for example on a total), we say so and ask you to confirm in the Finance Department order.</li>
+	<li>Calculators run in your browser. The numbers you type are not sent to us.</li>
+</ul>
+
+<h2 id="more">States being verified</h2>
+<p>These pages are not live yet because their orders have not been checked: {pending.map((s) => s.name).join(', ')}. If you want a state added sooner, write to us through the <a href="/contact-us/">contact page</a> with a link to the official order.</p>
+
+</SiteLayout>
