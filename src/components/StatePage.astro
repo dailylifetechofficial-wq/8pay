@@ -1,0 +1,125 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import StateCalc from './StateCalc.astro';
+import { STATES, CENTRE_DA, STATE_DATA_AS_OF, STATE_SOURCE, HUB_SLUG } from '../data/states';
+import { UPDATED_LABEL } from '../data/site';
+
+export interface Props { slug: string }
+const { slug } = Astro.props;
+const s = STATES.find((x) => x.slug === slug)!;
+const source = s.source ?? STATE_SOURCE;
+const checkedOn = s.checkedOn ?? STATE_DATA_AS_OF;
+const pageSlug = `${s.slug}-pay-commission-calculator`;
+const hasDa = typeof s.da === 'number';
+const da = hasDa ? (s.da as number) : null;
+const gap = hasDa ? CENTRE_DA - (s.da as number) : null;
+const fmt = (n: number) => 'Rs ' + Math.round(n).toLocaleString('en-IN');
+const samples = [18000, 35400, 56100];
+const rows = samples.map((b) => ({ b, st: hasDa ? (b * (s.da as number)) / 100 : 0, ce: (b * CENTRE_DA) / 100 }));
+
+const rise = typeof s.rise === 'number' ? s.rise : null;
+const months = s.arrearsMonths ?? null;
+const riseRows = rise === null ? [] : [18000, 35400, 56100].map((b) => ({ b, m: (b * rise) / 100, y: (b * rise * 12) / 100, a: months ? (b * rise * months) / 100 : null }));
+const pensionRows = rise === null ? [] : [15000, 30000, 50000].map((b) => ({ b, m: (b * rise) / 100, y: (b * rise * 12) / 100 }));
+const dec = (n: number) => (Math.round(n * 100) / 100).toString();
+
+const title = `${s.name} Pay Commission Calculator 2026`;
+const description = hasDa
+  ? `${s.name} pay commission calculator: estimate salary with ${s.name} DA at ${da}%, HRA and NPS, and see fitment scenarios. Updated ${UPDATED_LABEL}.`
+  : `${s.name} pay commission calculator: estimate salary with your ${s.name} DA, HRA and NPS and see fitment scenarios. Updated ${UPDATED_LABEL}.`;
+
+const gapText = s.noCompare
+  ? `${s.name}'s ${da}% is counted on the 2024 Revised Pay Scales, after a pay revision, so it cannot be compared directly with the central rate of ${CENTRE_DA}%.`
+  : !hasDa
+  ? `The reports reviewed give the size of the latest rise but not the new total DA, so enter your own DA rate in the calculator.`
+  : (gap ?? 0) > 0
+    ? `${s.name} DA is ${gap} percentage points below the central rate of ${CENTRE_DA}%.`
+    : gap === 0
+      ? `${s.name} DA is the same as the central rate of ${CENTRE_DA}%.`
+      : `${s.name} DA is above the central rate of ${CENTRE_DA}%.`;
+
+const answer = hasDa
+  ? `<strong>Short answer:</strong> The latest reported DA for ${s.name} government employees is <strong>${da}%</strong>. ${gapText} The 8th Pay Commission is a central body, so ${s.name} decides separately whether and when to revise pay.`
+  : `<strong>Short answer:</strong> ${s.name} announced a new DA rise in late 2026, but the report does not give the new total, so this calculator asks you to enter your own rate. The 8th Pay Commission is a central body, so ${s.name} decides separately whether and when to revise pay.`;
+
+const faq = [
+  { q: `What is the DA for ${s.name} government employees?`, a: hasDa ? `The latest reported rate is ${da}% of basic pay, according to ${source}. Confirm it in the ${s.name} Finance Department order.` : `The latest report gives the size of the rise but not the new total. Check the ${s.name} Finance Department order for the rate.` },
+  { q: `Is ${s.name} DA the same as central DA?`, a: hasDa ? gapText + (s.noCompare ? '' : ' Central DA is 63% from 1 July 2026.') : `Central DA is 63% from 1 July 2026. Compare it with the rate on your ${s.name} payslip.` },
+  ...(rise === null ? [] : [{ q: `How much extra will I get from the latest DA rise in ${s.name}?`, a: `A rise of ${dec(rise)} percentage points adds ${fmt((35400 * rise) / 100)} a month on a basic pay of Rs 35,400, or ${fmt((35400 * rise * 12) / 100)} a year, before tax.${months ? ` Arrears for ${months} months would add about ${fmt((35400 * rise * months) / 100)}.` : ''}` }]),
+  { q: `Will the 8th Pay Commission apply to ${s.name} employees?`, a: `Not automatically. It covers central employees and pensioners. ${s.name} decides its own pay revision. ${s.eightNote}` },
+  { q: `Does this calculator give an exact ${s.name} salary?`, a: `No. It uses the basic pay and rates you enter. ${s.name} has its own pay matrix and allowances, so use the result as an estimate and check your payslip.` },
+];
+const tocAll = [
+  { id: 'calculator', label: `${s.name} calculator` },
+  { id: 'da', label: `DA in ${s.name}` },
+  { id: 'rise', label: 'Latest rise in rupees' },
+  { id: 'compare', label: 'Compared with the Centre' },
+  { id: 'structure', label: 'Who gets it' },
+  { id: 'eighth', label: 'The 8th Pay Commission' },
+  { id: 'check', label: 'What to check' },
+];
+const toc = rise === null ? tocAll.filter((t) => t.id !== 'rise') : tocAll;
+const related = [HUB_SLUG, 'da-hike-latest-news', '8th-pay-commission-salary-calculator', 'state-government-8th-pay-commission'];
+---
+<SiteLayout title={title} description={description} slug={pageSlug} h1={`${s.name} Pay Commission Calculator`} lead={`Estimate ${s.name} government salary with the latest reported DA, HRA and NPS.`} faq={faq} toc={toc} related={related} pageType="article" breadcrumbLabel={`${s.name} Calculator`}>
+
+<div class="answer"><p set:html={answer}></p></div>
+
+<StateCalc state={s.name} da={da} centre={s.noCompare ? 0 : CENTRE_DA} title={`${s.name} salary calculator`} intro={hasDa ? `DA is prefilled at ${da}%. Change it if your payslip shows a different rate.` : 'Enter your DA rate from your payslip or the Finance Department order.'} />
+
+<h2 id="da">DA in {s.name}: what has been reported</h2>
+<ul>
+	{(s.facts ?? []).map((f) => <li>{f}</li>)}
+</ul>
+{s.daNote && <p class="notice">{s.daNote}</p>}
+<p>Source: {source}, checked on {checkedOn}. Official orders from the {s.name} Finance Department are the final authority. {s.extra}</p>
+
+{rise !== null && (<>
+<h2 id="rise">What the latest DA rise means in rupees</h2>
+<p>The latest reported rise in {s.name} is <strong>{dec(rise)} percentage points</strong>. The tables show the extra amount for sample basic pay and pension, before tax.</p>
+<div class="table-wrap"><table>
+	<thead><tr><th>Basic pay</th><th class="num">Extra per month</th><th class="num">Extra per year</th>{months && <th class="num">Arrears ({months} months)</th>}</tr></thead>
+	<tbody>
+		{riseRows.map((r) => <tr><th scope="row">{fmt(r.b)}</th><td class="num">{fmt(r.m)}</td><td class="num">{fmt(r.y)}</td>{months && <td class="num">{fmt(Number(r.a))}</td>}</tr>)}
+	</tbody>
+</table></div>
+<p>Pensioners receive the same rise as Dearness Relief on basic pension:</p>
+<div class="table-wrap"><table>
+	<thead><tr><th>Basic pension</th><th class="num">Extra DR per month</th><th class="num">Extra DR per year</th></tr></thead>
+	<tbody>
+		{pensionRows.map((r) => <tr><th scope="row">{fmt(r.b)}</th><td class="num">{fmt(r.m)}</td><td class="num">{fmt(r.y)}</td></tr>)}
+	</tbody>
+</table></div>
+{months ? <p class="calc-note">Arrears are shown for the {months} months stated in the report. Exact arrears depend on the order and your pay.</p> : <p class="calc-note">Arrears depend on the effective date in the order and are not estimated here.</p>}
+</>)}
+
+<h2 id="compare">{s.name} DA compared with the Centre</h2>
+<p>{gapText}</p>
+{hasDa && !s.noCompare && (
+	<div class="table-wrap"><table>
+		<thead><tr><th>Basic pay</th><th class="num">DA at {da}% ({s.name})</th><th class="num">DA at {CENTRE_DA}% (Centre)</th><th class="num">Monthly difference</th></tr></thead>
+		<tbody>
+			{rows.map((r) => <tr><th scope="row">{fmt(r.b)}</th><td class="num">{fmt(r.st)}</td><td class="num">{fmt(r.ce)}</td><td class="num">{fmt(r.ce - r.st)}</td></tr>)}
+		</tbody>
+	</table></div>
+)}
+<p>The central rate is {CENTRE_DA}% from 1 July 2026. See the <a href="/da-hike-latest-news/">central DA page</a> for the DA chart since 2021.</p>
+
+<h2 id="structure">Who gets the DA and how it works in {s.name}</h2>
+<ul>
+	{(s.structure ?? []).map((f) => <li>{f}</li>)}
+</ul>
+
+<h2 id="eighth">{s.name} and the 8th Pay Commission</h2>
+<p>The 8th Central Pay Commission was constituted on 3 November 2025 and is expected to report around May 2027. It covers central government employees and pensioners. {s.eightNote}</p>
+<p>The table in the calculator shows what a new pay structure could look like at the same four scenario factors used across this site (1.92, 2.28, 2.57 and 2.86). They are illustrations, not announcements. Read how the <a href="/fitment-factor-8th-pay-commission/">fitment factor</a> works and the <a href="/state-government-8th-pay-commission/">overview for state employees</a>.</p>
+
+<h2 id="check">What {s.name} employees should check</h2>
+<ul>
+	{(s.checks ?? []).map((f) => <li>{f}</li>)}
+	<li>Compare your payslip with the calculator. HRA, allowances and NPS rules differ by state and city class.</li>
+	<li>Follow the <a href={`/${HUB_SLUG}/`}>other state calculators</a> to compare how states have moved their DA.</li>
+</ul>
+<p class="calc-note">This page is general information and not official advice. Rates were last checked on {checkedOn}; page updated {UPDATED_LABEL}.</p>
+
+</SiteLayout>

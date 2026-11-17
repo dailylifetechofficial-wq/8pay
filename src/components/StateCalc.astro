@@ -1,0 +1,11 @@
+---
+export interface Props { state: string; da: number | null; centre: number; title: string; intro?: string }
+const { state, da, centre, title, intro } = Astro.props;
+---
+<section class="calc-box" aria-label={title}>
+	<h2>{title}</h2>
+	{intro && <p>{intro}</p>}
+	<div class="state-calc" data-state={state} data-da={da ?? ''} data-centre={centre}></div>
+	<noscript><p class="notice">This calculator needs JavaScript. The tables and explanations on this page work without it.</p></noscript>
+</section>
+<script is:inline src="/js/state-calc.js" defer></script>
