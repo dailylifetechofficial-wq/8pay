@@ -14,7 +14,7 @@ export const PUBLISHED_ISO = '2026-03-28';
 export interface PageInfo {
 	slug: string; // '' = home
 	title: string; // short label for navigation and cards
-	group: 'Latest' | 'Calculators' | 'Pay and allowances' | 'Salary by level' | 'Pension' | 'Guides' | 'About';
+	group: 'Latest' | 'Calculators' | 'Pay and allowances' | 'Salary by level' | 'Pension' | 'Guides' | 'States' | 'About';
 	blurb: string;
 }
 
@@ -28,6 +28,21 @@ export const PAGES: PageInfo[] = [
 	{ slug: '8th-pay-commission-five-year-pay-revision', title: 'Five-Year Pay Revision Demand', group: 'Latest', blurb: 'The demand to revise pay every five years and a permanent pay review body.' },
 	{ slug: '8th-pay-commission-consultations', title: 'Commission Consultations', group: 'Latest', blurb: 'Cities visited, how consultations work and what happens after the report.' },
 	{ slug: '8th-pay-commission-salary-all-levels', title: 'Salary by Level (1 to 18)', group: 'Salary by level', blurb: 'Entry pay for all 18 levels under four fitment scenarios.' },
+	{ slug: 'state-pay-commission-calculators', title: 'All State Calculators', group: 'States', blurb: 'State-wise pay commission calculators with the latest reported DA compared with the Centre.' },
+	{ slug: 'arunachal-pradesh-pay-commission-calculator', title: 'Arunachal Pradesh', group: 'States', blurb: 'Arunachal Pradesh pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'bihar-pay-commission-calculator', title: 'Bihar', group: 'States', blurb: 'Bihar pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'chhattisgarh-pay-commission-calculator', title: 'Chhattisgarh', group: 'States', blurb: 'Chhattisgarh pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'gujarat-pay-commission-calculator', title: 'Gujarat', group: 'States', blurb: 'Gujarat pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'haryana-pay-commission-calculator', title: 'Haryana', group: 'States', blurb: 'Haryana pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'himachal-pradesh-pay-commission-calculator', title: 'Himachal Pradesh', group: 'States', blurb: 'Himachal Pradesh pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'karnataka-pay-commission-calculator', title: 'Karnataka', group: 'States', blurb: 'Karnataka pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'maharashtra-pay-commission-calculator', title: 'Maharashtra', group: 'States', blurb: 'Maharashtra pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'madhya-pradesh-pay-commission-calculator', title: 'Madhya Pradesh', group: 'States', blurb: 'Madhya Pradesh pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'punjab-pay-commission-calculator', title: 'Punjab', group: 'States', blurb: 'Punjab pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'rajasthan-pay-commission-calculator', title: 'Rajasthan', group: 'States', blurb: 'Rajasthan pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'tamil-nadu-pay-commission-calculator', title: 'Tamil Nadu', group: 'States', blurb: 'Tamil Nadu pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'uttar-pradesh-pay-commission-calculator', title: 'Uttar Pradesh', group: 'States', blurb: 'Uttar Pradesh pay commission calculator with the latest reported DA, HRA and NPS.' },
+	{ slug: 'uttarakhand-pay-commission-calculator', title: 'Uttarakhand', group: 'States', blurb: 'Uttarakhand pay commission calculator with the latest reported DA, HRA and NPS.' },
 	{ slug: '8th-pay-commission-salary-calculator', title: 'Salary Calculator', group: 'Calculators', blurb: 'Estimate monthly pay under 8th CPC scenarios.' },
 	{ slug: '8th-pay-commission-arrears-calculator', title: 'Arrears Calculator', group: 'Calculators', blurb: 'Estimate arrears between the effective date and payout.' },
 	{ slug: '8th-pay-commission-pension-calculator', title: 'Pension Calculator', group: 'Calculators', blurb: 'Revised pension, family pension and expected hike.' },
@@ -86,6 +101,7 @@ export const NAV_GROUPS: { label: string; slugs: string[] }[] = [
 	{ label: 'Pay and allowances', slugs: ['fitment-factor-8th-pay-commission', 'minimum-basic-pay-8th-pay-commission', '8th-pay-commission-pay-matrix', 'da-merger-8th-pay-commission', 'hra-slabs-8th-pay-commission', 'central-government-payslip-explained', 'macp-scheme-explained', '8th-pay-commission-da-calculation-rules', 'how-basic-pay-is-fixed-in-pay-commission', 'central-government-employee-allowance-revisions', '8th-pay-commission-pay-scale-chart-pdf'] },
 	{ label: 'Salary by level', slugs: ['8th-pay-commission-salary-all-levels', '8th-pay-commission-level-1-salary', '8th-pay-commission-level-3-salary', '8th-pay-commission-level-5-salary', '8th-pay-commission-level-6-salary', '8th-pay-commission-level-7-salary', '8th-pay-commission-level-8-salary', '8th-pay-commission-level-9-salary', '8th-pay-commission-level-10-salary', '8th-pay-commission-level-11-salary'] },
 	{ label: 'Guides', slugs: ['7th-vs-8th-pay-commission', 'pay-commissions-in-india-history', '8th-pay-commission-who-is-covered', 'ups-unified-pension-scheme-8th-cpc', '8th-pay-commission-railway-employees', '8th-pay-commission-defence-armed-forces', 'state-government-8th-pay-commission', 'pay-commission-glossary', '8th-pay-commission-faq', 'ups-vs-nps-under-8th-pay-commission', 'retired-central-government-employee-pension-revision-8th-cpc'] },
+	{ label: 'States', slugs: ['state-pay-commission-calculators', 'arunachal-pradesh-pay-commission-calculator', 'bihar-pay-commission-calculator', 'chhattisgarh-pay-commission-calculator', 'gujarat-pay-commission-calculator', 'haryana-pay-commission-calculator', 'himachal-pradesh-pay-commission-calculator', 'karnataka-pay-commission-calculator', 'madhya-pradesh-pay-commission-calculator', 'maharashtra-pay-commission-calculator', 'punjab-pay-commission-calculator', 'rajasthan-pay-commission-calculator', 'tamil-nadu-pay-commission-calculator', 'uttar-pradesh-pay-commission-calculator', 'uttarakhand-pay-commission-calculator'] },
 ];
 
 export const HI_PAGES: { slug: string; title: string }[] = [
