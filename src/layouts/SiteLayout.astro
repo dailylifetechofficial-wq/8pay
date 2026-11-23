@@ -85,7 +85,7 @@ const hasAside = toc.length > 0;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="theme-color" content="#0b1f3a" />
 		<meta name="author" content="8PayCommission Editorial Team" />
-		<meta name="google-adsense-account" content={ca-pub-4002521920928976} />
+		<meta name="google-adsense-account" content={ADSENSE_CLIENT} />
 		<meta property="og:type" content={pageType === 'article' ? 'article' : 'website'} />
 		<meta property="og:site_name" content={SITE_NAME} />
 		<meta property="og:locale" content={hi ? 'hi_IN' : 'en_IN'} />
@@ -101,7 +101,7 @@ const hasAside = toc.length > 0;
 		<meta name="twitter:image" content={og} />
 		{pageType === 'article' && <meta property="article:modified_time" content={updated} />}
 		<script type="application/ld+json" set:html={jsonLd}></script>
-		<script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ca-pub-4002521920928976}`} crossorigin="anonymous"></script>
+		<script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`} crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<a class="skip" href="#main">{T.skip}</a>
