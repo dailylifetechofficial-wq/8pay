@@ -1,7 +1,7 @@
 // Central site data: used by the layout, footer, HTML sitemap and related-link cards.
 export const SITE_NAME = '8PayCommission';
 export const SITE_URL = 'https://8paycommission.com';
-export const ADSENSE_CLIENT = 'ca-pub-7557955393674418';
+export const ADSENSE_CLIENT = 'ca-pub-4002521920928976';
 // One place for the contact address. Change it to your domain email (for example contact@8paycommission.com) once you have it.
 export const CONTACT_EMAIL = 'dailylifetech.official@gmail.com';
 // Add real people here (name, role, bio). The About page shows this section only when the list is not empty.
